@@ -50,7 +50,7 @@ export function Ticker() {
       {/* scrolling strip */}
       <div
         className="flex w-max py-2.5"
-        style={{ animation: "ticker-scroll 32s linear infinite" }}
+        style={{ animation: "ticker-scroll 55s linear infinite" }}
       >
         {ITEMS.map((item, i) => (
           <span
@@ -76,6 +76,7 @@ export function Ticker() {
           0%   { transform: translateX(0); }
           100% { transform: translateX(-33.333%); }
         }
+
       `}</style>
     </div>
   );

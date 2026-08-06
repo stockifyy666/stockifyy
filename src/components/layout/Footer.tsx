@@ -187,6 +187,16 @@ export default function Footer() {
           <p className="text-center">
             © {new Date().getFullYear()} {site.fullName}. All rights reserved.
           </p>
+
+          <div className="flex items-center gap-6 text-xs text-gray-400">
+            <Link href="/privacy-policy" className="hover:text-[#986300] transition-colors">
+              Privacy Policy
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/terms-and-conditions" className="hover:text-[#986300] transition-colors">
+              Terms &amp; Conditions
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

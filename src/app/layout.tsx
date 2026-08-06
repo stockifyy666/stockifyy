@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   },
   description:
     "Independent corporate advisory for boards and management teams — mergers & acquisitions, capital strategy, restructuring, and governance.",
+  icons: {
+    icon: "/images/favicon.ico",
+  },
 };
 
 export default function RootLayout({
