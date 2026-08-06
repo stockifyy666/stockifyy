@@ -82,9 +82,9 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-[#986300] font-semibold mb-5">
+            <p className="font-sans text-xs uppercase tracking-[0.2em] text-[#986300] font-semibold mb-5">
               Services
-            </h4>
+            </p>
 
             <ul className="space-y-3 font-sans text-sm text-gray-600">
               {services.slice(0, 3).map((service) => (
@@ -111,9 +111,9 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-sans text-xs uppercase tracking-[0.2em] text-[#986300] font-semibold mb-5">
+            <p className="font-sans text-xs uppercase tracking-[0.2em] text-[#986300] font-semibold mb-5">
               Company
-            </h4>
+            </p>
 
             <ul className="space-y-3 font-sans text-sm text-gray-600">
               <li>
@@ -188,7 +188,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {site.fullName}. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-6 text-xs text-gray-400">
+          <div className="flex items-center gap-6 text-xs text-gray-700">
             <Link href="/privacy-policy" className="hover:text-[#986300] transition-colors">
               Privacy Policy
             </Link>

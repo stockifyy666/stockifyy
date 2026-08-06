@@ -24,7 +24,7 @@ export default function ContactSection() {
             <span className="text-gradient-gold">confidence.</span>
           </h2>
 
-          <p className="font-sans text-ink/60 leading-relaxed max-w-md">
+          <p className="font-sans text-slate leading-relaxed max-w-md">
             Tell us briefly about the situation. A partner will respond
             directly, typically within one business day, and always under
             confidentiality.
@@ -69,6 +69,7 @@ export default function ContactSection() {
             <select
               name="service"
               defaultValue=""
+              aria-label="Select a Service"
               className="w-full appearance-none rounded-full bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink focus:border-gold outline-none transition-colors cursor-pointer"
             >
               <option value="" disabled className="text-ink/40">
