@@ -177,9 +177,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#FEA500]/30 text-[#986300] transition-all hover:-translate-y-0.5 hover:border-transparent hover:bg-gradient-to-r hover:from-[#FEA500] hover:to-[#7C5200] hover:text-white"
+                className="social-icon-btn"
               >
-                <s.icon className="h-4 w-4" />
+                <s.icon className="h-4 w-4 shrink-0" />
               </a>
             ))}
           </div>

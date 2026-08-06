@@ -42,8 +42,8 @@ function CardFace({ service, hovered }: { service: (typeof services)[0]; hovered
         className="pointer-events-none absolute inset-0"
         style={{
           background: hovered
-            ? "linear-gradient(to top, rgba(11,31,46,0.82) 0%, rgba(11,31,46,0.3) 55%, rgba(11,31,46,0.05) 100%)"
-            : "linear-gradient(to top, rgba(11,31,46,0.88) 0%, rgba(11,31,46,0.45) 55%, rgba(11,31,46,0.15) 100%)",
+            ? "linear-gradient(to top, rgba(11,31,46,0.75) 0%, rgba(11,31,46,0.2) 50%, rgba(11,31,46,0) 100%)"
+            : "linear-gradient(to top, rgba(11,31,46,0.60) 0%, rgba(11,31,46,0.15) 55%, rgba(11,31,46,0) 100%)",
           transition: "background 0.4s ease",
         }}
       />
@@ -89,7 +89,7 @@ function RingCard({
   const x = Math.sin(theta) * radius;
   const z = Math.cos(theta) * radius;
   const depthT = (z / radius + 1) / 2;
-  const opacity = 0.38 + depthT * 0.62;
+  const opacity = 0.75 + depthT * 0.25;
   const depthScale = 0.72 + depthT * 0.28;
 
   const W = Math.round(radius * 0.44);

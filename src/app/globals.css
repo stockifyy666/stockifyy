@@ -86,3 +86,44 @@ body {
   outline: 2px solid #b08d57;
   outline-offset: 3px;
 }
+
+/* ── Footer social icon buttons ── */
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  border: 1px solid rgba(254, 165, 0, 0.3);
+  color: #986300;
+  background: transparent;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.social-icon-btn:hover {
+  transform: translateY(-2px);
+  border-color: transparent;
+  background: linear-gradient(135deg, #FEA500, #7C5200);
+  color: #fff;
+}
+
+/* ── Custom thin scrollbar ── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF7E9;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FEA500, #986300);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FEA500, #7C5200);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FEA500 #FFF7E9;
+}
