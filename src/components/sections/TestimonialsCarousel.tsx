@@ -15,7 +15,7 @@ const reviews = [
 ];
 
 const GOOGLE_REVIEWS_URL =
-  "https://www.google.com/maps/place/?q=place_id:ChIJD0z5nLHt3zgRXQBJPAKe3hc";
+  "https://search.google.com/local/reviews?placeid=ChIJD0z5nLHt3zgRXQBJPAKe3hc";
 
 export default function TestimonialsCarousel() {
   const [current, setCurrent] = useState(0);
