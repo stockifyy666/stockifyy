@@ -11,12 +11,14 @@ const roboto = Roboto({
   variable: "--font-roboto",
   weight: ["400", "500", "700"],
   style: ["normal", "italic"],
+  display: "swap",
 });
 
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -38,6 +40,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${roboto.variable} ${poppins.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+      </head>
       <body className="font-sans antialiased">
         <Header />
         <main>{children}</main>

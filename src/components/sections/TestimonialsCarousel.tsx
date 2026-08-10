@@ -63,6 +63,7 @@ export default function TestimonialsCarousel() {
               alt={`Google review ${prevIdx + 1}`}
               width={260}
               height={320}
+              sizes="260px"
               className="w-full h-auto object-contain"
             />
           </div>
@@ -74,6 +75,7 @@ export default function TestimonialsCarousel() {
               alt={`Google review ${current + 1}`}
               width={320}
               height={400}
+              sizes="320px"
               className="w-full h-auto object-contain"
               priority
             />
@@ -86,6 +88,7 @@ export default function TestimonialsCarousel() {
               alt={`Google review ${nextIdx + 1}`}
               width={260}
               height={320}
+              sizes="260px"
               className="w-full h-auto object-contain"
             />
           </div>
@@ -117,6 +120,7 @@ export default function TestimonialsCarousel() {
             alt={`Google review ${current + 1}`}
             width={400}
             height={300}
+            sizes="(max-width: 768px) calc(100vw - 80px)"
             className="w-full h-auto object-contain"
             priority
           />
