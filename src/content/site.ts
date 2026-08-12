@@ -13,7 +13,7 @@ export const site = {
     { href: "/", label: "Home" },
     { href: "/#about", label: "About Us" },
     { href: "/team", label: "Our Team" },
-    { href: "/blog", label: "Blogs" },
+    // { href: "/blog", label: "Blogs" },
     { href: "/#contact", label: "Contact Us" },
   ],
 };
