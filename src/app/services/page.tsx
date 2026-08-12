@@ -5,7 +5,7 @@ import { services } from "@/content/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Nine Shariah-compliant advisory services: premium market access, one-on-one advisory, corporate advisory, wealth planning, trade calls, education, webinars and taxation guidance.",
+    "Nine Shariah-compliant advisory services on the PSX: one-on-one advisory, corporate advisory, assets under advisement, portfolio designing, wealth planning, webinars, taxation services, PSX account opening and the Stockifyy investor community.",
 };
 
 export default function ServicesPage() {
