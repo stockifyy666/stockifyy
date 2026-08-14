@@ -314,11 +314,13 @@ export default function ServicesSpiral() {
         <div className="text-center max-w-2xl mx-auto">
           <p className="case-index text-ink font-display text-lg mb-4">What We Offer</p>
           <h2 className="font-display text-3xl md:text-5xl text-ink leading-tight">
-            Our <span className="text-gradient-gold">Financial Services</span>
+            Financial Guidance for Every  <span className="text-gradient-gold">  Stage of Your Journey</span>
+          
+
           </h2>
           <p className="font-sans text-slate mt-5 leading-relaxed">
-            Comprehensive, Shariah-compliant solutions for every kind of investor —
-            drag or hover the wheel to explore.
+           From opening your first PSX account to building and managing long-term wealth, our services are designed around your goals, 
+           experience and financial needs
           </p>
         </div>
 

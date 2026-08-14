@@ -1,87 +1,125 @@
+"use client";
+
+import { useState } from "react";
+
+const SHEET_URL =
+  "https://script.google.com/macros/s/AKfycbzt2qmwHg9EDYCi1nXYdtNTx93CAz576usRiGMwWzquqn9T8iXhqAflOQ4g3pdVasICBg/exec";
+
+const SERVICE_LIST = [
+  "One on One Advisory",
+  "Corporate Advisory",
+  "Assets Under Advisement Model",
+  "Wealth Planning",
+  "Training & Webinars",
+  "Stockifyy Membership",
+  "Account Opening in PSX",
+  "Taxation Services",
+];
+
 export default function ContactSection() {
-  const services = [
-    "One on One Advisory",
-    "Corporate Advisory",
-    "Assets Under Advisement",
-    "Wealth Planning",
-    "Trade Alert",
-    "Learning Portal",
-    "Webinars",
-    "Taxation Services",
-    "Stockifyy Exclusive Premium Services",
-  ];
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    service: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      await fetch(SHEET_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      setStatus("success");
+      setForm({ name: "", email: "", phone: "", address: "", service: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  const inputClass =
+    "w-full rounded-full bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink placeholder:text-ink/40 focus:border-gold outline-none transition-colors";
 
   return (
-    <section id="contact" className="bg-cream text-ink py-24 md:py-24 ">
+    <section id="contact" className="bg-cream text-ink py-24 md:py-24">
       <div className="max-w-content mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-16">
         <div>
-          <p className="case-index text-ink font-display text-lg mb-4">
-            Get in Touch
-          </p>
-
+          <p className="case-index text-ink font-display text-lg mb-4">Get in Touch</p>
           <h2 className="font-display text-3xl md:text-5xl leading-tight mb-6 text-ink">
-            Every conversation begins in{" "}
-            <span className="text-gradient-gold">confidence.</span>
+            Let&apos;s Start a{" "}
+            <span className="text-gradient-gold">Conversation</span>
           </h2>
-
           <p className="font-sans text-slate leading-relaxed max-w-md">
-            Tell us briefly about the situation. A partner will respond
-            directly, typically within one business day, and always under
-            confidentiality.
+            Tell us what you are looking for, and our team will connect you with the right
+            service and guide you on the next steps.
           </p>
         </div>
 
-        <form className="space-y-5">
-          {/* Full Name */}
+        <form onSubmit={handleSubmit} className="space-y-5">
           <input
             type="text"
             name="name"
+            value={form.name}
+            onChange={handleChange}
             placeholder="Full Name"
-            className="w-full rounded-full bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink placeholder:text-ink/40 focus:border-gold outline-none transition-colors"
+            required
+            className={inputClass}
           />
-
-          {/* Email */}
           <input
             type="email"
             name="email"
+            value={form.email}
+            onChange={handleChange}
             placeholder="Email Address"
-            className="w-full rounded-full bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink placeholder:text-ink/40 focus:border-gold outline-none transition-colors"
+            required
+            className={inputClass}
           />
-
-          {/* Phone Number */}
           <input
             type="tel"
             name="phone"
+            value={form.phone}
+            onChange={handleChange}
             placeholder="Phone Number"
-            className="w-full rounded-full bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink placeholder:text-ink/40 focus:border-gold outline-none transition-colors"
+            required
+            className={inputClass}
           />
-
-          {/* Address */}
           <input
             type="text"
             name="address"
+            value={form.address}
+            onChange={handleChange}
             placeholder="Address"
-            className="w-full rounded-full bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink placeholder:text-ink/40 focus:border-gold outline-none transition-colors"
+            className={inputClass}
           />
 
           {/* Service Dropdown */}
           <div className="relative">
             <select
               name="service"
-              defaultValue=""
+              value={form.service}
+              onChange={handleChange}
+              required
               aria-label="Select a Service"
               className="w-full appearance-none rounded-full bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink focus:border-gold outline-none transition-colors cursor-pointer"
             >
-              <option value="" disabled className="text-ink/40">
-                Select a Service
-              </option>
-              {services.map((service) => (
-                <option key={service} value={service} className="text-ink">
-                  {service}
-                </option>
+              <option value="" disabled>Select a Service</option>
+              {SERVICE_LIST.map((s) => (
+                <option key={s} value={s}>{s}</option>
               ))}
             </select>
-            {/* Dropdown arrow */}
             <div className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-ink/50">
               <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                 <path
@@ -93,19 +131,33 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Message */}
           <textarea
             name="message"
+            value={form.message}
+            onChange={handleChange}
             placeholder="Your Message"
             rows={4}
             className="w-full rounded-2xl bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink placeholder:text-ink/40 focus:border-gold outline-none transition-colors resize-none"
           />
 
+          {/* Success message */}
+          {status === "success" && (
+            <p className="text-sm font-sans text-green-600 font-medium">
+              ✓ Message sent successfully! We&apos;ll be in touch shortly.
+            </p>
+          )}
+          {status === "error" && (
+            <p className="text-sm font-sans text-red-500 font-medium">
+              Something went wrong. Please try again or contact us on WhatsApp.
+            </p>
+          )}
+
           <button
             type="submit"
-            className="rounded-full bg-gradient-to-r from-gold to-goldDeep text-white font-display text-sm font-medium px-7 py-3.5 shadow-lg hover:opacity-90 transition-opacity"
+            disabled={status === "sending"}
+            className="rounded-full bg-gradient-to-r from-gold to-goldDeep text-white font-display text-sm font-medium px-7 py-3.5 shadow-lg hover:opacity-90 transition-opacity disabled:opacity-60"
           >
-            Send confidentially
+            {status === "sending" ? "Sending…" : "SUBMIT YOUR ENQUIRY"}
           </button>
         </form>
       </div>

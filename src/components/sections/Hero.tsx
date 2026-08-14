@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, TrendingUp, Star, BadgeCheck } from "lucide-react";
 import { Ticker } from "./Ticker";
 import Counter from "@/components/ui/Counter";
-import teamImage from "../../../public/images/team.png";
+import websiteImage from "../../../public/images/website-image.png";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden" style={{ background: "#FFFDF7" }}>
@@ -72,7 +72,7 @@ export default function Hero() {
       />
 
       {/* TICKER */}
-      <Ticker />
+      {/* <Ticker /> */}
 
       {/* MAIN CONTENT */}
       <div className="relative z-10 mx-auto max-w-content px-6 md:px-10">
@@ -94,7 +94,8 @@ export default function Hero() {
                 className="text-[10px] font-bold uppercase tracking-[0.15em] sm:text-[11px] sm:tracking-[0.2em]"
                 style={{ color: "#7C5200" }}
               >
-                SECP Certified · Shariah-Compliant
+                SECP-LICENSED · SHARIAH-COMPLIANT
+
               </span>
             </div>
 
@@ -115,8 +116,9 @@ export default function Hero() {
 
             {/* body */}
             <p className="anim-3 mt-1 max-w-lg text-sm leading-relaxed text-gray-500 sm:text-base sm:mt-4">
-              Expert stock market guidance on the PSX — ethical, research-driven
-              and built around your financial goals.
+              Research driven financial advisory for Pakistan Stock Exchange investors, 
+              built around your goals, risk profile and values.
+
             </p>
 
             {/* CTAs */}
@@ -143,8 +145,8 @@ export default function Hero() {
               style={{ borderColor: "rgba(254,165,0,0.2)" }}
             >
               {[
-                { value: "500+", label: "Active Clients",    sub: "& growing"      },
-                { value: "8+",   label: "Years Experience",  sub: "in PSX markets" },
+                { value: "10k+", label: "Active Clients",    sub: "& growing"      },
+                { value: "18+",   label: "Years Experience",  sub: "in PSX markets" },
                 { value: "100%", label: "Shariah Compliant", sub: "every service"  },
               ].map((s) => (
                 <div key={s.label}>
@@ -160,64 +162,21 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ════════ RIGHT — team image ════════ */}
-          <div className="relative flex w-full items-center justify-center pb-12 lg:w-[56%] lg:pb-0">
-
-            {/* floating card 1 — DESKTOP ONLY */}
-            {/* <div
-              className="float-card-1 absolute -left-6 -top-14 z-20 hidden rounded-2xl px-4 py-3.5 lg:block"
+          {/* ════════ RIGHT — combined team image ════════ */}
+          <div className="relative w-full lg:w-[56%] self-stretch overflow-hidden flex items-end justify-center">
+            <Image
+              src={websiteImage}
+              alt="Stockifyy Advisory Team — Sohail Farooq & Mufeez Azeez"
+              width={900}
+              height={800}
+              priority
+              className="w-full h-auto object-contain object-bottom"
+              sizes="(max-width: 640px) 100vw, (max-width: 1080px) 55vw, 50vw"
               style={{
-                background: "rgba(255,253,247,0.92)",
-                border: "1px solid rgba(254,165,0,0.25)",
-                backdropFilter: "blur(12px)",
-                boxShadow: "0 8px 32px rgba(254,165,0,0.12), 0 2px 8px rgba(0,0,0,0.06)",
+                mixBlendMode: "multiply",
+                filter: "drop-shadow(0 12px 40px rgba(254,165,0,0.15))",
               }}
-            >
-              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#FEA500" }}>
-                Avg. Portfolio Return
-              </p>
-              <p className="mt-1 text-2xl font-black" style={{ color: "#111111" }}>+34.8%</p>
-              <div className="mt-1.5 flex items-center gap-1.5">
-                <TrendingUp className="size-3" style={{ color: "#16a34a" }} />
-                <p className="text-[10px] font-medium" style={{ color: "#16a34a" }}>
-                  Outperforming KSE-100
-                </p>
-              </div>
-            </div> */}
-
-            {/* floating card 2 — DESKTOP ONLY
-            <div
-              className="float-card-2 absolute -right-6 -top-14 z-20 hidden rounded-2xl px-4 py-3.5 lg:block"
-              style={{
-                background: "rgba(255,253,247,0.92)",
-                border: "1px solid rgba(254,165,0,0.25)",
-                backdropFilter: "blur(12px)",
-                boxShadow: "0 8px 32px rgba(254,165,0,0.12), 0 2px 8px rgba(0,0,0,0.06)",
-              }}
-            >
-              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#FEA500" }}>
-                Trusted Investors
-              </p>
-              <p className="mt-1 text-2xl font-black" style={{ color: "#111111" }}>500+</p>
-              <div className="mt-1.5 flex items-center gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="size-3 fill-[#FEA500] text-[#FEA500]" />
-                ))}
-              </div>
-            </div> */}
-
-            {/* team image */}
-            <div className="relative z-10 w-full max-w-[320px] aspect-[1130/933] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[600px]">
-              <Image
-                src={teamImage}
-                alt="Stockifyy Advisory Team"
-                fill
-                priority
-                className="object-contain"
-                sizes="(max-width: 640px) 90vw, (max-width: 1080px) 60vw, 50vw"
-                style={{ filter: "drop-shadow(0 20px 40px rgba(254,165,0,0.15))" }}
-              />
-            </div>
+            />
           </div>
 
         </div>

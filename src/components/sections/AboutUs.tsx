@@ -17,22 +17,27 @@ export default function AboutUs() {
         </div>
         <div className="order-1 md:order-2">
           <p className="case-index font-display text-ink font text-lg mb-4">About Us</p>
-          <h2 className="font-display text-3xl md:text-5xl text-ink leading-tight mb-6">
-            Your Trusted Partner in <span className="text-gradient-gold">Smarter Investing</span>
+          <h2 className="font-display text-3xl md:text-[44px] text-ink leading-tight mb-6">
+            
+           Clarity, Discipline and Values <span className="text-gradient-gold"> in Every Decision</span>
           </h2>
           <div className="font-sans text-slate leading-relaxed space-y-5">
             <p>
-              Our mission at Stockifyy is to make Shariah-compliant investing easy
-               and reliable for everyone — whether you're just starting your investment 
-               journey or already active in the market.clear, research-driven guidance 
-               focused on Shariah-compliant companies listed on the Pakistan Stock Exchange.
+              Stockifyy is an SECP-licensed financial advisory focused on helping investors navigate the Pakistan Stock Exchange with greater clarity and discipline.
+
+{/* We believe successful investing is not built on speculation or short-term noise. It requires quality research, responsible risk management and a strategy that reflects each investor’s goals and circumstances. */}
+
             </p>
 
 
             <p>
-              By combining simplicity, transparency and disciplined analysis,
-               we help investors make confident decisions, manage risk responsibly, 
-               and work toward long-term financial growth without compromising their values.
+            Our advisory is built entirely around Shariah-compliant investment opportunities.
+             Whether you are entering the market for the first time or managing an established 
+             portfolio, we help you understand your investments, make informed decisions and
+              build long-term wealth without compromising your values.
+
+
+
             </p>
           </div>
         </div>

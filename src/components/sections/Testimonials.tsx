@@ -8,10 +8,15 @@ export default function Testimonials() {
         <div className="max-w-content mx-auto px-6 md:px-10 mb-14">
           <SectionHeading
             index="Our Testimonials"
-            title="Clients Who"
-            subtitle="Trust Us"
+            title="What Our"   
+
+            subtitle="Clients Say"
             align="center"
           />
+          <p className="font-sans text-center text-slate mt-5 leading-relaxed">
+           Real experiences shared by investors who have worked with Stockifyy.
+
+          </p>
         </div>
 
         <div className="max-w-content mx-auto px-6 md:px-10">

@@ -5,18 +5,18 @@ import { HeartHandshake, ShieldCheck, SearchCheck } from "lucide-react";
 const reasons = [
   {
     icon: HeartHandshake,
-    title: "Ethical Investing",
-    body: "Invest in businesses that comply with Islamic principles.",
+    title: "SECP-Licensed Advisory",
+    body: "Professional financial guidance delivered within a regulated and responsible advisory framework.",
   },
   {
     icon: ShieldCheck,
-    title: "Shariah Compliance",
-    body: "Only Shariah-compliant companies as per PSX Shariah Board criteria.",
+    title: "Shariah-Compliant Investing",
+    body: "Every investment opportunity is evaluated against recognised Shariah screening criteria, ensuring that your portfolio remains aligned with your values.",
   },
   {
     icon: SearchCheck,
-    title: "Financial Screening",
-    body: "Companies are screened on financial ratios and business activities.",
+    title: "Research-Driven Guidance",
+    body: "Investment decisions supported by disciplined market research, company analysis and responsible risk assessment..",
   },
 ];
 

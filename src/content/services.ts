@@ -1,11 +1,11 @@
 import {
-  BookOpen,
   Building2,
   CreditCard,
-  Landmark,
+  LayoutDashboard,
   PieChart,
   Receipt,
   ShieldCheck,
+  TrendingUp,
   UserCheck,
   Users,
   Video,
@@ -147,55 +147,11 @@ export const services: Service[] = [
       "Stockifyy Assets Under Advisement (AUA) Model: expert portfolio oversight and strategic rebalancing advice while you retain full control of your assets.",
   },
   {
-    slug: "portfolio-designing",
-    navLabel: "Portfolio Designing",
-    title: "Portfolio Designing",
-    tagline: "Engineered for growth. Built to last.",
-    icon: PieChart,
-    summary:
-      "Professionally structured, Shariah-compliant equity portfolios designed from the ground up around your goals, risk profile and investment horizon.",
-    intro: [
-      "A well-designed portfolio is the most powerful tool an investor has — yet most investors skip this step entirely and jump straight to stock picking. At Stockifyy, our Portfolio Designing service builds a structured, diversified investment framework before a single trade is placed, ensuring every position has a clear purpose within your overall financial plan.",
-      "Our analysts evaluate your income, net worth, liquidity needs, time horizon and risk tolerance to create a bespoke asset allocation blueprint. From sectoral weights and stock selection to position sizing and rebalancing triggers, every element is deliberate. The result is a portfolio built for resilience across market cycles — not just performance in a bull run.",
-    ],
-    features: [
-      {
-        title: "Custom Asset Allocation Blueprint",
-        description:
-          "A structured breakdown of how your capital should be distributed across sectors, market caps and holding periods to match your goals.",
-      },
-      {
-        title: "Sector Diversification Strategy",
-        description:
-          "Deliberate spread across PSX sectors reduces concentration risk so no single industry downturn can derail your wealth journey.",
-      },
-      {
-        title: "Shariah-Compliant Stock Universe",
-        description:
-          "We only select equities that pass our comprehensive Shariah screening process, ensuring your growth is both profitable and principled.",
-      },
-      {
-        title: "Position Sizing & Risk Management",
-        description:
-          "Each holding is sized relative to your overall portfolio to control downside exposure without limiting upside potential.",
-      },
-      {
-        title: "Rebalancing Framework",
-        description:
-          "Clear triggers and guidelines for when to add, reduce or exit positions to keep the portfolio aligned with your original design.",
-      },
-    ],
-    image1: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=1200&q=80",
-    metaDescription:
-      "Stockifyy Portfolio Designing: custom, Shariah-compliant equity portfolio construction on the PSX — built around your risk profile, goals and time horizon.",
-  },
-  {
     slug: "wealth-planning",
     navLabel: "Wealth Planning",
     title: "Wealth Planning",
     tagline: "A long-term financial roadmap built around your life.",
-    icon: Landmark,
+    icon: TrendingUp,
     summary:
       "Comprehensive wealth planning that maps your financial future — integrating investments, income, savings and goals into one coherent long-term strategy.",
     intro: [
@@ -235,9 +191,9 @@ export const services: Service[] = [
       "Stockifyy Wealth Planning: comprehensive, Shariah-compliant long-term financial planning that integrates investments, savings and life goals into a single strategy.",
   },
   {
-    slug: "webinars",
-    navLabel: "Webinars",
-    title: "Webinars",
+    slug: "traning-webinars",
+    navLabel: "Training & Webinars",
+    title: "Training and Webinars",
     tagline: "Live market intelligence, direct from expert analysts.",
     icon: Video,
     summary:
@@ -279,49 +235,50 @@ export const services: Service[] = [
       "Stockifyy Webinars: live, interactive sessions with senior analysts covering PSX market developments, sector outlooks and investment strategy in real time.",
   },
   {
-    slug: "taxation-services",
-    navLabel: "Taxation Services",
-    title: "Taxation Services",
-    tagline: "Stay compliant. Keep more of what you earn.",
-    icon: Receipt,
+    slug: "stockifyy-membership",
+    navLabel: "Stockifyy Membership",
+    title: "Stockifyy Membership",
+    tagline: "Join Pakistan's most trusted investing community.",
+    icon: Users,
     summary:
-      "Practical, investor-focused tax guidance covering capital gains, withholding tax, FBR filing and filer status — tailored to PSX investors and traders.",
+      "Become part of the Stockifyy investor community — access curated research, live trade discussions and expert market insights through our exclusive advisory channel.",
     intro: [
-      "Pakistan's tax framework for capital market income is one of the most frequently misunderstood areas of personal finance. Capital gains tax rates, holding period rules, withholding tax at the broker level and FBR disclosure requirements all interact in ways that can quietly erode your returns if not properly managed. Stockifyy's Taxation Services bridge the gap between your investment activity and your tax obligations — so you pay exactly what you owe, and not a rupee more.",
-      "We work with individual investors, active traders and corporate clients to structure investment activity in a tax-aware manner from the outset. Tax planning is not an afterthought at Stockifyy — it is embedded into the advisory process so that every portfolio decision accounts for its tax implication alongside its investment merit.",
+      "Investing alone is harder than it needs to be. The Stockifyy community brings together thousands of Pakistani investors who share one goal: building wealth the right way. Through our exclusive advisory channel, members receive curated market research, live trade discussions, sectoral briefings and real-time analyst commentary — making professional-grade insight accessible to every member, regardless of portfolio size.",
+      "This is not a generic stock tips group. Every update shared through the Invest with Stockifyy channel is backed by the same research process that drives our premium advisory services — fundamental analysis, technical screening and Shariah compliance review. You get the confidence of knowing that what you read has been through a disciplined evaluation process before it reaches you.",
     ],
     features: [
       {
-        title: "Capital Gains Tax Structuring",
+        title: "Curated Research Shared Daily",
         description:
-          "We help you understand CGT implications based on your holding period, trading frequency and filer status, with strategies to optimise your net returns.",
+          "Analyst-reviewed market insights, sector updates and economic commentary delivered directly to your device every trading day.",
       },
       {
-        title: "Withholding Tax Review",
+        title: "Live Trade Call Discussions",
         description:
-          "A thorough review of broker-deducted taxes and dividend withholding to ensure you are not overpaying at source.",
+          "Active conversations around current market opportunities, with analysts providing context and answering member questions in real time.",
       },
       {
-        title: "ATL Filer Status Guidance",
+        title: "Shariah-Compliant Picks Only",
         description:
-          "Practical advice on maintaining Active Taxpayer List status and the material difference it makes to your trading cost structure.",
+          "Every stock or opportunity discussed in the community has been pre-screened for Shariah compliance — so you never have to second-guess your choices.",
       },
       {
-        title: "FBR Wealth & Income Filing Support",
+        title: "Community of Serious Investors",
         description:
-          "Organised assistance in preparing your capital market income disclosures for annual wealth statements and income tax returns.",
+          "Connect with thousands of like-minded Pakistani investors who are actively building their financial futures through disciplined, research-driven investing.",
       },
       {
-        title: "Corporate Investment Tax Coordination",
+        title: "Direct Access to the Stockifyy Team",
         description:
-          "For institutional clients, we coordinate directly with your finance function on the tax treatment of corporate market investment activities.",
+          "Ask questions, share observations and get direct responses from the analysts and advisors behind Stockifyy's research engine.",
       },
     ],
-    image1: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80",
+    image1: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80",
+    image2: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80",
     metaDescription:
-      "Stockifyy Taxation Services: expert capital gains tax, withholding tax and FBR filing guidance for Pakistan Stock Exchange investors, traders and corporate clients.",
+      "Invest with Stockifyy: join Pakistan's most trusted investor community for daily curated research, live trade discussions and Shariah-compliant stock market insights.",
   },
+  
   {
     slug: "account-opening-in-psx",
     navLabel: "Account Opening in PSX",
@@ -367,49 +324,50 @@ export const services: Service[] = [
       "Stockifyy Account Opening in PSX: expert guidance on CDC registration, broker selection and full compliance support for new Pakistan Stock Exchange investors.",
   },
   {
-    slug: "invest-with-stockifyy",
-    navLabel: "Invest with Stockifyy",
-    title: "Invest with Stockifyy",
-    tagline: "Join Pakistan's most trusted investing community.",
-    icon: Users,
+    slug: "taxation-services",
+    navLabel: "Taxation Services",
+    title: "Taxation Services",
+    tagline: "Stay compliant. Keep more of what you earn.",
+    icon: Receipt,
     summary:
-      "Become part of the Stockifyy investor community — access curated research, live trade discussions and expert market insights through our exclusive advisory channel.",
+      "Practical, investor-focused tax guidance covering capital gains, withholding tax, FBR filing and filer status — tailored to PSX investors and traders.",
     intro: [
-      "Investing alone is harder than it needs to be. The Stockifyy community brings together thousands of Pakistani investors who share one goal: building wealth the right way. Through our exclusive advisory channel, members receive curated market research, live trade discussions, sectoral briefings and real-time analyst commentary — making professional-grade insight accessible to every member, regardless of portfolio size.",
-      "This is not a generic stock tips group. Every update shared through the Invest with Stockifyy channel is backed by the same research process that drives our premium advisory services — fundamental analysis, technical screening and Shariah compliance review. You get the confidence of knowing that what you read has been through a disciplined evaluation process before it reaches you.",
+      "Pakistan's tax framework for capital market income is one of the most frequently misunderstood areas of personal finance. Capital gains tax rates, holding period rules, withholding tax at the broker level and FBR disclosure requirements all interact in ways that can quietly erode your returns if not properly managed. Stockifyy's Taxation Services bridge the gap between your investment activity and your tax obligations — so you pay exactly what you owe, and not a rupee more.",
+      "We work with individual investors, active traders and corporate clients to structure investment activity in a tax-aware manner from the outset. Tax planning is not an afterthought at Stockifyy — it is embedded into the advisory process so that every portfolio decision accounts for its tax implication alongside its investment merit.",
     ],
     features: [
       {
-        title: "Curated Research Shared Daily",
+        title: "Capital Gains Tax Structuring",
         description:
-          "Analyst-reviewed market insights, sector updates and economic commentary delivered directly to your device every trading day.",
+          "We help you understand CGT implications based on your holding period, trading frequency and filer status, with strategies to optimise your net returns.",
       },
       {
-        title: "Live Trade Call Discussions",
+        title: "Withholding Tax Review",
         description:
-          "Active conversations around current market opportunities, with analysts providing context and answering member questions in real time.",
+          "A thorough review of broker-deducted taxes and dividend withholding to ensure you are not overpaying at source.",
       },
       {
-        title: "Shariah-Compliant Picks Only",
+        title: "ATL Filer Status Guidance",
         description:
-          "Every stock or opportunity discussed in the community has been pre-screened for Shariah compliance — so you never have to second-guess your choices.",
+          "Practical advice on maintaining Active Taxpayer List status and the material difference it makes to your trading cost structure.",
       },
       {
-        title: "Community of Serious Investors",
+        title: "FBR Wealth & Income Filing Support",
         description:
-          "Connect with thousands of like-minded Pakistani investors who are actively building their financial futures through disciplined, research-driven investing.",
+          "Organised assistance in preparing your capital market income disclosures for annual wealth statements and income tax returns.",
       },
       {
-        title: "Direct Access to the Stockifyy Team",
+        title: "Corporate Investment Tax Coordination",
         description:
-          "Ask questions, share observations and get direct responses from the analysts and advisors behind Stockifyy's research engine.",
+          "For institutional clients, we coordinate directly with your finance function on the tax treatment of corporate market investment activities.",
       },
     ],
-    image1: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80",
+    image1: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80",
+    image2: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80",
     metaDescription:
-      "Invest with Stockifyy: join Pakistan's most trusted investor community for daily curated research, live trade discussions and Shariah-compliant stock market insights.",
-  },
+      "Stockifyy Taxation Services: expert capital gains tax, withholding tax and FBR filing guidance for Pakistan Stock Exchange investors, traders and corporate clients.",
+  }
+  
 ];
 
 export function getServiceBySlug(slug: string) {

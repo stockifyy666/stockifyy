@@ -11,15 +11,21 @@ import ContactSection from "@/components/sections/ContactSection";
 export default function Home() {
   return (
     <>
-      <Hero />
-      <AboutUs />
-      <ServicesSpiral />
-      <WhyChooseUs />
-      {/* <StatsSection /> */}
-      <Testimonials />
-      <CTASection />
-      <FAQSection />
-      <ContactSection  />
+      {/* Hero stays sticky — sections below scroll over it */}
+      <div className="sticky top-0 z-0">
+        <Hero />
+      </div>
+
+      <div className="relative z-10 bg-[#FFFDF7]">
+        <AboutUs />
+        <ServicesSpiral />
+        <WhyChooseUs />
+        {/* <StatsSection /> */}
+        <Testimonials />
+        <CTASection />
+        <FAQSection />
+        <ContactSection />
+      </div>
     </>
   );
 }
