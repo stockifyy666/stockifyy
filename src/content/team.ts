@@ -1,7 +1,7 @@
 import type { TeamMember } from "@/types";
 
 import sohailImg from "../../public/images/team/sohail-farooq.png";
-import mufeezImg from "../../public/images/team/mufeez-azeez.png";
+import mufeezImg from "../../public/images/mufeez.png";
 import moizImg from "../../public/images/team/moiz-shahzad.png";
 import saadImg from "../../public/images/team/saad-arshad.png";
 import sufiyanImg from "../../public/images/team/m-sufiyan.png";

@@ -163,14 +163,14 @@ export default function Hero() {
           </div>
 
           {/* ════════ RIGHT — combined team image ════════ */}
-          <div className="relative w-full lg:w-[56%] self-stretch overflow-hidden flex items-end justify-center">
+          <div className="relative w-full lg:w-[56%] self-stretch overflow-hidden flex items-start justify-center lg:pt-16">
             <Image
               src={websiteImage}
               alt="Stockifyy Advisory Team — Sohail Farooq & Mufeez Azeez"
               width={900}
               height={800}
               priority
-              className="w-full h-auto object-contain object-bottom"
+              className="w-full h-auto object-contain object-top"
               sizes="(max-width: 640px) 100vw, (max-width: 1080px) 55vw, 50vw"
               style={{
                 mixBlendMode: "multiply",
