@@ -6,11 +6,11 @@ export const faqs: FAQItem[] = [
     answer:
       "A Shariah-compliant investment avoids interest-based income (Riba), and avoids companies whose core business involves prohibited activities such as alcohol, gambling, tobacco or pork. Stockifyy only advises on companies listed on the Pakistan Stock Exchange that pass this ethical and financial screening.",
   },
-  {
-    question: "Do you take a stake in the deals you advise on?",
-    answer:
-      "No. We operate strictly as advisors, never as principals or investors. That separation is deliberate — it means our recommendations aren't shaped by a competing financial interest in the outcome.",
-  },
+  // {
+  //   question: "Do you take a stake in the deals you advise on?",
+  //   answer:
+  //     "No. We operate strictly as advisors, never as principals or investors. That separation is deliberate — it means our recommendations aren't shaped by a competing financial interest in the outcome.",
+  // },
   {
     question: "Do I need prior trading experience to work with Stockifyy?",
     answer:

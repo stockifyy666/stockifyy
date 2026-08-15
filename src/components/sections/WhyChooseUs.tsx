@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
           {/* YouTube embed */}
           <div className="relative aspect-video w-full overflow-hidden rounded-[20px] shadow-xl">
             <iframe
-              src="https://www.youtube-nocookie.com/embed/oTD6C3ZHPYk?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+              src="https://www.youtube.com/embed/Q2116h_ERHY"
               title="Why Choose Stockifyy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
