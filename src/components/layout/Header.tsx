@@ -119,12 +119,12 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link
+        {/* <Link
           href={site.dataPortalHref}
           className="hidden lg:inline-block font-display text-sm font-medium bg-gradient-to-r from-[#FEA500] to-[#986300] text-white shadow-lg hover:opacity-90 rounded-full px-6 py-2.5 hover:bg-paper transition-colors"
         >
           Data Portal
-        </Link>
+        </Link> */}
 
         {/* Mobile menu toggle */}
      <button
@@ -216,12 +216,12 @@ export default function Header() {
             </Link>
           ))}
 
-          <Link
+          {/* <Link
             href={site.dataPortalHref}
           className="font-display mt-6 text-center rounded-full bg-gradient-to-r from-[#FEA500] to-[#986300] text-white px-5 py-3.5 font-medium shadow-lg hover:opacity-90 transition"
           >
             Data Portal
-          </Link>
+          </Link> */}
         </nav>
       </div>
     </header>
