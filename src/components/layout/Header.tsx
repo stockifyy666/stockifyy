@@ -45,7 +45,7 @@ export default function Header() {
 </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8 font-sans text-sm text-gray-700">
+        <nav className="hidden lg:flex items-center gap-8 font-sans text-sm text-gray-700">
           <Link href={homeItem.href} className="hover:text-[#986300] duration-200 transition-colors">
             {homeItem.label}
           </Link>
@@ -121,7 +121,7 @@ export default function Header() {
 
         <Link
           href={site.dataPortalHref}
-          className="hidden md:inline-block font-display text-sm font-medium bg-gradient-to-r from-[#FEA500] to-[#986300] text-white shadow-lg hover:opacity-90 rounded-full px-6 py-2.5 hover:bg-paper transition-colors"
+          className="hidden lg:inline-block font-display text-sm font-medium bg-gradient-to-r from-[#FEA500] to-[#986300] text-white shadow-lg hover:opacity-90 rounded-full px-6 py-2.5 hover:bg-paper transition-colors"
         >
           Data Portal
         </Link>
@@ -131,7 +131,7 @@ export default function Header() {
   onClick={() => setMobileOpen((v) => !v)}
   aria-label={mobileOpen ? "Close menu" : "Open menu"}
   aria-expanded={mobileOpen}
-  className="md:hidden relative w-10 h-10 flex flex-col items-center justify-center"
+  className="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center"
 >
   <span
     className={`absolute w-6 h-0.5 bg-[#1A1A1A] rounded-full transition-all duration-300 ${
@@ -153,7 +153,7 @@ export default function Header() {
 
       {/* Mobile menu panel */}
       <div
-        className={`md:hidden overflow-hidden bg-[#FFF7E9] border-t border-[#E8DDC8] transition-[max-height] duration-300 ease-in-out ${
+        className={`lg:hidden overflow-hidden bg-[#FFF7E9] border-t border-[#E8DDC8] transition-[max-height] duration-300 ease-in-out ${
           mobileOpen ? "max-h-[calc(100vh-5rem)] overflow-y-auto" : "max-h-0"
         }`}
       >

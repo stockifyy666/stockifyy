@@ -23,14 +23,14 @@ export default function DataPortalPage() {
        </div>
 
         <h1 className="font-display text-4xl md:text-5xl text-ink mb-5 leading-tight">
-          Data Portal is Under Development
+          Data Portal is Coming Soon
         </h1>
 
-        <p className="font-sans text-slate max-w-lg mx-auto mb-4 leading-relaxed text-base md:text-lg">
+        {/* <p className="font-sans text-slate max-w-lg mx-auto mb-4 leading-relaxed text-base md:text-lg">
           We&apos;re building a powerful data portal to give you real-time
           PSX market insights, Shariah screening tools, and portfolio
           analytics — all in one place.
-        </p>
+        </p> */}
 
         <p className="font-sans text-slate/70 max-w-md mx-auto mb-10 text-sm leading-relaxed">
           Our team is working hard to bring this to you soon. In the meantime,

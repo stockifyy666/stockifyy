@@ -18,133 +18,154 @@ export const services: Service[] = [
     slug: "one-on-one-advisory",
     navLabel: "One on One Advisory",
     title: "One on One Advisory",
-    tagline: "Your portfolio. Your advisor. Your pace.",
+    tagline: "Simple, Practical Advice for Better Investment Decisions.",
     icon: UserCheck,
     summary:
-      "Direct, personalised guidance from a dedicated Stockifyy analyst — built around your financial goals, risk appetite and investment timeline.",
+      "Clear, professional guidance tailored to your financial objectives, risk profile and investment horizon — so you can make informed decisions with confidence.",
     intro: [
-      "At Stockifyy Advisory, we believe no two investors are the same. Our One on One Advisory service pairs you directly with a senior market analyst who takes the time to understand your financial history, your goals and the specific outcomes you want from the Pakistan Stock Exchange. This is not a generic signal group — it is a dedicated advisory relationship.",
-      "From your very first session, your advisor crafts a personalised investment strategy grounded in fundamental research, technical analysis and Shariah-compliant screening. Every recommendation comes with a clear rationale, so you grow your knowledge alongside your wealth. Whether you are building your first portfolio or refining an existing one, you get a partner who is as invested in your success as you are.",
+      "Investing can become complicated when there is too much information and too many opinions. At Stockifyy, our One on One Advisory service is designed for clients who want clear, practical and professional guidance before making investment decisions.",
+      "We start by understanding you — your financial objectives, investment horizon, level of risk you are comfortable with, and what you are looking to achieve through your investments. We then use this understanding to provide advice that is relevant to your individual situation.",
+      "Our advisory process begins with a conversation. We take the time to understand your requirements rather than taking a one-size-fits-all approach. Based on your objectives and risk profile, we assess relevant investment opportunities and provide our views and recommendations. We explain the reasoning behind our recommendations in simple terms, so you can make decisions with a clear understanding of the opportunity and the associated risks.",
+      "We believe investment advice should not make things more complicated than they already are. Our role is to bring research, analysis and experience together and present it in a way that is easy to understand. At Stockifyy, we do not believe in chasing every market movement — we focus on helping our clients understand their options and make informed decisions based on their own objectives.",
     ],
     features: [
       {
-        title: "Dedicated Senior Analyst",
+        title: "Understanding Your Objectives & Risk Profile",
         description:
-          "You work with one consistent advisor who knows your portfolio intimately and provides continuity across every market cycle.",
+          "We begin by learning your financial goals, investment horizon and comfort with risk before making any recommendation.",
       },
       {
-        title: "Personalised Investment Strategy",
+        title: "Review of Existing Investment Position",
         description:
-          "A custom plan built around your income, goals, risk tolerance and investment horizon — never a one-size-fits-all template.",
+          "We assess your current holdings and identify gaps, overexposures or opportunities that align with your objectives.",
       },
       {
-        title: "Research-Backed Trade Guidance",
+        title: "Research & Analysis of Opportunities",
         description:
-          "Every stock recommendation is supported by in-depth fundamental and technical analysis, giving you the confidence to act decisively.",
+          "In-depth research and analysis of relevant securities and investment opportunities in the Pakistan Stock Exchange.",
       },
       {
-        title: "Shariah-Compliant Stock Selection",
+        title: "Clear Investment Views & Recommendations",
         description:
-          "All recommendations are rigorously screened to ensure your investment activity remains fully aligned with Islamic financial principles.",
+          "We provide reasoned recommendations in plain language — so you understand the opportunity and the risk before you decide.",
       },
       {
-        title: "Ongoing Progress Reviews",
+        title: "Risk & Outcome Discussion",
         description:
-          "Regular portfolio check-ins ensure your strategy stays aligned with changing market conditions and evolving personal goals.",
+          "Every recommendation includes a frank discussion of potential risks and realistic expected outcomes.",
+      },
+      {
+        title: "Ongoing Review as Conditions Change",
+        description:
+          "We revisit your investment approach whenever your personal objectives or market conditions shift materially.",
       },
     ],
     image1: oneOnOneAdvisory,
     image2: "https://images.unsplash.com/photo-1551836022-aadb801c60ae?w=1200&q=80",
     metaDescription:
-      "Stockifyy One on One Advisory: personalised, Shariah-compliant PSX investment guidance from a dedicated senior analyst — tailored to your financial goals.",
+      "Stockifyy One on One Advisory: clear, practical and personalised investment guidance for PSX investors — built around your objectives, risk profile and investment horizon.",
   },
   {
     slug: "corporate-advisory",
     navLabel: "Corporate Advisory",
     title: "Corporate Advisory",
-    tagline: "Strategic financial intelligence for forward-thinking businesses.",
+    tagline: "Financial Advice for Important Business Decisions.",
     icon: Building2,
     summary:
-      "Institutional-grade, Shariah-compliant financial consulting for businesses that demand more than standard market advice.",
+      "Independent, well-researched financial and investment advice for businesses — designed to support sound decision-making at every stage of growth.",
     intro: [
-      "Corporate treasury decisions carry consequences that ripple across entire organisations. Stockifyy's Corporate Advisory service provides businesses, institutions and family offices with the same depth of research, regulatory insight and strategic discipline used by leading investment firms — structured around the unique requirements of Pakistan's corporate landscape.",
-      "We work directly alongside your executive and finance teams to evaluate investment opportunities, optimise idle capital, manage financial risk and ensure every corporate market activity is fully Shariah-compliant and SECP-aligned. From capital deployment on the PSX to structuring dividend reinvestment strategies, we deliver clear, data-driven recommendations that protect your organisation's financial health and support long-term growth.",
+      "Businesses regularly face financial and investment decisions that require careful consideration. Whether it is evaluating an opportunity, assessing a financial position, or planning for the next stage of growth, having an independent and well-researched perspective can make a meaningful difference.",
+      "Stockifyy provides Corporate Advisory services to businesses and corporate clients looking for practical financial and investment-related advice. We work with management and decision-makers to understand the business, its objectives and the situation at hand. From there, we provide analysis and recommendations designed to support sound decision making.",
+      "Every business is different, which is why we begin with understanding the company rather than immediately proposing a solution. We look at the relevant financial information, business objectives, market environment and other factors that may affect the decision. We then present our findings and recommendations in a clear and practical manner.",
+      "Our role is to provide an informed perspective and help management evaluate its options. We work closely with our clients throughout the advisory process and maintain clear communication from the initial discussion through to the final recommendation. We understand that corporate decisions can have long-term consequences — our approach is therefore based on careful analysis, transparency and a clear understanding of the client's objectives.",
     ],
     features: [
       {
-        title: "Institutional Research & Market Intelligence",
+        title: "Financial & Investment Analysis",
         description:
-          "High-conviction sector reports and macroeconomic briefings that give your board the intelligence needed for sound capital decisions.",
+          "In-depth analysis of the financial and investment dimensions of business decisions, grounded in data and market understanding.",
       },
       {
-        title: "Treasury & Idle Capital Optimisation",
+        title: "Evaluation of Investment Opportunities",
         description:
-          "We identify the most effective Shariah-compliant vehicles for deploying surplus corporate funds to generate returns without excess risk.",
+          "Structured assessment of specific investment opportunities to help management understand the potential, risks and strategic fit.",
       },
       {
-        title: "Bespoke Corporate Investment Strategy",
+        title: "Market & Sector Analysis",
         description:
-          "Every corporate engagement begins with a thorough financial diagnostic, resulting in a strategy aligned with your industry, scale and liquidity needs.",
+          "Relevant market and sector research to give your team a clear picture of the environment in which a decision is being made.",
       },
       {
-        title: "Regulatory & Shariah Compliance",
+        title: "Review of Financial & Strategic Considerations",
         description:
-          "All recommendations adhere to SECP guidelines and Islamic finance principles — protecting your corporate reputation and stakeholder trust.",
+          "A thorough review of the financial and strategic factors that should inform the decision — presented clearly to management.",
       },
       {
-        title: "Ongoing Strategic Risk Assessment",
+        title: "Independent Analysis for Management",
         description:
-          "We proactively monitor market and regulatory developments that could affect your corporate investment positions, keeping you a step ahead.",
+          "An objective, independent perspective to complement internal views and support well-considered management decisions.",
+      },
+      {
+        title: "Capital Market & Securities Advice",
+        description:
+          "Advice relating to capital market activity, securities-related matters and ongoing advisory engagement where required.",
       },
     ],
     image1: "https://images.unsplash.com/photo-1551135049-8a33b5883817?w=1200&q=80",
     image2: "https://images.unsplash.com/photo-1626105985445-6430a31f6f96?w=1200&q=80",
     metaDescription:
-      "Stockifyy Corporate Advisory: Shariah-compliant treasury management, capital strategy and institutional market intelligence for Pakistani businesses and institutions.",
+      "Stockifyy Corporate Advisory: independent financial and investment analysis for businesses — supporting management decisions with clear, practical and well-researched advice.",
   },
   {
     slug: "assets-under-advisement-model",
     navLabel: "Assets Under Advisement Model",
-    title: "Assets Under Advisement Model",
-    tagline: "Professional oversight. Complete ownership. Zero conflict of interest.",
+    title: "Assets Under Advisory (AUA)",
+    tagline: "Ongoing Investment Advice, Built Around Your Objectives.",
     icon: ShieldCheck,
     summary:
-      "Expert strategic advisory over your entire asset base — while you retain full custody, control and decision-making authority.",
+      "Continuing professional guidance and regular review of your investments — so you stay aligned with your objectives as markets and circumstances change.",
     intro: [
-      "The Assets Under Advisement (AUA) Model is designed for investors and institutions who already hold a substantial portfolio but want professional oversight to identify inefficiencies, reduce unnecessary risk and unlock better risk-adjusted returns. Unlike traditional fund management, you never hand over control of your assets — Stockifyy acts purely as your strategic advisor.",
-      "We conduct a holistic review of your total investment picture — equities, cash positions, sectoral exposure and more — and provide ongoing rebalancing recommendations backed by rigorous research. This model is especially suited to high-net-worth individuals, family offices and corporate treasuries that require expert-level guidance without surrendering custody of their holdings.",
+      "Investment management does not end after making an investment decision. Markets change, businesses change, and your own financial objectives can change over time. Our Assets Under Advisory (AUA) service is designed for clients who want ongoing professional guidance and regular review of their investments.",
+      "Under this service, Stockifyy provides continuing advice based on the client's agreed objectives, investment horizon and risk profile. We stay engaged with the portfolio and provide our views and recommendations as circumstances change.",
+      "We begin by understanding the client's existing portfolio, investment objectives and risk tolerance. This gives us a clear starting point for providing relevant advice. We then maintain an ongoing advisory relationship — reviewing the portfolio, monitoring developments and providing recommendations when changes may be appropriate.",
+      "We believe managing investments requires patience, discipline and regular review. Our focus is not on reacting to every short-term market movement, but on keeping the client's investment approach aligned with their objectives and risk profile. When we recommend a change, we explain the reasoning behind it and discuss the relevant risks and considerations.",
     ],
     features: [
       {
-        title: "Holistic Portfolio Audit",
+        title: "Portfolio Review & Positioning",
         description:
-          "A comprehensive review of your existing holdings across all asset classes, identifying overlaps, overexposures and untapped opportunities.",
+          "Regular review of the overall portfolio and its positioning relative to the client's agreed objectives and risk profile.",
       },
       {
-        title: "Strategic Rebalancing Recommendations",
+        title: "Market & Economic Monitoring",
         description:
-          "Regular, research-driven suggestions on when and how to shift capital between sectors or instruments to optimise performance.",
+          "Ongoing monitoring of relevant market and economic developments that may affect the client's investment approach.",
       },
       {
-        title: "Full Asset Custody Retained by You",
+        title: "Individual Investment Review",
         description:
-          "Your assets remain entirely in your own brokerage accounts — we advise, you decide. No discretionary management, no hidden conflicts.",
+          "Review of individual holdings and their underlying factors to assess whether they remain appropriate for the portfolio.",
       },
       {
-        title: "Institutional-Grade Reporting",
+        title: "Timely Recommendations",
         description:
-          "Detailed quarterly performance analytics and risk attribution reports that benchmark your portfolio against relevant PSX indices.",
+          "Recommendations when changes may be appropriate — clearly explained with the reasoning and relevant risks discussed.",
       },
       {
-        title: "Scalable as Your Wealth Grows",
+        title: "Diversification & Risk Discussion",
         description:
-          "The AUA model expands with your portfolio — whether you add new asset classes, markets or investment vehicles, our coverage scales with you.",
+          "Ongoing discussion of portfolio diversification and risk to ensure the investment approach remains balanced and well-considered.",
+      },
+      {
+        title: "Periodic Objective Alignment",
+        description:
+          "Regular reviews to ensure the portfolio remains aligned with the client's long-term investment goals as objectives evolve.",
       },
     ],
     image1: "https://images.unsplash.com/photo-1611095790444-1dfa35e37b52?w=1200&q=80",
     image2: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80",
     metaDescription:
-      "Stockifyy Assets Under Advisement (AUA) Model: expert portfolio oversight and strategic rebalancing advice while you retain full control of your assets.",
+      "Stockifyy Assets Under Advisory (AUA): ongoing investment advice and regular portfolio review built around your objectives, risk profile and investment horizon.",
   },
   {
     slug: "wealth-planning",

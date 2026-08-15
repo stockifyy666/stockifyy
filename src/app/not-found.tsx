@@ -20,18 +20,18 @@ export default function NotFound() {
           404
         </p>
 
-        <p className="case-index text-gold text-sm uppercase tracking-widest mb-4 -mt-10 md:-mt-16">
+        {/* <p className="case-index text-gold text-sm uppercase tracking-widest mb-4 -mt-10 md:-mt-16">
           Page Not Found
-        </p>
+        </p> */}
 
-        <h1 className="font-display text-4xl md:text-5xl text-ink mb-5 leading-tight">
-          This page isn&apos;t on file.
+        <h1 className="font-display text-4xl md:text-5xl text-gold mb-5 leading-tight">
+        Page Not Found
         </h1>
-
+{/* 
         <p className="font-sans text-slate max-w-md mx-auto mb-10 leading-relaxed">
           The page you&apos;re looking for may have moved, been renamed, or no
           longer exists. Let&apos;s get you back on track.
-        </p>
+        </p> */}
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link

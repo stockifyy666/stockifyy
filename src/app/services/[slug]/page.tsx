@@ -48,16 +48,16 @@ export default function ServiceDetailPage({ params }: Props) {
         </Link>
 
         <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-          <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-gold px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-ink">
-            <Icon className="size-3.5" aria-hidden="true" />
-            {service.tagline}
+          <span className="inline-flex items-start gap-1.5 rounded-2xl bg-gold px-4 py-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wide text-ink max-w-[85vw] sm:max-w-md text-center leading-snug">
+            <Icon className="size-3 sm:size-3.5 shrink-0 mt-0.5" aria-hidden="true" />
+            <span>{service.tagline}</span>
           </span>
 
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-white mt-5 max-w-3xl leading-tight">
+          <h1 className="font-display text-2xl sm:text-4xl md:text-5xl text-white mt-4 max-w-3xl leading-tight px-2 sm:px-0">
             {service.title}
           </h1>
 
-          <p className="font-sans text-white/80 border-y border-gold/50 py-3 mt-6 max-w-xl leading-relaxed">
+          <p className="font-sans text-white/80 border-y border-gold/50 py-3 mt-4 max-w-xl leading-relaxed text-sm sm:text-base px-2 sm:px-0">
             {service.summary}
           </p>
         </div>
