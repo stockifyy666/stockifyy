@@ -54,7 +54,7 @@ export const services: Service[] = [
       },
     ],
     image1: oneOnOneAdvisory,
-    image2: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80",
+    image2: "https://images.unsplash.com/photo-1551836022-aadb801c60ae?w=1200&q=80",
     metaDescription:
       "Stockifyy One on One Advisory: personalised, Shariah-compliant PSX investment guidance from a dedicated senior analyst — tailored to your financial goals.",
   },
@@ -97,8 +97,8 @@ export const services: Service[] = [
           "We proactively monitor market and regulatory developments that could affect your corporate investment positions, keeping you a step ahead.",
       },
     ],
-    image1: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80",
+    image1: "https://images.unsplash.com/photo-1551135049-8a33b5883817?w=1200&q=80",
+    image2: "https://images.unsplash.com/photo-1626105985445-6430a31f6f96?w=1200&q=80",
     metaDescription:
       "Stockifyy Corporate Advisory: Shariah-compliant treasury management, capital strategy and institutional market intelligence for Pakistani businesses and institutions.",
   },
@@ -141,7 +141,7 @@ export const services: Service[] = [
           "The AUA model expands with your portfolio — whether you add new asset classes, markets or investment vehicles, our coverage scales with you.",
       },
     ],
-    image1: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80",
+    image1: "https://images.unsplash.com/photo-1611095790444-1dfa35e37b52?w=1200&q=80",
     image2: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80",
     metaDescription:
       "Stockifyy Assets Under Advisement (AUA) Model: expert portfolio oversight and strategic rebalancing advice while you retain full control of your assets.",
@@ -150,222 +150,322 @@ export const services: Service[] = [
     slug: "wealth-planning",
     navLabel: "Wealth Planning",
     title: "Wealth Planning",
-    tagline: "A long-term financial roadmap built around your life.",
+    tagline: "Personalized Shariah-Compliant Portfolios. Designed Around You.",
     icon: TrendingUp,
     summary:
-      "Comprehensive wealth planning that maps your financial future — integrating investments, income, savings and goals into one coherent long-term strategy.",
+      "Your financial goals, capital, investment horizon, and risk profile are unique. Your portfolio should be too.",
     intro: [
-      "True wealth is not built through a single great trade — it is built through deliberate, disciplined planning over time. Stockifyy's Wealth Planning service takes a holistic view of your financial life, bringing together your investment portfolio, income streams, savings targets and long-term aspirations into a single, coherent strategy that compounds year after year.",
-      "We work with you to define what financial freedom looks like on your terms — whether that is early retirement, funding your children's education, building generational wealth or achieving a specific net-worth milestone. From there, we reverse-engineer a practical roadmap with milestone checkpoints, investment targets and regular reviews to keep you on track regardless of market conditions.",
+      "Stockifyy's Wealth Planning service creates personalized portfolios focused exclusively on Shariah-compliant stocks listed on the Pakistan Stock Exchange (PSX), tailored to your individual objectives.",
+      "Our approach is built around your capital, your goals, and your investment horizon — not a generic template. We focus on fundamentally sound, established, and growth-oriented companies across carefully selected sectors to help manage concentration and deliver both dividend income and capital appreciation.",
+      "Your investment journey doesn't end with your initial portfolio. Stockifyy helps you develop an ongoing approach to additional investments, reinvestment, and long-term compounding — so your wealth continues to grow with purpose.",
     ],
     features: [
       {
-        title: "Goal-Based Financial Mapping",
+        title: "Personalized Portfolio Design",
         description:
-          "We translate your life ambitions into quantifiable financial targets, then build a step-by-step plan to reach each one.",
+          "Built around your capital, goals, investment horizon, and risk profile — never a one-size-fits-all template.",
       },
       {
-        title: "Integrated Investment & Savings Strategy",
+        title: "Shariah-Compliant Focus",
         description:
-          "Your market investments, savings and income are coordinated into one unified framework for maximum compounding efficiency.",
+          "Investments focused exclusively on Shariah-compliant PSX-listed securities, so your wealth grows without compromising your values.",
       },
       {
-        title: "Long-Term Horizon Planning",
+        title: "Sector Diversification",
         description:
-          "Whether your goals are five years away or twenty-five, we structure a strategy that builds wealth sustainably across every phase.",
+          "Exposure across carefully selected sectors to help manage concentration risk and improve portfolio resilience.",
       },
       {
-        title: "Shariah-Compliant Wealth Growth",
+        title: "Quality & Growth Orientation",
         description:
-          "Every element of your wealth plan adheres to Islamic financial principles, so growth is achieved without compromising your values.",
+          "Focus on fundamentally sound, established, and growth-oriented companies with strong long-term prospects.",
       },
       {
-        title: "Regular Plan Reviews & Adjustments",
+        title: "Dividend + Capital Growth",
         description:
-          "Life changes, and so should your plan. Scheduled reviews ensure your wealth strategy adapts as your circumstances evolve.",
+          "A balanced approach combining potential dividend income and capital appreciation to build wealth over time.",
+      },
+      {
+        title: "Flexible Investment Horizons",
+        description:
+          "Strategies designed for short (3M–1Y), medium (1–3Y), or long-term (3–5Y) objectives based on your personal goals.",
       },
     ],
+    horizons: [
+      {
+        label: "Short Term",
+        duration: "3 Months – 1 Year",
+        description: "For investors with near-term objectives seeking focused, time-bound opportunities.",
+      },
+      {
+        label: "Medium Term",
+        duration: "1 – 3 Years",
+        description: "For investors seeking growth over a medium-term horizon with a balanced risk approach.",
+      },
+      {
+        label: "Long Term",
+        duration: "3 – 5 Years",
+        description: "For investors focused on long-term wealth creation and compounding returns.",
+      },
+    ],
+    whoIsItFor: [
+      "Professionals & entrepreneurs",
+      "Business owners",
+      "High-net-worth individuals",
+      "Investors seeking a professionally designed, Shariah-compliant portfolio",
+    ],
     image1: "https://images.unsplash.com/photo-1554260570-e9689a3418b8?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=80",
+    image2: "https://images.unsplash.com/photo-1560221328-12fe60f83ab8?w=1200&q=80",
     metaDescription:
-      "Stockifyy Wealth Planning: comprehensive, Shariah-compliant long-term financial planning that integrates investments, savings and life goals into a single strategy.",
+      "Stockifyy Wealth Planning: personalized, Shariah-compliant PSX portfolios designed around your capital, goals, and investment horizon — short, medium, or long term.",
   },
   {
     slug: "traning-webinars",
     navLabel: "Training & Webinars",
     title: "Training and Webinars",
-    tagline: "Live market intelligence, direct from expert analysts.",
+    tagline: "Learn. Understand. Invest with Confidence.",
     icon: Video,
     summary:
-      "Interactive live sessions where Stockifyy's senior analysts break down market developments, sector outlooks and investment strategy in real time.",
+      "The stock market becomes easier to navigate when you understand how it works. Stockifyy's webinars and training programs provide practical insights into the PSX, market fundamentals, and Shariah-compliant investing.",
     intro: [
-      "Staying ahead in Pakistan's fast-moving equity market demands more than reading headlines. Stockifyy's Webinar series connects you directly with our senior analysts for structured, live deep-dives into the forces shaping the PSX — from macroeconomic policy shifts and corporate earnings to global capital flows and emerging sectoral opportunities.",
-      "Each session is designed to be immediately actionable. We go beyond surface-level commentary to explain the underlying data, the historical context and the specific implications for your portfolio. And because every webinar includes a live Q&A segment, you can bring your own questions and get expert answers in real time — not days later.",
+      "Whether you're a beginner or an experienced investor looking to strengthen your knowledge, our sessions are designed to make investing simpler, practical, and easier to understand.",
+      "Our training programs cover the Pakistan Stock Exchange from the ground up — how markets work, how to read fundamentals, how to evaluate stocks through a Shariah-compliant lens, and how to develop a disciplined investment mindset. We don't just share information — we help you build the knowledge to make your own informed decisions.",
+      "Educational content is provided for informational purposes and is designed to help you build market understanding. Learn before you invest — build your market knowledge, understand opportunities, and develop a more disciplined approach to investing.",
     ],
     features: [
       {
-        title: "Live Analyst-Led Sessions",
+        title: "Beginner-Friendly Market Education",
         description:
-          "Senior Stockifyy analysts present structured market reviews covering macroeconomic developments, sector rotation and stock-level insights.",
+          "Structured sessions that take you from the basics of PSX investing to a confident understanding of how markets move and why.",
       },
       {
-        title: "Real-Time Q&A Access",
+        title: "Practical PSX Insights",
         description:
-          "Ask your specific investment questions directly during the session and receive expert, research-backed answers on the spot.",
+          "Real-world examples and current market data used throughout every session to make concepts immediately relevant.",
       },
       {
-        title: "In-Depth Sector Outlooks",
+        title: "Shariah-Compliant Investing Focus",
         description:
-          "Each webinar identifies which PSX sectors are positioned for growth and which carry elevated near-term risk based on current data.",
+          "Learn how to screen stocks for Shariah compliance and build a portfolio that aligns with both your financial and ethical values.",
       },
       {
-        title: "Macro-to-Micro Analysis",
+        title: "Expert-Led Sessions",
         description:
-          "We connect global economic trends to local market dynamics, showing you exactly how international factors affect Pakistani equities.",
+          "Sessions conducted by Stockifyy's experienced analysts and advisors with deep knowledge of Pakistan's capital markets.",
       },
       {
-        title: "On-Demand Access for Members",
+        title: "Accessible to All Experience Levels",
         description:
-          "Registered members receive access to session recordings, so you never miss a critical market update even when you cannot attend live.",
+          "Designed for beginners, first-time investors, students, salaried individuals, and experienced investors looking to sharpen their knowledge.",
       },
     ],
-    image1: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?w=1200&q=80",
+    whoIsItFor: [
+      "Beginners & first-time investors",
+      "Students & young professionals",
+      "Salaried individuals",
+      "Existing investors looking to strengthen knowledge",
+      "Anyone interested in PSX & Shariah-compliant investing",
+    ],
+    disclaimer:
+      "Educational content is provided for informational purposes only and does not guarantee investment performance or constitute individualized financial advice. Investments in the Pakistan Stock Exchange are subject to market risk.",
+    image1: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
+    image2: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&q=80",
     metaDescription:
-      "Stockifyy Webinars: live, interactive sessions with senior analysts covering PSX market developments, sector outlooks and investment strategy in real time.",
+      "Stockifyy Training & Webinars: practical, expert-led education on PSX investing, market fundamentals, and Shariah-compliant investing for all experience levels.",
   },
   {
     slug: "stockifyy-membership",
     navLabel: "Stockifyy Membership",
     title: "Stockifyy Membership",
-    tagline: "Join Pakistan's most trusted investing community.",
+    tagline: "Three Membership Tiers. One Goal: Your Financial Growth.",
     icon: Users,
     summary:
-      "Become part of the Stockifyy investor community — access curated research, live trade discussions and expert market insights through our exclusive advisory channel.",
+      "Choose the membership that fits your trading style — from fast T+1 trade calls to swing strategies and an exclusive investor community powered by expert market insights.",
     intro: [
-      "Investing alone is harder than it needs to be. The Stockifyy community brings together thousands of Pakistani investors who share one goal: building wealth the right way. Through our exclusive advisory channel, members receive curated market research, live trade discussions, sectoral briefings and real-time analyst commentary — making professional-grade insight accessible to every member, regardless of portfolio size.",
-      "This is not a generic stock tips group. Every update shared through the Invest with Stockifyy channel is backed by the same research process that drives our premium advisory services — fundamental analysis, technical screening and Shariah compliance review. You get the confidence of knowing that what you read has been through a disciplined evaluation process before it reaches you.",
+      "Stockifyy Membership gives you access to professionally developed market strategies, expert analysis, and a community of serious investors — all through three focused membership tiers designed for different trading styles and investment goals.",
+      "Whether you trade daily, look for short-to-medium term opportunities, or want to build deep market understanding, there is a Stockifyy membership built for you. Every tier is grounded in Shariah-compliant research and delivered by our experienced team.",
     ],
     features: [
       {
-        title: "Curated Research Shared Daily",
+        title: "T+1 Trading Calls (Trade Tier)",
         description:
-          "Analyst-reviewed market insights, sector updates and economic commentary delivered directly to your device every trading day.",
+          "Fast, focused trade ideas built around a Buy Today, Sell Tomorrow strategy for traders seeking short-term PSX opportunities.",
       },
       {
-        title: "Live Trade Call Discussions",
+        title: "Swing Trade Calls (Swing Tier)",
         description:
-          "Active conversations around current market opportunities, with analysts providing context and answering member questions in real time.",
+          "Short- to mid-term swing opportunities with daily market audio analysis and 26 live Zoom sessions per year.",
       },
       {
-        title: "Shariah-Compliant Picks Only",
+        title: "Market Insights & Key Levels (Invest Tier)",
         description:
-          "Every stock or opportunity discussed in the community has been pre-screened for Shariah compliance — so you never have to second-guess your choices.",
+          "Key stock and market levels, members-only discussions, and insights into market psychology — monthly live Zoom included.",
       },
       {
-        title: "Community of Serious Investors",
+        title: "Shariah-Compliant Strategies",
         description:
-          "Connect with thousands of like-minded Pakistani investors who are actively building their financial futures through disciplined, research-driven investing.",
+          "All trading calls and investment strategies across every tier are screened for Shariah compliance before being shared.",
       },
       {
-        title: "Direct Access to the Stockifyy Team",
+        title: "Expert-Led Community",
         description:
-          "Ask questions, share observations and get direct responses from the analysts and advisors behind Stockifyy's research engine.",
+          "Access to analysts, market commentary, and a members-only discussion community of serious Pakistani investors.",
       },
     ],
-    image1: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80",
+    plans: [
+      {
+        name: "Trade With Stockifyy",
+        tagline: "Buy Today. Sell Tomorrow.",
+        description:
+          "A focused trading membership built around a T+1 strategy, designed for traders looking for short-term opportunities in the Pakistan Stock Exchange.",
+        features: [
+          "T+1 trading calls",
+          "Shariah-compliant trading opportunities",
+          "Fast, focused trade ideas",
+          "A simple, execution-oriented approach",
+        ],
+      },
+      {
+        name: "Swing With Stockifyy",
+        tagline: "For Traders & Investors Looking Beyond the Next Day.",
+        description:
+          "Get access to premium market insights and carefully developed strategies designed for serious traders and investors seeking short- to medium-term opportunities.",
+        features: [
+          "Swing trade calls for short- to mid-term opportunities",
+          "Shariah-compliant investment strategies",
+          "Daily market audio analysis by experts",
+          "26 live Zoom sessions per year",
+        ],
+      },
+      {
+        name: "Invest With Stockifyy",
+        tagline: "Build Your Market Understanding. Invest With Confidence.",
+        description:
+          "Join an exclusive community of traders and investors gaining market insights, strategies, and knowledge inspired by the experience and teachings of Dr. Masood.",
+        features: [
+          "Market insights and analysis",
+          "Key stock levels and market levels",
+          "Members-only discussion community",
+          "Insights into market psychology",
+          "Monthly live Zoom session",
+        ],
+      },
+    ],
+    image1: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80",
+    image2: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1200&q=80",
     metaDescription:
-      "Invest with Stockifyy: join Pakistan's most trusted investor community for daily curated research, live trade discussions and Shariah-compliant stock market insights.",
+      "Stockifyy Membership: choose from Trade, Swing, or Invest tiers — expert Shariah-compliant trading calls, swing strategies, and market insights for PSX investors.",
   },
   
   {
     slug: "account-opening-in-psx",
     navLabel: "Account Opening in PSX",
     title: "Account Opening in PSX",
-    tagline: "Your gateway to the Pakistan Stock Exchange — we handle the paperwork.",
+    tagline: "Your Gateway to the Pakistan Stock Exchange — We Handle the Paperwork.",
     icon: CreditCard,
     summary:
-      "End-to-end account opening support for new investors — from selecting the right broker to completing CDC and brokerage registration with full compliance guidance.",
+      "End-to-end assistance for opening a Pakistan Stock Exchange account, covering documentation, application processing and account activation.",
     intro: [
-      "Taking your first step into the Pakistan Stock Exchange is often the hardest — not because investing is difficult, but because the account opening process involves multiple institutions, documentation requirements and regulatory steps that can feel overwhelming without a guide. Stockifyy eliminates that friction entirely.",
-      "Our team walks you through every stage of the process: selecting a SECP-regulated broker that suits your trading style, completing your CDC (Central Depository Company) Investor Account registration, submitting the correct documentation and ensuring your account is properly configured for Shariah-compliant equity investing. By the time you make your first trade, you will understand exactly how your account works, what protections you have and how your investments are held.",
+      "Opening a PSX account is the first step towards investing in Pakistan's capital market. However, different account types, documentation requirements and verification procedures can make the process confusing — particularly for first-time investors.",
+      "Stockifyy simplifies the entire account-opening process. We help you understand which account type suits your needs, prepare the required documents, complete the application and follow the process through to activation.",
+      "Once your account is active, our team helps you understand its basic operation so you can begin your investment journey with greater clarity and confidence.",
     ],
     features: [
       {
-        title: "Broker Selection Guidance",
+        title: "Regular Account Opening",
         description:
-          "We help you identify the right SECP-regulated brokerage based on your trading frequency, tech preferences and service requirements.",
+          "A complete PSX trading account for investors who meet the standard documentation and verification requirements.",
       },
       {
-        title: "CDC Investor Account Registration",
+        title: "Sahulat Account Opening",
         description:
-          "Step-by-step support for opening your Central Depository Company account — the foundation of all PSX equity investing.",
+          "A simplified account-opening option for individual investors who want to begin investing with easier documentation and defined investment limits.",
       },
       {
-        title: "Documentation & Compliance Checklist",
+        title: "Minor Account Opening",
         description:
-          "A clear list of required documents and how to prepare them correctly, eliminating delays and rejected applications.",
+          "Account-opening assistance for investments made on behalf of a minor under the supervision of a parent or legal guardian.",
       },
       {
-        title: "Shariah-Compliant Account Configuration",
+        title: "Roshan Digital Account",
         description:
-          "Guidance on ensuring your account settings and initial investment selections align with Islamic finance requirements from day one.",
+          "Support for overseas Pakistanis seeking to invest in the Pakistan Stock Exchange through their Roshan Digital Account.",
       },
       {
-        title: "Post-Opening Orientation",
+        title: "Corporate Account Opening",
         description:
-          "Once your account is active, we walk you through the trading platform, order types and portfolio monitoring tools so you can invest with confidence.",
+          "Structured account-opening assistance for companies and other eligible corporate entities seeking exposure to the Pakistan Stock Exchange.",
+      },
+      {
+        title: "Documentation & Application Assistance",
+        description:
+          "A clear checklist of required documents, along with support in completing and submitting the account-opening application correctly.",
+      },
+      {
+        title: "Account Activation Support",
+        description:
+          "Follow-up and assistance throughout the verification and activation process to help minimise unnecessary delays.",
+      },
+      {
+        title: "Post-Opening Guidance",
+        description:
+          "Basic guidance on account access, the trading platform, fund transfers and other essential features after activation.",
       },
     ],
-    image1: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1554260570-e9689a3418b8?w=1200&q=80",
+    image1: "https://images.unsplash.com/photo-1562564055-71e051d33c19?w=1200&q=80",
+    image2: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80",
     metaDescription:
-      "Stockifyy Account Opening in PSX: expert guidance on CDC registration, broker selection and full compliance support for new Pakistan Stock Exchange investors.",
+      "Stockifyy Account Opening in PSX: end-to-end assistance for Regular, Sahulat, Minor, Roshan Digital and Corporate PSX accounts — documentation to activation.",
   },
   {
     slug: "taxation-services",
     navLabel: "Taxation Services",
     title: "Taxation Services",
-    tagline: "Stay compliant. Keep more of what you earn.",
+    tagline: "Stay Compliant. Invest with Confidence.",
     icon: Receipt,
     summary:
-      "Practical, investor-focused tax guidance covering capital gains, withholding tax, FBR filing and filer status — tailored to PSX investors and traders.",
+      "Complete tax support for PSX investors, covering filer status, capital gains, dividend reporting, investment records and annual income tax return filing.",
     intro: [
-      "Pakistan's tax framework for capital market income is one of the most frequently misunderstood areas of personal finance. Capital gains tax rates, holding period rules, withholding tax at the broker level and FBR disclosure requirements all interact in ways that can quietly erode your returns if not properly managed. Stockifyy's Taxation Services bridge the gap between your investment activity and your tax obligations — so you pay exactly what you owe, and not a rupee more.",
-      "We work with individual investors, active traders and corporate clients to structure investment activity in a tax-aware manner from the outset. Tax planning is not an afterthought at Stockifyy — it is embedded into the advisory process so that every portfolio decision accounts for its tax implication alongside its investment merit.",
+      "Your responsibility as a PSX investor does not end with selecting the right stocks. Understanding and correctly managing the taxes connected to your investments is equally important.",
+      "Investing in the stock market comes with tax responsibilities that are often difficult to understand. Capital gains, dividends, broker deductions, filer status and annual FBR declarations must all be reported correctly.",
+      "Stockifyy's Taxation Services help you organise your investment records, prepare your income tax return and complete the filing process accurately. Whether you are a long-term investor or an active trader, our goal is to make tax compliance simpler, clearer and less stressful.",
     ],
     features: [
       {
-        title: "Capital Gains Tax Structuring",
+        title: "Filer Status Assistance",
         description:
-          "We help you understand CGT implications based on your holding period, trading frequency and filer status, with strategies to optimise your net returns.",
+          "Guidance on becoming a filer and maintaining your status on the Active Taxpayers List — essential for reduced withholding tax rates on trades and dividends.",
       },
       {
-        title: "Withholding Tax Review",
+        title: "Income Tax Return Preparation & Filing",
         description:
-          "A thorough review of broker-deducted taxes and dividend withholding to ensure you are not overpaying at source.",
+          "Preparation and filing of your annual income tax return, with your PSX investment income and activity properly accounted for.",
       },
       {
-        title: "ATL Filer Status Guidance",
+        title: "Capital Gains & Dividend Reporting",
         description:
-          "Practical advice on maintaining Active Taxpayer List status and the material difference it makes to your trading cost structure.",
+          "Correct reporting of capital gains, dividend income and other relevant earnings arising from your stock market investments.",
       },
       {
-        title: "FBR Wealth & Income Filing Support",
+        title: "Broker Tax Statement Review",
         description:
-          "Organised assistance in preparing your capital market income disclosures for annual wealth statements and income tax returns.",
+          "Review of broker-provided tax certificates and statements to identify taxes already deducted and ensure they are properly reflected in your return.",
       },
       {
-        title: "Corporate Investment Tax Coordination",
+        title: "Wealth Statement Preparation",
         description:
-          "For institutional clients, we coordinate directly with your finance function on the tax treatment of corporate market investment activities.",
+          "Assistance in declaring your investment portfolio, cash balances and other relevant assets in your annual wealth statement.",
+      },
+      {
+        title: "PSX Investment Record Organisation",
+        description:
+          "Support in compiling the documents and investment records required for an accurate and properly supported tax filing.",
       },
     ],
     image1: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80",
+    image2: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
     metaDescription:
-      "Stockifyy Taxation Services: expert capital gains tax, withholding tax and FBR filing guidance for Pakistan Stock Exchange investors, traders and corporate clients.",
+      "Stockifyy Taxation Services: complete PSX investor tax support — filer status, capital gains reporting, income tax return filing and wealth statement preparation.",
   }
   
 ];

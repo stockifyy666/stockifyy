@@ -3,6 +3,19 @@ export type ServiceFeature = {
   description: string;
 };
 
+export type ServicePlan = {
+  name: string;
+  tagline: string;
+  description: string;
+  features: string[];
+};
+
+export type InvestmentHorizon = {
+  label: string;
+  duration: string;
+  description: string;
+};
+
 export type Service = {
   slug: string;
   navLabel: string;
@@ -15,6 +28,10 @@ export type Service = {
   image1: string | import("next/image").StaticImageData;
   image2: string | import("next/image").StaticImageData;
   metaDescription: string;
+  plans?: ServicePlan[];
+  horizons?: InvestmentHorizon[];
+  whoIsItFor?: string[];
+  disclaimer?: string;
 };
 
 export type Post = {
