@@ -68,4 +68,5 @@ export type TeamMember = {
   name: string;
   role: string;
   image: import("next/image").StaticImageData;
+  objectPosition?: string;
 };

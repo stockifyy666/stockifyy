@@ -43,17 +43,18 @@ export default function TeamPage() {
           Leadership
         </p>
 
-        <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+        <div className="flex flex-wrap justify-center items-start gap-8 md:gap-12">
           {leaders.map((member) => (
-            <div key={member.name} className="group flex flex-col items-center w-48 sm:w-56 md:w-64">
+            <div key={member.name} className="group flex flex-col items-center w-48 sm:w-56 md:w-64 self-start">
               {/* Image */}
               <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-md ring-1 ring-gold/20 group-hover:ring-gold/60 transition-all duration-300">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  sizes="(min-width: 768px) 256px, (min-width: 640px) 224px, 192px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={{ objectPosition: member.objectPosition ?? "center 5%" }}
+                  sizes="(min-width: 768px) 256px, (min-width: 640px) 224px, 192px "
                 />
                 {/* Gradient overlay at bottom */}
                 <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent" />
@@ -83,26 +84,27 @@ export default function TeamPage() {
           Directors
         </p>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center items-start gap-8 md:gap-12">
           {directors.map((member) => (
-            <div key={member.name} className="group flex flex-col items-center w-32 sm:w-36 md:w-40">
+            <div key={member.name} className="group flex flex-col items-center w-48 sm:w-56 md:w-64 self-start">
               {/* Image */}
-              <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-sm ring-1 ring-gold/15 group-hover:ring-gold/50 transition-all duration-300">
+              <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-md ring-1 ring-gold/20 group-hover:ring-gold/60 transition-all duration-300">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  sizes="(min-width: 768px) 160px, (min-width: 640px) 144px, 128px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={{ objectPosition: member.objectPosition ?? "center 5%" }}
+                  sizes="(min-width: 768px) 256px, (min-width: 640px) 224px, 192px"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/30 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
               {/* Name & role */}
-              <div className="mt-3 text-center">
-                <h2 className="font-display text-sm md:text-base text-ink font-semibold leading-tight">
+              <div className="mt-4 text-center">
+                <h2 className="font-display text-lg md:text-xl text-ink font-semibold">
                   {member.name}
                 </h2>
-                <span className="inline-block mt-1 rounded-full bg-gold/10 border border-gold/25 px-2.5 py-0.5 text-[10px] font-sans font-semibold text-goldDeep tracking-wide">
+                <span className="inline-block mt-1.5 rounded-full bg-gold/10 border border-gold/30 px-3 py-0.5 text-xs font-sans font-semibold text-goldDeep tracking-wide">
                   {member.role}
                 </span>
               </div>
