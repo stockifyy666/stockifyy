@@ -27,7 +27,8 @@ export default function TeamPage() {
           Meet Our <span className="text-gradient-gold">Team</span>
         </h1>
         <p className="font-sans text-ink/55 mt-5 max-w-xl mx-auto leading-relaxed">
-         Professional financial advisory and stock market guidance to help you grow, protect, and manage your wealth with confidence.
+          A dedicated group of professionals committed to delivering Shariah-compliant
+          financial guidance you can trust.
         </p>
       </div>
 
