@@ -3,6 +3,7 @@ import { CheckCircle, XCircle, Award, Calendar, User, Hash, GraduationCap, BookO
 import { getCertificateById } from "@/content/certificates";
 import Link from "next/link";
 
+
 type Props = { params: { id: string } };
 
 export function generateMetadata({ params }: Props): Metadata {
@@ -106,7 +107,7 @@ export default function VerifyPage({ params }: Props) {
               </div>
 
               {/* Details row — full width */}
-              <div className="border-t border-[#E8DDC8] grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#E8DDC8]">
+              <div className="border-t border-[#E8DDC8] grid grid-cols-1 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#E8DDC8]">
 
                 <div className="flex flex-col items-center justify-center gap-2 px-6 py-8 text-center">
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10">
@@ -127,6 +128,13 @@ export default function VerifyPage({ params }: Props) {
                 )}
 
                 <div className="flex flex-col items-center justify-center gap-2 px-6 py-8 text-center">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10">
+                    <Hash className="size-4 text-goldDeep" />
+                  </span>
+                  <p className="text-xs font-sans text-slate uppercase tracking-widest">Enrollment No</p>
+                  <p className="font-mono text-sm font-bold text-ink tracking-widest">{cert.id}</p>
+                </div>
+                 <div className="flex flex-col items-center justify-center gap-2 px-6 py-8 text-center">
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10">
                     <Hash className="size-4 text-goldDeep" />
                   </span>

@@ -27,6 +27,9 @@ export type Service = {
   features: ServiceFeature[];
   image1: string | import("next/image").StaticImageData;
   image2: string | import("next/image").StaticImageData;
+  image3: string | import("next/image").StaticImageData;
+  image4: string | import("next/image").StaticImageData;
+
   metaDescription: string;
   plans?: ServicePlan[];
   horizons?: InvestmentHorizon[];

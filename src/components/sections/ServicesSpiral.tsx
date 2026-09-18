@@ -49,7 +49,7 @@ function CardFace({ service, hovered }: { service: (typeof services)[0]; hovered
       />
 
       <p className="relative z-10 px-2 text-center font-display text-[11px] font-semibold leading-tight text-white">
-        {service.title.length > 26 ? service.title.slice(0, 24).trimEnd() + "…" : service.title}
+        {/* {service.title.length > 26 ? service.title.slice(0, 24).trimEnd() + "…" : service.title} */}
       </p>
       {hovered && (
         <motion.span
@@ -158,7 +158,7 @@ function GridCard({ service }: { service: (typeof services)[0] }) {
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="block h-36 w-full sm:h-40"
+      className="block h-[150px] w-full sm:h-[300px] md:h-[230px] lg:h-[220px]"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -294,13 +294,14 @@ function RingScene({ radius, height }: { radius: number; height: number }) {
 
 // ── Main export ───────────────────────────────────────────────────────────
 export default function ServicesSpiral() {
-  const [screenSize, setScreenSize] = useState<"mobile" | "tablet" | "desktop">("desktop");
+  const [screenSize, setScreenSize] = useState<"mobile" | "tablet" | "Laptop" | "desktop">("desktop");
 
   useEffect(() => {
     function check() {
       const w = window.innerWidth;
-      if (w < 640) setScreenSize("mobile");
-      else if (w < 1024) setScreenSize("tablet");
+      if (w < 400) setScreenSize("mobile");
+      else if (w < 768) setScreenSize("tablet");
+      else if (w < 1024) setScreenSize("Laptop");
       else setScreenSize("desktop");
     }
     check();
@@ -315,12 +316,12 @@ export default function ServicesSpiral() {
           <p className="case-index text-ink font-display text-lg mb-4">What We Offer</p>
           <h2 className="font-display text-3xl md:text-5xl text-ink leading-tight">
             Financial Guidance for Every  <span className="text-gradient-gold">  Stage of Your Journey</span>
-          
+
 
           </h2>
           <p className="font-sans text-slate mt-5 leading-relaxed">
-           From opening your first PSX account to building and managing long-term wealth, our services are designed around your goals, 
-           experience and financial needs
+            From opening your first PSX account to building and managing long-term wealth, our services are designed around your goals,
+            experience and financial needs
           </p>
         </div>
 
@@ -334,13 +335,20 @@ export default function ServicesSpiral() {
           )}
 
           {screenSize === "tablet" && (
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-10">
               {services.map((s) => (
                 <GridCard key={s.slug} service={s} />
               ))}
             </div>
           )}
 
+          {screenSize === "Laptop" && (
+            <div className="grid grid-cols-3 gap-3">
+              {services.map((s) => (
+                <GridCard key={s.slug} service={s} />
+              ))}
+            </div>
+          )}
           {screenSize === "desktop" && <RingScene radius={340} height={420} />}
         </div>
       </section>

@@ -12,7 +12,7 @@ export default function ServiceCard({ service }: { service: Service }) {
       <div className="p-3 pb-0">
         <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden">
           <Image
-            src={service.image1}
+            src={service.image2}
             alt={service.title}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"

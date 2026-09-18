@@ -1,5 +1,5 @@
 import Image from "next/image";
-import teamoffice from "../../../public/images/officeteam.png"
+import teamoffice from "../../../public/images/officeteam.jpeg"
 
 export default function AboutUs() {
   return (

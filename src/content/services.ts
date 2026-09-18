@@ -12,6 +12,40 @@ import {
 } from "lucide-react";
 import type { Service } from "@/types";
 import oneOnOneAdvisory from "../../public/images/one-on-one.jpg";
+import oneOnOneHeader from "../../public/images/one-on-one.png"
+import corporateHeader from "../../public/images/corporate-advisory.png"
+import auaHeader from "../../public/images/assest-under-advisory.png"
+import wealthHeader from "../../public/images/wealth-planing.png"
+import trainingHeader from "../../public/images/traning-and-webinars.png"
+import membershipHeader from "../../public/images/stockifyy-membership.png"
+import accountOpeningHeader from "../../public/images/account-opening.png"
+import taxationHeader from "../../public/images/taxation-services.png"
+import oneOnOneBody from "../../public/images/oneononebody.jpeg"
+import corporateBody from "../../public/images/corporateBody.jpeg"
+import auaBody from "../../public/images/auabody.jpeg"
+import trainingBody from "../../public/images/trainingbody.jpeg"
+import wealthBody from "../../public/images/wealthplaningbody.jpeg"
+import membershipBody from "../../public/images/membershipbody.jpeg"
+import accountBody from "../../public/images/accountopeningbody.jpeg"
+import taxationBody from "../../public/images/taxationBody.jpeg"
+import oneononecard from "../../public/images/oneononecard.jpeg"
+import corporatecard from "../../public/images/corporatecard.jpeg"
+import auacard from "../../public/images/auacard.jpeg"
+import wealthcard from "../../public/images/wealthcard.jpeg"
+import trainingcard from "../../public/images/trainingcard.jpeg"
+import membershipcard from "../../public/images/membershipcard.jpeg"
+import accountcard from "../../public/images/accountcard.jpeg"
+import taxationcard from "../../public/images/taxationcard.jpeg"
+import oneonone from "../../public/images/oneonone.jpeg"
+import corporate from "../../public/images/corporate.jpeg"
+import aua from "../../public/images/aua.jpeg"
+import wealth from "../../public/images/wealth.jpeg"
+import training from "../../public/images/training.jpeg"
+import membership from "../../public/images/membership.jpeg"
+import account from "../../public/images/account.jpeg"
+import taxation from "../../public/images/taxation.jpeg"
+
+
 
 export const services: Service[] = [
   {
@@ -60,8 +94,10 @@ export const services: Service[] = [
           "We revisit your investment approach whenever your personal objectives or market conditions shift materially.",
       },
     ],
-    image1: oneOnOneAdvisory,
-    image2: "https://images.unsplash.com/photo-1551836022-aadb801c60ae?w=1200&q=80",
+    image1: oneonone,
+    image2: oneononecard,
+    image3:oneOnOneHeader,
+    image4:oneOnOneBody,
     metaDescription:
       "Stockifyy One on One Advisory: clear, practical and personalised investment guidance for PSX investors — built around your objectives, risk profile and investment horizon.",
   },
@@ -111,8 +147,10 @@ export const services: Service[] = [
           "Advice relating to capital market activity, securities-related matters and ongoing advisory engagement where required.",
       },
     ],
-    image1: "https://images.unsplash.com/photo-1551135049-8a33b5883817?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1626105985445-6430a31f6f96?w=1200&q=80",
+    image1: corporate,
+    image2: corporatecard,
+    image3:corporateHeader,
+    image4:corporateBody,
     metaDescription:
       "Stockifyy Corporate Advisory: independent financial and investment analysis for businesses — supporting management decisions with clear, practical and well-researched advice.",
   },
@@ -162,8 +200,10 @@ export const services: Service[] = [
           "Regular reviews to ensure the portfolio remains aligned with the client's long-term investment goals as objectives evolve.",
       },
     ],
-    image1: "https://images.unsplash.com/photo-1611095790444-1dfa35e37b52?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80",
+    image1: aua,
+    image2: auacard,
+    image3:auaHeader,
+    image4:auaBody,
     metaDescription:
       "Stockifyy Assets Under Advisory (AUA): ongoing investment advice and regular portfolio review built around your objectives, risk profile and investment horizon.",
   },
@@ -235,8 +275,10 @@ export const services: Service[] = [
       "High-net-worth individuals",
       "Investors seeking a professionally designed, Shariah-compliant portfolio",
     ],
-    image1: "https://images.unsplash.com/photo-1554260570-e9689a3418b8?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1560221328-12fe60f83ab8?w=1200&q=80",
+    image1: wealth,
+    image2: wealthcard,
+    image3:wealthHeader,
+    image4:wealthBody,
     metaDescription:
       "Stockifyy Wealth Planning: personalized, Shariah-compliant PSX portfolios designed around your capital, goals, and investment horizon — short, medium, or long term.",
   },
@@ -289,8 +331,10 @@ export const services: Service[] = [
     ],
     disclaimer:
       "Educational content is provided for informational purposes only and does not guarantee investment performance or constitute individualized financial advice. Investments in the Pakistan Stock Exchange are subject to market risk.",
-    image1: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&q=80",
+    image1: training,
+    image2: trainingcard,
+    image3:trainingHeader,
+    image4:trainingBody,
     metaDescription:
       "Stockifyy Training & Webinars: practical, expert-led education on PSX investing, market fundamentals, and Shariah-compliant investing for all experience levels.",
   },
@@ -372,8 +416,10 @@ export const services: Service[] = [
         ],
       },
     ],
-    image1: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1200&q=80",
+    image1: membership,
+    image2: membershipcard,
+    image3:membershipHeader,
+    image4:membershipBody,
     metaDescription:
       "Stockifyy Membership: choose from Trade, Swing, or Invest tiers — expert Shariah-compliant trading calls, swing strategies, and market insights for PSX investors.",
   },
@@ -433,8 +479,10 @@ export const services: Service[] = [
           "Basic guidance on account access, the trading platform, fund transfers and other essential features after activation.",
       },
     ],
-    image1: "https://images.unsplash.com/photo-1562564055-71e051d33c19?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80",
+    image1: account,
+    image2: accountcard,
+    image3:accountOpeningHeader,
+    image4:accountBody,
     metaDescription:
       "Stockifyy Account Opening in PSX: end-to-end assistance for Regular, Sahulat, Minor, Roshan Digital and Corporate PSX accounts — documentation to activation.",
   },
@@ -483,8 +531,10 @@ export const services: Service[] = [
           "Support in compiling the documents and investment records required for an accurate and properly supported tax filing.",
       },
     ],
-    image1: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80",
-    image2: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+    image1: taxation,
+    image2: taxationcard,
+    image3:taxationHeader,
+    image4:taxationBody,
     metaDescription:
       "Stockifyy Taxation Services: complete PSX investor tax support — filer status, capital gains reporting, income tax return filing and wealth statement preparation.",
   }

@@ -28,16 +28,16 @@ export default function ServiceDetailPage({ params }: Props) {
   return (
     <div className="bg-cream">
       {/* Full-bleed hero — image as background, text overlaid */}
-      <div className="relative h-[60vh] min-h-[460px] max-h-[620px] w-full overflow-hidden">
+      <div className="relative h-[90vh] sm:h-[50vh] md:h-[60vh] min-h-[280px] sm:min-h-[380px] md:min-h-[460px] max-h-[620px] w-full overflow-hidden">
         <Image
-          src={service.image1}
+          src={service.image3}
           alt={service.title}
           fill
           priority
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/60" />
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/60" /> */}
 
         <Link
           href="/services"
@@ -47,11 +47,11 @@ export default function ServiceDetailPage({ params }: Props) {
           All services
         </Link>
 
-        <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-          <span className="inline-flex items-start gap-1.5 rounded-2xl bg-gold px-4 py-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wide text-ink max-w-[85vw] sm:max-w-md text-center leading-snug">
+        <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center pt-12 sm:pt-0">
+          {/* <span className="inline-flex items-start gap-1.5 rounded-2xl bg-white px-4 py-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wide text-ink max-w-[85vw] sm:max-w-md text-center leading-snug">
             <Icon className="size-3 sm:size-3.5 shrink-0 mt-0.5" aria-hidden="true" />
             <span>{service.tagline}</span>
-          </span>
+          </span> */}
 
           <h1 className="font-display text-2xl sm:text-4xl md:text-5xl text-white mt-4 max-w-3xl leading-tight px-2 sm:px-0">
             {service.title}
@@ -76,7 +76,7 @@ export default function ServiceDetailPage({ params }: Props) {
 
             <div className="relative aspect-[16/9] w-full mt-2 rounded-2xl overflow-hidden">
               <Image
-                src={service.image2}
+                src={service.image4}
                 alt={service.title}
                 fill
                 className="object-cover"
