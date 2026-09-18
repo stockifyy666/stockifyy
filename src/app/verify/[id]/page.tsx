@@ -138,8 +138,8 @@ export default function VerifyPage({ params }: Props) {
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10">
                     <Hash className="size-4 text-goldDeep" />
                   </span>
-                  <p className="text-xs font-sans text-slate uppercase tracking-widest">Certificate ID</p>
-                  <p className="font-mono text-sm font-bold text-ink tracking-widest">{cert.id}</p>
+                  <p className="text-xs font-sans text-slate uppercase tracking-widest">Certificate No</p>
+                  <p className="font-mono text-sm font-bold text-ink tracking-widest">{cert.certificateNo}</p>
                 </div>
 
               </div>
