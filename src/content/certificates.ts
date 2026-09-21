@@ -43,7 +43,7 @@ export const certificates: Certificate[] = [
   { id: "RC-2026-32", name: "Maria Siddiqui", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari", certificateNo:"ST-B9-32", },
   { id: "RC-2026-33", name: "Muhammad Ashfaq", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari", certificateNo:"ST-B9-33", },
   { id: "RC-2026-34", name: "Muhammad Saad Khan", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari", certificateNo:"ST-B9-34", },
-  { id: "RC-2026-35", name: "Rizwan Ullah", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari" , certificateNo:"ST-B9-35",},
+  { id: "RC-2026-35", name: "Abdul Wahab", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari" , certificateNo:"ST-B9-35",},
   { id: "RC-2026-36", name: "Kamran Mirza", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari" , certificateNo:"ST-B9-36",},
   { id: "RC-2026-37", name: "Muhammad Abdullah", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari", certificateNo:"ST-B9-37", },
   { id: "RC-2026-38", name: "Muhammad Irshad Ashraf", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari", certificateNo:"ST-B9-38", },
@@ -54,14 +54,14 @@ export const certificates: Certificate[] = [
   { id: "RC-2026-43", name: "Sarah Hassan", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari", certificateNo:"ST-B9-43", },
   { id: "RC-2026-44", name: "Akhtar Ali", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari" , certificateNo:"ST-B9-44",},
   { id: "RC-2026-45", name: "Umair Akber", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari" , certificateNo:"ST-B9-45",},
-  { id: "RC-2026-46", name: "Nadeem Sheheryar", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari", certificateNo:"ST-B9-46", },
+  { id: "RC-2026-46", name: "Nadeem Shahryar", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari", certificateNo:"ST-B9-46", },
   { id: "RC-2026-47", name: "Muhammad Afaque", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari", certificateNo:"ST-B9-47", },
   { id: "RC-2026-48", name: "Ali Hassan Raza", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari", certificateNo:"ST-B9-48", },
   { id: "RC-2026-49", name: "Ahmed Subhan", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari" , certificateNo:"ST-B9-49",},
   { id: "RC-2026-50", name: "Maria Mahmood", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari" , certificateNo:"ST-B9-50",},
   { id: "RC-2026-51", name: "Syeda Maimoona", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari", certificateNo:"ST-B9-51", },
   { id: "RC-2026-52", name: "Anas Anwar", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari" , certificateNo:"ST-B9-52",},
-  { id: "RC-2026-53", name: "Beena Abbas", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari" , certificateNo:"ST-B9-53",},
+  { id: "RC-2026-53", name: "Beena Abbasi", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari" , certificateNo:"ST-B9-53",},
 ];
 
 export function getCertificateById(id: string): Certificate | undefined {
