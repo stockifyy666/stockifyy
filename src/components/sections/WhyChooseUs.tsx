@@ -1,6 +1,9 @@
 "use client";
 
-import { HeartHandshake, ShieldCheck, SearchCheck } from "lucide-react";
+import { useState } from "react";
+import { HeartHandshake, ShieldCheck, SearchCheck, Play } from "lucide-react";
+
+const YOUTUBE_ID = "Q2116h_ERHY";
 
 const reasons = [
   {
@@ -21,6 +24,14 @@ const reasons = [
 ];
 
 export default function WhyChooseUs() {
+  // Load the actual YouTube iframe only after a click. Google's
+  // embed sets third-party cookies as soon as the iframe loads
+  // (flagged in Chrome DevTools' Issues panel and dinged by
+  // Lighthouse), and it also ships a lot of JS on every page view
+  // whether or not the visitor ever plays the video. A thumbnail
+  // facade avoids both — full video only loads on real intent.
+  const [playing, setPlaying] = useState(false);
+
   return (
     <div className="bg-[#FFF7E9]/95">
       <section className="max-w-content mx-auto px-6 md:px-10 py-24 md:py-24">
@@ -32,16 +43,39 @@ export default function WhyChooseUs() {
         </div>
 
         <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-14 mt-12 items-center">
-          {/* YouTube embed */}
-          <div className="relative aspect-video w-full overflow-hidden rounded-[20px] shadow-xl">
-            <iframe
-              src="https://www.youtube.com/embed/Q2116h_ERHY"
-              title="Why Choose Stockifyy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-              style={{ border: "none" }}
-            />
+          {/* YouTube embed — thumbnail facade until clicked (see note above) */}
+          <div className="relative aspect-video w-full overflow-hidden rounded-[20px] shadow-xl bg-ink">
+            {playing ? (
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_ID}?autoplay=1`}
+                title="Why Choose Stockifyy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+                style={{ border: "none" }}
+              />
+            ) : (
+              <button
+                type="button"
+                onClick={() => setPlaying(true)}
+                aria-label="Play video: Why Choose Stockifyy"
+                className="group absolute inset-0 w-full h-full"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element -- external YouTube thumbnail, not a local/optimizable asset */}
+                <img
+                  src={`https://i.ytimg.com/vi/${YOUTUBE_ID}/hqdefault.jpg`}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <span className="absolute inset-0 bg-black/25 group-hover:bg-black/35 transition-colors" />
+                <span className="absolute inset-0 flex items-center justify-center">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-gold to-goldDeep text-white shadow-lg group-hover:scale-105 transition-transform">
+                    <Play className="size-6 ml-0.5" fill="currentColor" />
+                  </span>
+                </span>
+              </button>
+            )}
           </div>
 
           <div className="space-y-8">
