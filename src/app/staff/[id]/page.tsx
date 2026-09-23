@@ -42,14 +42,30 @@ export default function StaffVerifyPage({ params }: Props) {
   }
 
   return (
-    // Fits one screen on any device — no scrolling needed to see the
-    // full card. `100dvh` accounts for mobile browser chrome; the
-    // header height is subtracted so the card centers in what's left.
-    <div className="min-h-[calc(100dvh-5rem)] bg-cream flex items-center justify-center px-4 py-6">
+    <div className="min-h-[calc(100dvh-5rem)] bg-cream flex flex-col">
+      {/* Compact hero — kept, but short enough that the card below
+          still fits on screen without scrolling. */}
+      <div className="w-full bg-gradient-to-br from-[#1A1A1A] via-[#2a1a00] to-[#1A1A1A] py-4 sm:py-8 px-6 text-center relative overflow-hidden shrink-0">
+        <div className="absolute inset-0 hidden sm:flex items-center justify-center pointer-events-none">
+          <div className="w-[360px] h-[360px] rounded-full border border-gold/10" />
+        </div>
+        <div className="relative z-10">
+          <span className="inline-block rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-gold mb-2 sm:mb-3">
+            Stockifyy — Staff Directory
+          </span>
+          <h1 className="font-display text-xl sm:text-2xl md:text-3xl text-white font-semibold leading-tight">
+            Staff <span className="text-gradient-gold">Verification</span>
+          </h1>
+        </div>
+      </div>
+
+      {/* Fits the remaining screen on any device — no scrolling
+          needed to see the full card. */}
+      <div className="flex-1 flex items-center justify-center px-4 py-3 sm:py-5">
       <div className="w-full max-w-[380px]">
         {/* Verified badge row */}
-        <div className="flex items-center gap-3 rounded-2xl bg-emerald-50 border border-emerald-200 px-4 py-3 mb-3">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-500">
+        <div className="flex items-center gap-3 rounded-2xl bg-emerald-50 border border-emerald-200 px-4 py-2.5 mb-2.5">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500">
             <ShieldCheck className="size-4 text-white" />
           </div>
           <div className="min-w-0">
@@ -67,14 +83,15 @@ export default function StaffVerifyPage({ params }: Props) {
           <div className="h-1.5 w-full bg-gradient-to-r from-gold via-[#fbbf24] to-goldDeep" />
 
           {/* Photo + name */}
-          <div className="px-6 pt-6 pb-5 text-center border-b border-[#E8DDC8]">
-            <div className="flex justify-center mb-3">
-              <StaffAvatar name={staff.name} photo={staff.photo} size={88} />
+          <div className="px-6 pt-5 pb-4 text-center border-b border-[#E8DDC8]">
+            <div className="flex justify-center mb-2.5">
+              <StaffAvatar name={staff.name} photo={staff.photo} size={76} />
             </div>
-            <h1 className="font-display text-xl font-bold text-ink leading-tight">
+            {/* h2, not h1 — the hero above already carries the page's h1 */}
+            <h2 className="font-display text-lg font-bold text-ink leading-tight">
               {staff.name}
-            </h1>
-            <p className="font-sans text-goldDeep font-semibold text-xs mt-1">
+            </h2>
+            <p className="font-sans text-goldDeep font-semibold text-xs mt-0.5">
               {staff.designation}
             </p>
           </div>
@@ -100,7 +117,7 @@ export default function StaffVerifyPage({ params }: Props) {
           </div>
 
           {/* Verified footer */}
-          <div className="border-t border-[#E8DDC8] bg-[#FFF7E9]/50 py-3 flex justify-center">
+          <div className="border-t border-[#E8DDC8] bg-[#FFF7E9]/50 py-2.5 flex justify-center">
             <div className="flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-3.5 py-1.5">
               <ShieldCheck className="size-3.5 text-emerald-500" />
               <span className="font-sans text-[10px] font-semibold text-emerald-700 uppercase tracking-wide">
@@ -113,6 +130,7 @@ export default function StaffVerifyPage({ params }: Props) {
         <p className="text-center font-sans text-[10px] text-slate mt-3">
           © {new Date().getFullYear()} Stockifyy — Internal verification only.
         </p>
+      </div>
       </div>
     </div>
   );
@@ -146,7 +164,7 @@ function DetailCell({
   );
 
   return (
-    <div className={`flex items-center gap-2.5 bg-white px-4 py-3 min-w-0 ${className}`}>
+    <div className={`flex items-center gap-2 bg-white px-3.5 py-2.5 min-w-0 ${className}`}>
       <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/10">
         {icon}
       </span>
