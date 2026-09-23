@@ -72,7 +72,9 @@ export default function StaffVerifyPage({ params }: Props) {
             <p className="font-display text-sm font-semibold text-emerald-800 leading-tight">
               Identity Verified
             </p>
-            <p className="font-sans text-[11px] text-emerald-600 leading-tight">
+            {/* emerald-700, not -600 — the lighter shade failed the
+                WCAG contrast check against the emerald-50 background */}
+            <p className="font-sans text-[11px] text-emerald-700 leading-tight">
               Genuine Stockifyy staff member
             </p>
           </div>
