@@ -58,9 +58,15 @@ export default function Footer() {
               <Image
                 src={logo}
                 alt="Stockifyy Logo"
-                width={180}
-                height={60}
-                priority
+                // Matches the SVG's real intrinsic ratio (181x51, from
+                // its viewBox). The old 180x60 (a 3:1 ratio vs the
+                // actual ~3.55:1) made the browser reserve the wrong
+                // box, causing a layout shift once the SVG loaded.
+                width={181}
+                height={51}
+                // Below the fold in the footer — not an LCP candidate,
+                // so it shouldn't compete for network priority with
+                // the actual hero image.
                 className="h-14 w-auto"
               />
             </Link>

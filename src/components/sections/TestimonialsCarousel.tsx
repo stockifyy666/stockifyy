@@ -138,16 +138,24 @@ export default function TestimonialsCarousel() {
       {/* Dot indicators */}
       <div className="flex justify-center gap-2 mt-6">
         {reviews.map((_, i) => (
+          // The visible dot stays small (design intent), but the
+          // button itself gets padding so the actual tap target is
+          // >=24x24px — small dots otherwise fail touch-target
+          // accessibility checks and are hard to tap on mobile.
           <button
             key={i}
             onClick={() => { setCurrent(i); setPaused(true); }}
             aria-label={`Go to review ${i + 1}`}
-            className={`rounded-full transition-all duration-300 ${
-              i === current
-                ? "w-6 h-2 bg-gold"
-                : "w-2 h-2 bg-creamLine hover:bg-amber"
-            }`}
-          />
+            className="p-3 flex items-center justify-center"
+          >
+            <span
+              className={`block rounded-full transition-all duration-300 ${
+                i === current
+                  ? "w-6 h-2 bg-gold"
+                  : "w-2 h-2 bg-creamLine hover:bg-amber"
+              }`}
+            />
+          </button>
         ))}
       </div>
 
