@@ -50,7 +50,7 @@ export default function TeamPage() {
               <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-md ring-1 ring-gold/20 group-hover:ring-gold/60 transition-all duration-300">
                 <Image
                   src={member.image}
-                  alt={member.name}
+                  alt={member.name} 
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   style={{ objectPosition: member.objectPosition ?? "center 5%" }}
