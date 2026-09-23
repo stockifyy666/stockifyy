@@ -28,7 +28,11 @@ export default function StaffAvatar({
           src={photo}
           alt={name}
           fill
-          sizes={`${size}px`}
+          // Request roughly 2x the display size so the circle stays
+          // sharp on retina/high-DPI screens instead of looking blurry.
+          sizes={`${size * 2}px`}
+          quality={95}
+          priority
           className="object-cover"
         />
       </div>
