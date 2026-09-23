@@ -44,7 +44,7 @@ export type StaffMember = {
 
 export const staffMembers: StaffMember[] = [
   // ── Islamabad Office (15) ──
-  { id: "STK-7F5C45", name: "Abdullah", designation: "Web Developer", department: "IT Team", office: "Islamabad", email: "abdullahkinglk@gmail.com", phone: "+92 317 0502504", photo: "/images/staff/abdullah-khan.jpg", status: "Active" },
+  { id: "STK-7F5C45", name: "Abdullah Awais", designation: "Web Developer", department: "IT Team", office: "Islamabad", email: "abdullahkinglk@gmail.com", phone: "+92 317 0502504", photo: "/images/staff/abdullah-khan.jpg", status: "Active" },
   { id: "STK-0D7C47", name: "Bilal Hussain", designation: "Customer Support Executive", department: "Customer Support Team", office: "Islamabad", email: "bilal.hussain@stockifyy.com", phone: "+92 301 1234502", photo: "https://i.pravatar.cc/300?img=2", status: "Active" },
   { id: "STK-BCF84A", name: "Sara Khan", designation: "Media Executive", department: "Media Team", office: "Islamabad", email: "sara.khan@stockifyy.com", phone: "+92 302 1234503", photo: "https://i.pravatar.cc/300?img=3", status: "Active" },
   { id: "STK-4D4025", name: "Usman Tariq", designation: "Finance Executive", department: "Finance & Accounts Team", office: "Islamabad", email: "usman.tariq@stockifyy.com", phone: "+92 303 1234504", photo: "https://i.pravatar.cc/300?img=4", status: "Active" },
