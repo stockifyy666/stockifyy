@@ -59,8 +59,8 @@ export const staffMembers: StaffMember[] = [
   { id: "STK-344996", name: "Mustansar Hussain Tariq", designation: "IT Executive", department: "IT Team", office: "Islamabad", email: "sana.yousaf@stockifyy.com", phone: "+92 312 1234513", photo: "https://i.pravatar.cc/300?img=13", status: "Active" },
 
   // ── Karachi Office (18) ──
-  { id: "STK-6A0EF8", name: "Hassan Ali", designation: "Finance Executive", department: "Finance & Accounts Team", office: "Karachi", email: "hassan.ali@stockifyy.com", phone: "+92 315 7654301", photo: "https://i.pravatar.cc/300?img=16", status: "Active" },
-  { id: "STK-7C625D", name: "Kiran Baig", designation: "Technical Analyst", department: "Technical Analysts Team", office: "Karachi", email: "kiran.baig@stockifyy.com", phone: "+92 316 7654302", photo: "https://i.pravatar.cc/300?img=17", status: "Active" },
+  { id: "STK-6A0EF8", name: "Hassan Askari", designation: "Finance Executive", department: "Finance & Accounts Team", office: "Karachi", email: "hassan.ali@stockifyy.com", phone: "+92 315 7654301", photo: "https://i.pravatar.cc/300?img=16", status: "Active" },
+  { id: "STK-7C625D", name: "Ali", designation: "Technical Analyst", department: "Technical Analysts Team", office: "Karachi", email: "kiran.baig@stockifyy.com", phone: "+92 316 7654302", photo: "https://i.pravatar.cc/300?img=17", status: "Active" },
   { id: "STK-7B1094", name: "Salman Qureshi", designation: "Graphic Designer", department: "Graphic Design Team", office: "Karachi", email: "salman.qureshi@stockifyy.com", phone: "+92 317 7654303", photo: "https://i.pravatar.cc/300?img=18", status: "Active" },
   { id: "STK-67370C", name: "Ayesha Siddiqa", designation: "IT Support Officer", department: "IT Team", office: "Karachi", email: "ayesha.siddiqa@stockifyy.com", phone: "+92 318 7654304", photo: "https://i.pravatar.cc/300?img=19", status: "Active" },
   { id: "STK-4E1683", name: "Junaid Akhtar", designation: "Customer Support Executive", department: "Customer Support Team", office: "Karachi", email: "junaid.akhtar@stockifyy.com", phone: "+92 319 7654305", photo: "https://i.pravatar.cc/300?img=20", status: "Active" },
