@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const SHEET_URL =
-  "https://script.google.com/macros/s/AKfycbzt2qmwHg9EDYCi1nXYdtNTx93CAz576usRiGMwWzquqn9T8iXhqAflOQ4g3pdVasICBg/exec";
+  "https://script.google.com/macros/s/AKfycbwPIPRr7QURA-iN928wZfVhVIjXuNZhJZ9G4sOny7o9k5HQ7tPFiwxOT8GSzNq5BWXhDg/exec";
 
 const SERVICE_LIST = [
   "One on One Advisory",
@@ -37,12 +37,9 @@ export default function ContactSection() {
     e.preventDefault();
     setStatus("sending");
     try {
-      await fetch(SHEET_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const params = new URLSearchParams();
+      Object.entries(form).forEach(([k, v]) => params.append(k, v));
+      await fetch(`${SHEET_URL}?${params.toString()}`, { method: "GET", mode: "no-cors" });
       setStatus("success");
       setForm({ name: "", email: "", phone: "", address: "", service: "", message: "" });
     } catch {
