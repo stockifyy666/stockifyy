@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/staff/", "/verify/"],
+      disallow: ["/verify/"],
     },
     sitemap: "https://www.stockifyy.com/sitemap.xml",
   };
