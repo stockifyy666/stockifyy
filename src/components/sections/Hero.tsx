@@ -130,12 +130,11 @@ export default function Hero() {
       {/* TICKER */}
       {/* <Ticker /> */}
 
-      {/* Everything above the fold (slider, badges, headline/photo)
-          is grouped and vertically centered within one viewport on
-          larger screens — on short laptop windows this stops the
-          headline row from awkwardly half-peeking in at the very
-          bottom edge; it now either fully shows or stays fully below
-          the fold until the visitor scrolls. */}
+      {/* Slider + badges alone are given a full viewport's worth of
+          height on larger screens (centered if they don't need it
+          all). This guarantees the headline/photo row below always
+          starts at a fresh scroll position — never half-visible,
+          awkwardly peeking in at the bottom edge of the screen. */}
       <div className="lg:flex lg:min-h-[calc(100dvh-5rem)] lg:flex-col lg:justify-center">
 
       {/* Course promo slider — full-bleed, no side gutters (edge to
@@ -235,6 +234,7 @@ export default function Hero() {
             <span className="text-xs font-semibold text-ink sm:text-sm">Book Free Consultation</span>
           </Link>
         </div>
+      </div>
       </div>
 
       {/* MAIN CONTENT */}
@@ -343,7 +343,6 @@ export default function Hero() {
           </div>
 
         </div>
-      </div>
       </div>
 
       {/* bottom divider */}
