@@ -178,7 +178,7 @@ export default function Hero() {
           href={ENROLL_WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-4 py-1.5 font-display text-[11px] font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:bottom-0 sm:gap-2 sm:px-7 sm:py-2.5 sm:text-base"
+          className="absolute bottom-[0.5%] left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-4 py-1.5 font-display text-[11px] font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:bottom-[0.5%] sm:gap-2 sm:px-7 sm:py-2.5 sm:text-base"
         >
           Enroll Now
           <ArrowRight className="size-3.5 sm:size-5" />
