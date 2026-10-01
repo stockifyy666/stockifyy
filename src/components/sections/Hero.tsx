@@ -165,15 +165,12 @@ export default function Hero() {
           <ChevronRight className="size-5" />
         </button>
 
-        {/* Enroll Now — overlaid under the WhatsApp number printed on
-            the Technical Analysis slide only; opens WhatsApp directly. */}
+        {/* Enroll Now — shown on every slide, opens WhatsApp directly. */}
         <a
           href={ENROLL_WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className={`absolute bottom-[7%] left-1/2 -translate-x-1/2 inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-5 py-2 font-display text-xs font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:bottom-[3%] sm:gap-2.5 sm:px-10 sm:py-3.5 sm:text-lg ${
-            slide === 0 ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
+          className="absolute bottom-[3%] left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-4 py-1.5 font-display text-[11px] font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:gap-2 sm:px-7 sm:py-2.5 sm:text-base"
         >
           Enroll Now
           <ArrowRight className="size-3.5 sm:size-5" />
