@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, TrendingUp, Star, BadgeCheck } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, TrendingUp, Star, BadgeCheck } from "lucide-react";
 import { Ticker } from "./Ticker";
 import Counter from "@/components/ui/Counter";
 import websiteImage from "../../../public/images/website-image.png";
 
-// Course promo banners — top slider, auto-advances every 4s.
+// Course promo banners — top slider, auto-advances every 5s (matches
+// the live site's banner pace).
 const slides = [
   { src: "/images/course-banner-technical-analysis.webp", alt: "Technical Analysis SuperClass Batch 10 with Dr. Masood Rashid & Mr. Hassan Askari" },
   { src: "/images/course-banner-index.webp", alt: "Technical Analysis course index — topics covered" },
@@ -18,7 +19,7 @@ export default function Hero() {
   const [slide, setSlide] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setSlide((s) => (s + 1) % slides.length), 4000);
+    const id = setInterval(() => setSlide((s) => (s + 1) % slides.length), 5000);
     return () => clearInterval(id);
   }, []);
 
@@ -89,32 +90,40 @@ export default function Hero() {
       {/* TICKER */}
       {/* <Ticker /> */}
 
-      {/* Course promo slider — same max-w-content as the rest of the
-          site, so its side gutters match everything else. */}
-      <div className="relative z-10 mx-auto max-w-content px-6 md:px-10">
-        <div className="anim-1 relative mt-6 w-full overflow-hidden rounded-2xl border border-gold/20 shadow-md aspect-[21/9] sm:aspect-[3/1]">
-          {slides.map((s, i) => (
-            <Image
-              key={s.src}
-              src={s.src}
-              alt={s.alt}
-              fill
-              priority={i === 0}
-              sizes="(max-width: 1080px) 100vw, 1170px"
-              className={`object-cover transition-opacity duration-700 ${
-                i === slide ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
-          <button
-            type="button"
-            onClick={() => setSlide((s) => (s + 1) % slides.length)}
-            aria-label="Next slide"
-            className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/60 sm:h-9 sm:w-9"
-          >
-            <ArrowRight className="size-4" />
-          </button>
-        </div>
+      {/* Course promo slider — full-bleed, no side gutters (edge to
+          edge like the live site's banner), placed directly in the
+          section so it isn't constrained by the max-w-content wrapper
+          used below for the text/CTA column. */}
+      <div className="anim-1 relative z-10 w-full overflow-hidden aspect-[21/9] sm:aspect-[3/1]">
+        {slides.map((s, i) => (
+          <Image
+            key={s.src}
+            src={s.src}
+            alt={s.alt}
+            fill
+            priority={i === 0}
+            sizes="100vw"
+            className={`object-cover transition-opacity duration-700 ${
+              i === slide ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+        <button
+          type="button"
+          onClick={() => setSlide((s) => (s - 1 + slides.length) % slides.length)}
+          aria-label="Previous slide"
+          className="absolute left-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/60 sm:h-9 sm:w-9"
+        >
+          <ChevronLeft className="size-5" />
+        </button>
+        <button
+          type="button"
+          onClick={() => setSlide((s) => (s + 1) % slides.length)}
+          aria-label="Next slide"
+          className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/60 sm:h-9 sm:w-9"
+        >
+          <ChevronRight className="size-5" />
+        </button>
       </div>
 
       {/* MAIN CONTENT */}
