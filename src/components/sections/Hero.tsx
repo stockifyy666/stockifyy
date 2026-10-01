@@ -1,12 +1,27 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, TrendingUp, Star, BadgeCheck } from "lucide-react";
 import { Ticker } from "./Ticker";
 import Counter from "@/components/ui/Counter";
 import websiteImage from "../../../public/images/website-image.png";
+
+// Course promo banners — top slider, auto-advances every 4s.
+const slides = [
+  { src: "/images/course-banner-technical-analysis.webp", alt: "Technical Analysis SuperClass Batch 10 with Dr. Masood Rashid & Mr. Hassan Askari" },
+  { src: "/images/course-banner-index.webp", alt: "Technical Analysis course index — topics covered" },
+];
+
 export default function Hero() {
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setSlide((s) => (s + 1) % slides.length), 4000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative overflow-hidden" style={{ background: "#FFFDF7" }}>
       <style>{`
@@ -76,6 +91,32 @@ export default function Hero() {
 
       {/* MAIN CONTENT */}
       <div className="relative z-10 mx-auto max-w-content px-6 md:px-10">
+
+        {/* ════════ Course promo slider — auto-advances every 4s ════════ */}
+        <div className="anim-1 relative mt-6 w-full overflow-hidden rounded-2xl border border-gold/20 shadow-md aspect-[3/1]">
+          {slides.map((s, i) => (
+            <Image
+              key={s.src}
+              src={s.src}
+              alt={s.alt}
+              fill
+              priority={i === 0}
+              sizes="(max-width: 1080px) 100vw, 1170px"
+              className={`object-cover transition-opacity duration-700 ${
+                i === slide ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+          <button
+            type="button"
+            onClick={() => setSlide((s) => (s + 1) % slides.length)}
+            aria-label="Next slide"
+            className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/60 sm:h-9 sm:w-9"
+          >
+            <ArrowRight className="size-4" />
+          </button>
+        </div>
+
         <div className="flex flex-col lg:flex-row lg:items-center lg:min-h-[640px]  lg:py-8">
 
           {/* ════════ LEFT — copy ════════ */}
