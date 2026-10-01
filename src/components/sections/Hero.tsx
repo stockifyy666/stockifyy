@@ -24,9 +24,6 @@ const ENROLL_WHATSAPP_URL =
 const CERT_WHATSAPP_URL =
   "https://wa.me/923362444466?text=" +
   encodeURIComponent("Hi, I'd like to verify a Stockifyy certificate.");
-const CHAT_WHATSAPP_URL =
-  "https://wa.me/923362444466?text=" +
-  encodeURIComponent("Hello! I'm interested in learning more about Stockifyy's services.");
 const GOOGLE_REVIEWS_URL =
   "https://search.google.com/local/reviews?placeid=ChIJD0z5nLHt3zgRXQBJPAKe3hc";
 
@@ -156,24 +153,29 @@ export default function Hero() {
       </div>
 
       {/* Quick-resource strip — certificate verification, the free
-          guide (book) we're publishing, reviews, and a direct chat
-          link. Sits in the gap between the slider and the headline. */}
-      <div className="anim-1 relative z-10 mx-auto max-w-content px-6 md:px-10 py-4 sm:py-5">
-        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 lg:justify-start">
+          guide (book) we're publishing, reviews, and a consultation
+          link. Sits centered in the gap between the slider and the
+          headline. */}
+      <div className="anim-1 relative z-10 mx-auto max-w-content px-6 md:px-10 py-5 sm:py-6">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
           <a
             href={CERT_WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-white px-3.5 py-2 text-xs font-semibold text-ink shadow-sm transition-colors hover:border-gold sm:text-sm"
+            className="group inline-flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2.5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md sm:px-5"
           >
-            <Award className="size-4 text-goldDeep" />
-            Verify Certificate
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/10 text-goldDeep transition-colors group-hover:bg-gold/20">
+              <Award className="size-3.5" />
+            </span>
+            <span className="text-xs font-semibold text-ink sm:text-sm">Verify Certificate</span>
           </a>
 
-          <span className="inline-flex cursor-not-allowed items-center gap-1.5 rounded-full border border-dashed border-gold/30 bg-white/60 px-3.5 py-2 text-xs font-semibold text-slate sm:text-sm">
-            <BookOpen className="size-4 text-goldDeep" />
-            Free Trading Guide
-            <span className="rounded-full bg-gold/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-goldDeep">
+          <span className="inline-flex cursor-not-allowed items-center gap-2 rounded-full border border-dashed border-gold/30 bg-cream/60 px-4 py-2.5 sm:px-5">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/10 text-goldDeep/70">
+              <BookOpen className="size-3.5" />
+            </span>
+            <span className="text-xs font-semibold text-slate sm:text-sm">Free Trading Guide</span>
+            <span className="rounded-full bg-gold/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-goldDeep sm:text-[10px]">
               Coming Soon
             </span>
           </span>
@@ -182,21 +184,23 @@ export default function Hero() {
             href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-white px-3.5 py-2 text-xs font-semibold text-ink shadow-sm transition-colors hover:border-gold sm:text-sm"
+            className="group inline-flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2.5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md sm:px-5"
           >
-            <Star className="size-4 text-goldDeep" />
-            Read Our Reviews
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/10 text-goldDeep transition-colors group-hover:bg-gold/20">
+              <Star className="size-3.5" />
+            </span>
+            <span className="text-xs font-semibold text-ink sm:text-sm">Read Our Reviews</span>
           </a>
 
-          <a
-            href={CHAT_WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-white px-3.5 py-2 text-xs font-semibold text-ink shadow-sm transition-colors hover:border-gold sm:text-sm"
+          <Link
+            href="/#contact"
+            className="group inline-flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2.5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md sm:px-5"
           >
-            <MessageCircle className="size-4 text-goldDeep" />
-            Chat on WhatsApp
-          </a>
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/10 text-goldDeep transition-colors group-hover:bg-gold/20">
+              <MessageCircle className="size-3.5" />
+            </span>
+            <span className="text-xs font-semibold text-ink sm:text-sm">Book Free Consultation</span>
+          </Link>
         </div>
       </div>
 
