@@ -11,8 +11,16 @@ import websiteImage from "../../../public/images/website-image.png";
 // Course promo banners — top slider, auto-advances every 5s (matches
 // the live site's banner pace).
 const slides = [
-  { src: "/images/course-banner-technical-analysis.webp", alt: "Technical Analysis SuperClass Batch 10 with Dr. Masood Rashid & Mr. Hassan Askari" },
-  { src: "/images/course-banner-index.webp", alt: "Technical Analysis course index — topics covered" },
+  {
+    src: "/images/course-banner-technical-analysis.webp",
+    mobileSrc: "/images/course-banner-technical-analysis-mobile.jpg",
+    alt: "Technical Analysis SuperClass Batch 10 with Dr. Masood Rashid & Mr. Hassan Askari",
+  },
+  {
+    src: "/images/course-banner-index.webp",
+    mobileSrc: "/images/course-banner-index-mobile.jpg",
+    alt: "Technical Analysis course index — topics covered",
+  },
 ];
 
 // Same WhatsApp number printed on the banner itself.
@@ -141,19 +149,33 @@ export default function Hero() {
           edge like the live site's banner), placed directly in the
           section so it isn't constrained by the max-w-content wrapper
           used below for the text/CTA column. */}
-      <div className="anim-1 relative z-10 w-full overflow-hidden aspect-[21/9] sm:aspect-[3/1]">
+      <div className="anim-1 relative z-10 w-full overflow-hidden aspect-[1080/700] sm:aspect-[3/1]">
         {slides.map((s, i) => (
-          <Image
+          <div
             key={s.src}
-            src={s.src}
-            alt={s.alt}
-            fill
-            priority={i === 0}
-            sizes="100vw"
-            className={`object-cover transition-opacity duration-700 ${
+            className={`absolute inset-0 transition-opacity duration-700 ${
               i === slide ? "opacity-100" : "opacity-0"
             }`}
-          />
+          >
+            {/* Separate, purpose-cropped artwork for phones vs
+                desktop/tablet — not just the same image squeezed in. */}
+            <Image
+              src={s.mobileSrc}
+              alt={s.alt}
+              fill
+              priority={i === 0}
+              sizes="100vw"
+              className="object-cover sm:hidden"
+            />
+            <Image
+              src={s.src}
+              alt={s.alt}
+              fill
+              priority={i === 0}
+              sizes="100vw"
+              className="hidden object-cover sm:block"
+            />
+          </div>
         ))}
         <button
           type="button"
@@ -177,7 +199,9 @@ export default function Hero() {
           href={ENROLL_WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-[0.5%] left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-4 py-1.5 font-display text-[11px] font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:bottom-[0.5%] sm:gap-2 sm:px-7 sm:py-2.5 sm:text-base"
+          className={`absolute left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-4 py-1.5 font-display text-[11px] font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:bottom-[0.5%] sm:gap-2 sm:px-7 sm:py-2.5 sm:text-base ${
+            slide === 0 ? "bottom-[12%]" : "bottom-[3%]"
+          }`}
         >
           Enroll Now
           <ArrowRight className="size-3.5 sm:size-5" />
