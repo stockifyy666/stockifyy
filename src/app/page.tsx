@@ -1,20 +1,20 @@
+import dynamic from "next/dynamic";
 import AdvertisementBanner from "@/components/sections/AdvertisementBanner";
 import Hero from "@/components/sections/Hero";
-import AboutUs from "@/components/sections/AboutUs";
-import ServicesSpiral from "@/components/sections/ServicesSpiral";
-import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import StatsSection from "@/components/sections/StatsSection";
-import Testimonials from "@/components/sections/Testimonials";
-import CTASection from "@/components/sections/CTASection";
-import FAQSection from "@/components/sections/FAQSection";
-import ContactSection from "@/components/sections/ContactSection";
+
+const AboutUs = dynamic(() => import("@/components/sections/AboutUs"));
+const ServicesSpiral = dynamic(() => import("@/components/sections/ServicesSpiral"));
+const WhyChooseUs = dynamic(() => import("@/components/sections/WhyChooseUs"));
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
+const CTASection = dynamic(() => import("@/components/sections/CTASection"));
+const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
+const ContactSection = dynamic(() => import("@/components/sections/ContactSection"));
 
 export default function Home() {
   return (
     <>
       <AdvertisementBanner />
 
-      {/* Hero stays sticky — sections below scroll over it */}
       <div className="sticky top-0 z-0">
         <Hero />
       </div>
@@ -23,7 +23,6 @@ export default function Home() {
         <AboutUs />
         <ServicesSpiral />
         <WhyChooseUs />
-        {/* <StatsSection /> */}
         <Testimonials />
         <CTASection />
         <FAQSection />

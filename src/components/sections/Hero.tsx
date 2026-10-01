@@ -89,10 +89,9 @@ export default function Hero() {
       {/* TICKER */}
       {/* <Ticker /> */}
 
-      {/* Course promo slider — its own wider container (not max-w-content)
-          so it doesn't look tiny/lost on large monitors; the text
-          column below stays at the narrower reading width. */}
-      <div className="relative z-10 mx-auto max-w-[1600px] px-6 md:px-10">
+      {/* Course promo slider — same max-w-content as the rest of the
+          site, so its side gutters match everything else. */}
+      <div className="relative z-10 mx-auto max-w-content px-6 md:px-10">
         <div className="anim-1 relative mt-6 w-full overflow-hidden rounded-2xl border border-gold/20 shadow-md aspect-[21/9] sm:aspect-[3/1]">
           {slides.map((s, i) => (
             <Image
@@ -101,7 +100,7 @@ export default function Hero() {
               alt={s.alt}
               fill
               priority={i === 0}
-              sizes="(max-width: 1080px) 100vw, 1600px"
+              sizes="(max-width: 1080px) 100vw, 1170px"
               className={`object-cover transition-opacity duration-700 ${
                 i === slide ? "opacity-100" : "opacity-0"
               }`}
