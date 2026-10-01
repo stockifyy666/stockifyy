@@ -42,6 +42,15 @@ export default function Hero() {
           0%   { opacity: 0; transform: translateY(28px); }
           100% { opacity: 1; transform: translateY(0); }
         }
+        @keyframes pop-in {
+          0%   { opacity: 0; transform: scale(0.75) translateY(10px); }
+          70%  { opacity: 1; transform: scale(1.06) translateY(0); }
+          100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .badge-pop-1 { animation: pop-in 0.5s 0.1s cubic-bezier(0.34,1.56,0.64,1) both; }
+        .badge-pop-2 { animation: pop-in 0.5s 0.22s cubic-bezier(0.34,1.56,0.64,1) both; }
+        .badge-pop-3 { animation: pop-in 0.5s 0.34s cubic-bezier(0.34,1.56,0.64,1) both; }
+        .badge-pop-4 { animation: pop-in 0.5s 0.46s cubic-bezier(0.34,1.56,0.64,1) both; }
         @keyframes shimmer {
           0%   { background-position: 0% center; }
           100% { background-position: 200% center; }
@@ -162,7 +171,7 @@ export default function Hero() {
             href={CERT_WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2.5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md sm:px-5"
+            className="badge-pop-1 group inline-flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2.5 shadow-sm transition-all hover:-translate-y-1 hover:scale-105 hover:border-gold hover:shadow-lg sm:px-5"
           >
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/10 text-goldDeep transition-colors group-hover:bg-gold/20">
               <Award className="size-3.5" />
@@ -170,7 +179,7 @@ export default function Hero() {
             <span className="text-xs font-semibold text-ink sm:text-sm">Verify Certificate</span>
           </a>
 
-          <span className="inline-flex cursor-not-allowed items-center gap-2 rounded-full border border-dashed border-gold/30 bg-cream/60 px-4 py-2.5 sm:px-5">
+          <span className="badge-pop-2 inline-flex cursor-not-allowed items-center gap-2 rounded-full border border-dashed border-gold/30 bg-cream/60 px-4 py-2.5 sm:px-5">
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/10 text-goldDeep/70">
               <BookOpen className="size-3.5" />
             </span>
@@ -184,7 +193,7 @@ export default function Hero() {
             href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2.5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md sm:px-5"
+            className="badge-pop-3 group inline-flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2.5 shadow-sm transition-all hover:-translate-y-1 hover:scale-105 hover:border-gold hover:shadow-lg sm:px-5"
           >
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/10 text-goldDeep transition-colors group-hover:bg-gold/20">
               <Star className="size-3.5" />
@@ -194,7 +203,7 @@ export default function Hero() {
 
           <Link
             href="/#contact"
-            className="group inline-flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2.5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md sm:px-5"
+            className="badge-pop-4 group inline-flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2.5 shadow-sm transition-all hover:-translate-y-1 hover:scale-105 hover:border-gold hover:shadow-lg sm:px-5"
           >
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/10 text-goldDeep transition-colors group-hover:bg-gold/20">
               <MessageCircle className="size-3.5" />
@@ -206,7 +215,7 @@ export default function Hero() {
 
       {/* MAIN CONTENT */}
       <div className="relative z-10 mx-auto max-w-content px-6 md:px-10">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:min-h-[640px]  lg:py-8">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:py-4">
 
           {/* ════════ LEFT — copy ════════ */}
           <div className="flex w-full flex-col items-start pb-8 pt-12 sm:pb-10 sm:pt-14 lg:w-1/2 lg:py-1 lg:pr-8">
