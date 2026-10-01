@@ -130,6 +130,14 @@ export default function Hero() {
       {/* TICKER */}
       {/* <Ticker /> */}
 
+      {/* Everything above the fold (slider, badges, headline/photo)
+          is grouped and vertically centered within one viewport on
+          larger screens — on short laptop windows this stops the
+          headline row from awkwardly half-peeking in at the very
+          bottom edge; it now either fully shows or stays fully below
+          the fold until the visitor scrolls. */}
+      <div className="lg:flex lg:min-h-[calc(100dvh-5rem)] lg:flex-col lg:justify-center">
+
       {/* Course promo slider — full-bleed, no side gutters (edge to
           edge like the live site's banner), placed directly in the
           section so it isn't constrained by the max-w-content wrapper
@@ -170,7 +178,7 @@ export default function Hero() {
           href={ENROLL_WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-[3%] left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-4 py-1.5 font-display text-[11px] font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:gap-2 sm:px-7 sm:py-2.5 sm:text-base"
+          className="absolute bottom-[1%] left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-4 py-1.5 font-display text-[11px] font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:bottom-[2%] sm:gap-2 sm:px-7 sm:py-2.5 sm:text-base"
         >
           Enroll Now
           <ArrowRight className="size-3.5 sm:size-5" />
@@ -335,6 +343,7 @@ export default function Hero() {
           </div>
 
         </div>
+      </div>
       </div>
 
       {/* bottom divider */}
