@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight, TrendingUp, Star, BadgeCheck, Award, BookOpen, MessageCircle } from "lucide-react";
@@ -29,11 +29,30 @@ const GOOGLE_REVIEWS_URL =
 
 export default function Hero() {
   const [slide, setSlide] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const startTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(
+      () => setSlide((s) => (s + 1) % slides.length),
+      7000
+    );
+  };
 
   useEffect(() => {
-    const id = setInterval(() => setSlide((s) => (s + 1) % slides.length), 5000);
-    return () => clearInterval(id);
+    startTimer();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
   }, []);
+
+  // Manual arrow clicks restart the auto-advance timer so the slide
+  // the visitor just chose actually stays for a full interval instead
+  // of the background timer flipping it again almost immediately.
+  function goTo(updater: (s: number) => number) {
+    setSlide(updater);
+    startTimer();
+  }
 
   return (
     <section className="relative overflow-hidden" style={{ background: "#FFFDF7" }}>
@@ -131,7 +150,7 @@ export default function Hero() {
         ))}
         <button
           type="button"
-          onClick={() => setSlide((s) => (s - 1 + slides.length) % slides.length)}
+          onClick={() => goTo((s) => (s - 1 + slides.length) % slides.length)}
           aria-label="Previous slide"
           className="absolute left-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/60 sm:h-9 sm:w-9"
         >
@@ -139,7 +158,7 @@ export default function Hero() {
         </button>
         <button
           type="button"
-          onClick={() => setSlide((s) => (s + 1) % slides.length)}
+          onClick={() => goTo((s) => (s + 1) % slides.length)}
           aria-label="Next slide"
           className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/60 sm:h-9 sm:w-9"
         >
@@ -152,12 +171,12 @@ export default function Hero() {
           href={ENROLL_WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className={`absolute bottom-[4%] left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-4 py-1.5 font-display text-[10px] font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:gap-2 sm:px-7 sm:py-2.5 sm:text-sm ${
+          className={`absolute bottom-[7%] left-1/2 -translate-x-1/2 inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-5 py-2 font-display text-xs font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:bottom-[3%] sm:gap-2.5 sm:px-10 sm:py-3.5 sm:text-lg ${
             slide === 0 ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
           Enroll Now
-          <ArrowRight className="size-3 sm:size-4" />
+          <ArrowRight className="size-3.5 sm:size-5" />
         </a>
       </div>
 
@@ -165,15 +184,15 @@ export default function Hero() {
           guide (book) we're publishing, reviews, and a consultation
           link. Sits centered in the gap between the slider and the
           headline. */}
-      <div className="anim-1 relative z-10 mx-auto max-w-content px-6 md:px-10 py-5 sm:py-6">
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+      <div className="anim-1 relative z-10 mx-auto max-w-content px-6 md:px-10 py-3 sm:py-4">
+        <div className="flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-gold/15 bg-gradient-to-b from-white to-cream/40 px-4 py-4 shadow-[0_4px_20px_-4px_rgba(254,165,0,0.25)] sm:gap-4 sm:px-6">
           <a
             href={CERT_WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="badge-pop-1 group inline-flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2.5 shadow-sm transition-all hover:-translate-y-1 hover:scale-105 hover:border-gold hover:shadow-lg sm:px-5"
+            className="badge-pop-1 group inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gradient-to-b from-white to-creamSoft px-4 py-2.5 shadow-sm transition-all hover:-translate-y-1 hover:scale-105 hover:border-gold hover:shadow-[0_8px_20px_-6px_rgba(254,165,0,0.5)] sm:px-5"
           >
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/10 text-goldDeep transition-colors group-hover:bg-gold/20">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep text-white shadow-sm transition-transform group-hover:scale-110">
               <Award className="size-3.5" />
             </span>
             <span className="text-xs font-semibold text-ink sm:text-sm">Verify Certificate</span>
@@ -193,9 +212,9 @@ export default function Hero() {
             href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="badge-pop-3 group inline-flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2.5 shadow-sm transition-all hover:-translate-y-1 hover:scale-105 hover:border-gold hover:shadow-lg sm:px-5"
+            className="badge-pop-3 group inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gradient-to-b from-white to-creamSoft px-4 py-2.5 shadow-sm transition-all hover:-translate-y-1 hover:scale-105 hover:border-gold hover:shadow-[0_8px_20px_-6px_rgba(254,165,0,0.5)] sm:px-5"
           >
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/10 text-goldDeep transition-colors group-hover:bg-gold/20">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep text-white shadow-sm transition-transform group-hover:scale-110">
               <Star className="size-3.5" />
             </span>
             <span className="text-xs font-semibold text-ink sm:text-sm">Read Our Reviews</span>
@@ -203,9 +222,9 @@ export default function Hero() {
 
           <Link
             href="/#contact"
-            className="badge-pop-4 group inline-flex items-center gap-2 rounded-full border border-gold/20 bg-white px-4 py-2.5 shadow-sm transition-all hover:-translate-y-1 hover:scale-105 hover:border-gold hover:shadow-lg sm:px-5"
+            className="badge-pop-4 group inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gradient-to-b from-white to-creamSoft px-4 py-2.5 shadow-sm transition-all hover:-translate-y-1 hover:scale-105 hover:border-gold hover:shadow-[0_8px_20px_-6px_rgba(254,165,0,0.5)] sm:px-5"
           >
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/10 text-goldDeep transition-colors group-hover:bg-gold/20">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep text-white shadow-sm transition-transform group-hover:scale-110">
               <MessageCircle className="size-3.5" />
             </span>
             <span className="text-xs font-semibold text-ink sm:text-sm">Book Free Consultation</span>
@@ -218,7 +237,7 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row lg:items-center lg:py-4">
 
           {/* ════════ LEFT — copy ════════ */}
-          <div className="flex w-full flex-col items-start pb-8 pt-12 sm:pb-10 sm:pt-14 lg:w-1/2 lg:py-1 lg:pr-8">
+          <div className="flex w-full flex-col items-start pb-8 pt-3 sm:pb-10 sm:pt-4 lg:w-1/2 lg:py-1 lg:pr-8">
 
             {/* kicker */}
             <div
