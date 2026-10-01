@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronLeft, ChevronRight, TrendingUp, Star, BadgeCheck } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, TrendingUp, Star, BadgeCheck, Award, BookOpen, MessageCircle } from "lucide-react";
 import { Ticker } from "./Ticker";
 import Counter from "@/components/ui/Counter";
 import websiteImage from "../../../public/images/website-image.png";
@@ -18,6 +18,17 @@ const slides = [
 // Same WhatsApp number printed on the banner itself.
 const ENROLL_WHATSAPP_URL =
   "https://wa.me/923362444466?text=Hi%2C%20I%20would%20like%20to%20enroll%20in%20the%20Technical%20Analysis%20SuperClass.%20Please%20guide%20me%20on%20the%20next%20steps.";
+
+// Quick-resource strip under the slider. Reuses the site's real
+// WhatsApp number and Google reviews link — no invented data.
+const CERT_WHATSAPP_URL =
+  "https://wa.me/923362444466?text=" +
+  encodeURIComponent("Hi, I'd like to verify a Stockifyy certificate.");
+const CHAT_WHATSAPP_URL =
+  "https://wa.me/923362444466?text=" +
+  encodeURIComponent("Hello! I'm interested in learning more about Stockifyy's services.");
+const GOOGLE_REVIEWS_URL =
+  "https://search.google.com/local/reviews?placeid=ChIJD0z5nLHt3zgRXQBJPAKe3hc";
 
 export default function Hero() {
   const [slide, setSlide] = useState(0);
@@ -142,6 +153,51 @@ export default function Hero() {
           Enroll Now
           <ArrowRight className="size-3 sm:size-4" />
         </a>
+      </div>
+
+      {/* Quick-resource strip — certificate verification, the free
+          guide (book) we're publishing, reviews, and a direct chat
+          link. Sits in the gap between the slider and the headline. */}
+      <div className="anim-1 relative z-10 mx-auto max-w-content px-6 md:px-10 py-4 sm:py-5">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 lg:justify-start">
+          <a
+            href={CERT_WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-white px-3.5 py-2 text-xs font-semibold text-ink shadow-sm transition-colors hover:border-gold sm:text-sm"
+          >
+            <Award className="size-4 text-goldDeep" />
+            Verify Certificate
+          </a>
+
+          <span className="inline-flex cursor-not-allowed items-center gap-1.5 rounded-full border border-dashed border-gold/30 bg-white/60 px-3.5 py-2 text-xs font-semibold text-slate sm:text-sm">
+            <BookOpen className="size-4 text-goldDeep" />
+            Free Trading Guide
+            <span className="rounded-full bg-gold/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-goldDeep">
+              Coming Soon
+            </span>
+          </span>
+
+          <a
+            href={GOOGLE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-white px-3.5 py-2 text-xs font-semibold text-ink shadow-sm transition-colors hover:border-gold sm:text-sm"
+          >
+            <Star className="size-4 text-goldDeep" />
+            Read Our Reviews
+          </a>
+
+          <a
+            href={CHAT_WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-white px-3.5 py-2 text-xs font-semibold text-ink shadow-sm transition-colors hover:border-gold sm:text-sm"
+          >
+            <MessageCircle className="size-4 text-goldDeep" />
+            Chat on WhatsApp
+          </a>
+        </div>
       </div>
 
       {/* MAIN CONTENT */}
