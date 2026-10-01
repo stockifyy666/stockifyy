@@ -15,6 +15,10 @@ const slides = [
   { src: "/images/course-banner-index.webp", alt: "Technical Analysis course index — topics covered" },
 ];
 
+// Same WhatsApp number printed on the banner itself.
+const ENROLL_WHATSAPP_URL =
+  "https://wa.me/923362444466?text=Hi%2C%20I%20would%20like%20to%20enroll%20in%20the%20Technical%20Analysis%20SuperClass.%20Please%20guide%20me%20on%20the%20next%20steps.";
+
 export default function Hero() {
   const [slide, setSlide] = useState(0);
 
@@ -124,6 +128,20 @@ export default function Hero() {
         >
           <ChevronRight className="size-5" />
         </button>
+
+        {/* Enroll Now — overlaid under the WhatsApp number printed on
+            the Technical Analysis slide only; opens WhatsApp directly. */}
+        <a
+          href={ENROLL_WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`absolute bottom-[4%] left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-4 py-1.5 font-display text-[10px] font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:gap-2 sm:px-7 sm:py-2.5 sm:text-sm ${
+            slide === 0 ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+        >
+          Enroll Now
+          <ArrowRight className="size-3 sm:size-4" />
+        </a>
       </div>
 
       {/* MAIN CONTENT */}
