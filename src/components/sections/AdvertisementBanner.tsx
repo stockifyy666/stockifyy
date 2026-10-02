@@ -26,7 +26,7 @@ export default function AdvertisementBanner() {
 
   return (
     <div
-      className="relative w-full overflow-hidden group min-h-[65vh] sm:min-h-[80vh] md:min-h-[79vh] lg:min-h-[80vh] xl:min-h-[102vh]"
+      className="relative w-full overflow-hidden group min-h-[55vh] sm:min-h-[80vh] md:min-h-[79vh] lg:min-h-[80vh] xl:min-h-[102vh]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
