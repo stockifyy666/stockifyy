@@ -62,6 +62,7 @@ export const certificates: Certificate[] = [
   { id: "RC-2026-51", name: "Syeda Maimoona", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari", certificateNo:"ST-B9-51", },
   { id: "RC-2026-52", name: "Anas Anwar", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari" , certificateNo:"ST-B9-52",},
   { id: "RC-2026-53", name: "Beena Abbasi", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari" , certificateNo:"ST-B9-53",},
+   { id: "RC-2026-54", name: "kamran Qureshi", course: "Technical Analysis Super Class — Batch 9", completionDate: "2026-07-25", instructor: "Dr. Masood Rashid & Hassan Askari" , certificateNo:"ST-B9-54",},
 ];
 
 export function getCertificateById(id: string): Certificate | undefined {
