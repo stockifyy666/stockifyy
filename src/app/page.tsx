@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import AdvertisementBanner from "@/components/sections/AdvertisementBanner";
 import Hero from "@/components/sections/Hero";
 
 const AboutUs = dynamic(() => import("@/components/sections/AboutUs"));
@@ -13,12 +12,7 @@ const ContactSection = dynamic(() => import("@/components/sections/ContactSectio
 export default function Home() {
   return (
     <>
-      <AdvertisementBanner />
-
-      <div className="sticky top-0 z-0">
-        <Hero />
-      </div>
-
+      <Hero />
       <div className="relative z-10 bg-[#FFFDF7]">
         <AboutUs />
         <ServicesSpiral />
