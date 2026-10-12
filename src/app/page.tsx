@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
+import HeroContent from "@/components/sections/HeroContent";
 
 const AboutUs = dynamic(() => import("@/components/sections/AboutUs"));
 const ServicesSpiral = dynamic(() => import("@/components/sections/ServicesSpiral"));
@@ -12,7 +13,15 @@ const ContactSection = dynamic(() => import("@/components/sections/ContactSectio
 export default function Home() {
   return (
     <>
+      {/* Hero slider + badges — normal flow (not sticky) */}
       <Hero />
+
+      {/* Grow Your Wealth — sticky so About Us slides over it */}
+      <div className="sticky top-20 z-0">
+        <HeroContent />
+      </div>
+
+      {/* All sections scroll over HeroContent */}
       <div className="relative z-10 bg-[#FFFDF7]">
         <AboutUs />
         <ServicesSpiral />
