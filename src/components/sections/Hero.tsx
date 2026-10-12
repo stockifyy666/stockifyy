@@ -199,33 +199,33 @@ export default function Hero() {
 
         {/* Quick-resource strip */}
         <div className="anim-1 relative z-10 w-full bg-[#FFFDF7] py-3 sm:py-4 border-b" style={{ borderColor: "rgba(254,165,0,0.35)" }}>
-          <div className="mx-auto flex max-w-content items-start justify-center gap-8 px-6 sm:gap-14 md:gap-20">
-            <div className="badge-pop-1 group flex flex-col items-center gap-2 cursor-default">
-              <div className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)]">
-                <Award className="size-7 md:size-8 text-white" />
+          <div className="mx-auto flex max-w-content items-start justify-center gap-3 px-3 sm:gap-14 sm:px-6 md:gap-20">
+            <div className="badge-pop-1 group flex flex-col items-center gap-1.5 cursor-default">
+              <div className="flex h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)]">
+                <Award className="size-5 sm:size-7 md:size-8 text-white" />
               </div>
-              <span className="text-center text-[11px] font-semibold text-ink sm:text-xs">Verify Certificate</span>
+              <span className="text-center text-[9px] sm:text-[11px] font-semibold text-ink">Verify Certificate</span>
             </div>
 
-            <Link href="/services/stockifyy-membership" className="badge-pop-2 group flex flex-col items-center gap-2">
-              <div className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)] transition-transform group-hover:scale-110">
-                <Crown className="size-7 md:size-8 text-white" />
+            <Link href="/services/stockifyy-membership" className="badge-pop-2 group flex flex-col items-center gap-1.5">
+              <div className="flex h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)] transition-transform group-hover:scale-110">
+                <Crown className="size-5 sm:size-7 md:size-8 text-white" />
               </div>
-              <span className="text-center text-[11px] font-semibold text-ink sm:text-xs">Stockifyy Membership</span>
+              <span className="text-center text-[9px] sm:text-[11px] font-semibold text-ink">Stockifyy Membership</span>
             </Link>
 
-            <Link href="/team" className="badge-pop-3 group flex flex-col items-center gap-2">
-              <div className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)] transition-transform group-hover:scale-110">
-                <Users className="size-7 md:size-8 text-white" />
+            <Link href="/team" className="badge-pop-3 group flex flex-col items-center gap-1.5">
+              <div className="flex h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)] transition-transform group-hover:scale-110">
+                <Users className="size-5 sm:size-7 md:size-8 text-white" />
               </div>
-              <span className="text-center text-[11px] font-semibold text-ink sm:text-xs">Meet Our Team</span>
+              <span className="text-center text-[9px] sm:text-[11px] font-semibold text-ink">Meet Our Team</span>
             </Link>
 
-            <Link href="/services/one-on-one-advisory" className="badge-pop-4 group flex flex-col items-center gap-2">
-              <div className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)] transition-transform group-hover:scale-110">
-                <PhoneCall className="size-7 md:size-8 text-white" />
+            <Link href="/services/one-on-one-advisory" className="badge-pop-4 group flex flex-col items-center gap-1.5">
+              <div className="flex h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)] transition-transform group-hover:scale-110">
+                <PhoneCall className="size-5 sm:size-7 md:size-8 text-white" />
               </div>
-              <span className="text-center text-[11px] font-semibold text-ink sm:text-xs">One on One Advisory</span>
+              <span className="text-center text-[9px] sm:text-[11px] font-semibold text-ink">One on One Advisory</span>
             </Link>
           </div>
         </div>
