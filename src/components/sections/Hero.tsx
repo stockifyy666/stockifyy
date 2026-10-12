@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronLeft, ChevronRight, TrendingUp, Star, BadgeCheck, Award, BookOpen, MessageCircle } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, BadgeCheck, Award, Crown, PhoneCall, Users } from "lucide-react";
 import { Ticker } from "./Ticker";
 import Counter from "@/components/ui/Counter";
 import websiteImage from "../../../public/images/website-image.png";
@@ -23,17 +23,8 @@ const slides = [
   },
 ];
 
-// Same WhatsApp number printed on the banner itself.
 const ENROLL_WHATSAPP_URL =
   "https://wa.me/923362444466?text=Hi%2C%20I%20would%20like%20to%20enroll%20in%20the%20Technical%20Analysis%20SuperClass.%20Please%20guide%20me%20on%20the%20next%20steps.";
-
-// Quick-resource strip under the slider. Reuses the site's real
-// WhatsApp number and Google reviews link — no invented data.
-const CERT_WHATSAPP_URL =
-  "https://wa.me/923362444466?text=" +
-  encodeURIComponent("Hi, I'd like to verify a Stockifyy certificate.");
-const GOOGLE_REVIEWS_URL =
-  "https://search.google.com/local/reviews?placeid=ChIJD0z5nLHt3zgRXQBJPAKe3hc";
 
 export default function Hero() {
   const [slide, setSlide] = useState(0);
@@ -159,22 +150,8 @@ export default function Hero() {
           >
             {/* Separate, purpose-cropped artwork for phones vs
                 desktop/tablet — not just the same image squeezed in. */}
-            <Image
-              src={s.mobileSrc}
-              alt={s.alt}
-              fill
-              priority={i === 0}
-              sizes="100vw"
-              className="object-cover sm:hidden"
-            />
-            <Image
-              src={s.src}
-              alt={s.alt}
-              fill
-              priority={i === 0}
-              sizes="100vw"
-              className="hidden object-cover sm:block"
-            />
+            <Image src={s.mobileSrc} alt={s.alt} fill priority={i === 0} sizes="100vw" quality={90} className="object-cover sm:hidden" />
+            <Image src={s.src} alt={s.alt} fill priority={i === 0} sizes="100vw" quality={90} className="hidden object-cover sm:block" />
           </div>
         ))}
         <button
@@ -194,68 +171,43 @@ export default function Hero() {
           <ChevronRight className="size-5" />
         </button>
 
-        {/* Enroll Now — shown on every slide, opens WhatsApp directly. */}
-        <a
-          href={ENROLL_WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`absolute left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-4 py-1.5 font-display text-[11px] font-bold text-white shadow-lg transition-opacity hover:opacity-90 sm:bottom-[0.5%] sm:gap-2 sm:px-7 sm:py-2.5 sm:text-base ${
-            slide === 0 ? "bottom-[12%]" : "bottom-[3%]"
-          }`}
-        >
-          Enroll Now
-          <ArrowRight className="size-3.5 sm:size-5" />
-        </a>
+        {/* Enroll Now — sits at a consistent visual position inside the banner
+            at every screen size and zoom level. We use top+bottom anchoring
+            so the button is always in the lower-center of whichever image is
+            visible. Per-slide bottom% is tuned to the actual artwork. */}
+        <a href={ENROLL_WHATSAPP_URL} target="_blank" rel="noopener noreferrer" style={{bottom: slide === 0 ? "8%" : "4%"}} className="sm:hidden absolute left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-4 py-1.5 font-display text-[11px] font-bold text-white shadow-lg transition-opacity hover:opacity-90">Enroll Now <ArrowRight className="size-3.5" /></a>
+        <a href={ENROLL_WHATSAPP_URL} target="_blank" rel="noopener noreferrer" style={{bottom: "5%"}} className="hidden sm:inline-flex absolute left-1/2 -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-gold to-goldDeep px-7 py-2.5 font-display text-base font-bold text-white shadow-lg transition-opacity hover:opacity-90">Enroll Now <ArrowRight className="size-5" /></a>
       </div>
 
-      {/* Quick-resource strip — certificate verification, the free
-          guide (book) we're publishing, reviews, and a consultation
-          link. Sits centered in the gap between the slider and the
-          headline. */}
-      <div className="anim-1 relative z-10 mx-auto max-w-content px-6 md:px-10 py-3 sm:py-4">
-        <div className="flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-gold/15 bg-gradient-to-b from-white to-cream/40 px-4 py-4 shadow-[0_4px_20px_-4px_rgba(254,165,0,0.25)] sm:gap-4 sm:px-6">
-          <a
-            href={CERT_WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="badge-pop-1 group inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gradient-to-b from-white to-creamSoft px-4 py-2.5 shadow-sm transition-all hover:-translate-y-1 hover:scale-105 hover:border-gold hover:shadow-[0_8px_20px_-6px_rgba(254,165,0,0.5)] sm:px-5"
-          >
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep text-white shadow-sm transition-transform group-hover:scale-110">
-              <Award className="size-3.5" />
-            </span>
-            <span className="text-xs font-semibold text-ink sm:text-sm">Verify Certificate</span>
-          </a>
+      {/* Quick-resource strip — IBS-style circles, Stockifyy gold theme */}
+      <div className="anim-1 relative z-10 w-full bg-[#FFFDF7] shadow-[0_4px_20px_-4px_rgba(254,165,0,0.18)] py-3 sm:py-4">
+        <div className="mx-auto flex max-w-content items-start justify-center gap-8 px-6 sm:gap-14 md:gap-20">
+          <div className="badge-pop-1 group flex flex-col items-center gap-2 cursor-default">
+            <div className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)]">
+              <Award className="size-7 md:size-8 text-white" />
+            </div>
+            <span className="text-center text-[11px] font-semibold text-ink sm:text-xs">Verify Certificate</span>
+          </div>
 
-          <span className="badge-pop-2 inline-flex cursor-not-allowed items-center gap-2 rounded-full border border-dashed border-gold/30 bg-cream/60 px-4 py-2.5 sm:px-5">
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold/10 text-goldDeep/70">
-              <BookOpen className="size-3.5" />
-            </span>
-            <span className="text-xs font-semibold text-slate sm:text-sm">Free Trading Guide</span>
-            <span className="rounded-full bg-gold/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-goldDeep sm:text-[10px]">
-              Coming Soon
-            </span>
-          </span>
+          <Link href="/services/stockifyy-membership" className="badge-pop-2 group flex flex-col items-center gap-2">
+            <div className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)] transition-transform group-hover:scale-110">
+              <Crown className="size-7 md:size-8 text-white" />
+            </div>
+            <span className="text-center text-[11px] font-semibold text-ink sm:text-xs">Stockifyy Membership</span>
+          </Link>
 
-          <a
-            href={GOOGLE_REVIEWS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="badge-pop-3 group inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gradient-to-b from-white to-creamSoft px-4 py-2.5 shadow-sm transition-all hover:-translate-y-1 hover:scale-105 hover:border-gold hover:shadow-[0_8px_20px_-6px_rgba(254,165,0,0.5)] sm:px-5"
-          >
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep text-white shadow-sm transition-transform group-hover:scale-110">
-              <Star className="size-3.5" />
-            </span>
-            <span className="text-xs font-semibold text-ink sm:text-sm">Read Our Reviews</span>
-          </a>
+          <Link href="/team" className="badge-pop-3 group flex flex-col items-center gap-2">
+            <div className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)] transition-transform group-hover:scale-110">
+              <Users className="size-7 md:size-8 text-white" />
+            </div>
+            <span className="text-center text-[11px] font-semibold text-ink sm:text-xs">Meet Our Team</span>
+          </Link>
 
-          <Link
-            href="/#contact"
-            className="badge-pop-4 group inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gradient-to-b from-white to-creamSoft px-4 py-2.5 shadow-sm transition-all hover:-translate-y-1 hover:scale-105 hover:border-gold hover:shadow-[0_8px_20px_-6px_rgba(254,165,0,0.5)] sm:px-5"
-          >
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep text-white shadow-sm transition-transform group-hover:scale-110">
-              <MessageCircle className="size-3.5" />
-            </span>
-            <span className="text-xs font-semibold text-ink sm:text-sm">Book Free Consultation</span>
+          <Link href="/services/one-on-one-advisory" className="badge-pop-4 group flex flex-col items-center gap-2">
+            <div className="flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)] transition-transform group-hover:scale-110">
+              <PhoneCall className="size-7 md:size-8 text-white" />
+            </div>
+            <span className="text-center text-[11px] font-semibold text-ink sm:text-xs">One on One Advisory</span>
           </Link>
         </div>
       </div>

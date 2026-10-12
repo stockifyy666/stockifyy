@@ -31,6 +31,7 @@ function CardFace({ service, hovered }: { service: (typeof services)[0]; hovered
         src={service.image1}
         alt=""
         fill
+        loading="lazy"
         className="object-cover"
         sizes="200px"
         style={{

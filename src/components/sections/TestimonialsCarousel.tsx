@@ -77,7 +77,7 @@ export default function TestimonialsCarousel() {
               height={400}
               sizes="320px"
               className="w-full h-auto object-contain"
-              priority
+              loading="lazy"
             />
           </div>
 
@@ -122,7 +122,7 @@ export default function TestimonialsCarousel() {
             height={300}
             sizes="(max-width: 768px) calc(100vw - 80px)"
             className="w-full h-auto object-contain"
-            priority
+            loading="lazy"
           />
         </div>
 
