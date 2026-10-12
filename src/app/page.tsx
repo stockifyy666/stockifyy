@@ -1,4 +1,5 @@
 import AdvertisementBanner from "@/components/sections/AdvertisementBanner";
+import AdvertisementBannerDesigned from "@/components/sections/AdvertisementBannerDesigned";
 import Hero from "@/components/sections/Hero";
 import AboutUs from "@/components/sections/AboutUs";
 import ServicesSpiral from "@/components/sections/ServicesSpiral";
@@ -12,7 +13,8 @@ import ContactSection from "@/components/sections/ContactSection";
 export default function Home() {
   return (
     <>
-      <AdvertisementBanner />
+      {/* <AdvertisementBanner /> */}
+      {/* <AdvertisementBannerDesigned /> */}
 
       {/* Hero stays sticky — sections below scroll over it */}
       <div className="sticky top-0 z-0">
