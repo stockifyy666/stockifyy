@@ -1,5 +1,5 @@
 import AdvertisementBanner from "@/components/sections/AdvertisementBanner";
-import AdvertisementBannerDesigned from "@/components/sections/AdvertisementBannerDesigned";
+// import AdvertisementBannerDesigned from "@/components/sections/AdvertisementBannerDesigned";
 import Hero from "@/components/sections/Hero";
 import AboutUs from "@/components/sections/AboutUs";
 import ServicesSpiral from "@/components/sections/ServicesSpiral";
