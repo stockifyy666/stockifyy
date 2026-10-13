@@ -94,12 +94,6 @@ export default function RootLayout({
           href="/images/course-banner-technical-analysis.webp"
           media="(min-width: 641px)"
         />
-        <link
-          rel="preload"
-          as="image"
-          href="/images/website-image.png"
-          media="(min-width: 1024px)"
-        />
       </head>
       <body className="font-sans antialiased">
         <Header />

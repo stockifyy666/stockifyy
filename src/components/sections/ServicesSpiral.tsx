@@ -159,6 +159,7 @@ function GridCard({ service }: { service: (typeof services)[0] }) {
   return (
     <Link
       href={`/services/${service.slug}`}
+      aria-label={service.title}
       className="block h-[150px] w-full sm:h-[300px] md:h-[230px] lg:h-[220px]"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -295,7 +296,7 @@ function RingScene({ radius, height }: { radius: number; height: number }) {
 
 // ── Main export ───────────────────────────────────────────────────────────
 export default function ServicesSpiral() {
-  const [screenSize, setScreenSize] = useState<"mobile" | "tablet" | "Laptop" | "desktop">("desktop");
+  const [screenSize, setScreenSize] = useState<"mobile" | "tablet" | "Laptop" | "desktop">("mobile");
 
   useEffect(() => {
     function check() {

@@ -72,6 +72,7 @@ export default function ContactSection() {
             value={form.name}
             onChange={handleChange}
             placeholder="Full Name"
+            aria-label="Full Name"
             required
             className={inputClass}
           />
@@ -81,6 +82,7 @@ export default function ContactSection() {
             value={form.email}
             onChange={handleChange}
             placeholder="Email Address"
+            aria-label="Email Address"
             required
             className={inputClass}
           />
@@ -90,6 +92,7 @@ export default function ContactSection() {
             value={form.phone}
             onChange={handleChange}
             placeholder="Phone Number"
+            aria-label="Phone Number"
             required
             className={inputClass}
           />
@@ -99,6 +102,7 @@ export default function ContactSection() {
             value={form.address}
             onChange={handleChange}
             placeholder="Address"
+            aria-label="Address"
             className={inputClass}
           />
 
@@ -133,6 +137,7 @@ export default function ContactSection() {
             value={form.message}
             onChange={handleChange}
             placeholder="Your Message"
+            aria-label="Your Message"
             rows={4}
             className="w-full rounded-2xl bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink placeholder:text-ink/40 focus:border-gold outline-none transition-colors resize-none"
           />
