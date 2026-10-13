@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { CheckCircle, XCircle, Award, Calendar, User, Hash, GraduationCap, BookOpen, ShieldCheck, BadgeCheck } from "lucide-react";
 import { getCertificateById } from "@/content/certificates";
 import Link from "next/link";
+import Image from "next/image";
+// eslint-disable-next-line @next/next/no-page-custom-font
+import { Cormorant_Garamond } from "next/font/google";
 
+const cormorant = Cormorant_Garamond({ weight: ["600", "700"], subsets: ["latin"] });
 
 type Props = { params: { id: string } };
 
@@ -17,9 +20,7 @@ export function generateMetadata({ params }: Props): Metadata {
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-PK", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
+    day: "numeric", month: "long", year: "numeric",
   });
 }
 
@@ -27,195 +28,273 @@ export default function VerifyPage({ params }: Props) {
   const cert = getCertificateById(params.id);
 
   return (
-    <div className="min-h-screen bg-cream flex flex-col">
+    <div className="min-h-screen flex flex-col items-center justify-center py-12"
+      style={{ background: "#FFFFFF", paddingInline: "clamp(16px, 4vw, 48px)" }}>
 
-      {/* Hero */}
-      <div className="w-full bg-gradient-to-br from-[#1A1A1A] via-[#2a1a00] to-[#1A1A1A] py-20 md:py-28 px-6 text-center relative overflow-hidden">
-        {/* Decorative gold rings */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[600px] h-[600px] rounded-full border border-gold/10" />
-        </div>
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[400px] h-[400px] rounded-full border border-gold/10" />
-        </div>
+      <style suppressHydrationWarning>{`
+        @media (max-width: 480px) {
+          .cert-details-grid { display: flex !important; flex-direction: column !important; }
+          .cert-details-cell { border-right: none !important; border-bottom: 1px solid rgba(201,168,76,0.2); }
+          .cert-details-cell:last-child { border-bottom: none; }
+          .cert-sig-row { flex-direction: column !important; gap: 20px !important; align-items: center !important; }
+          .cert-sig-row > div { text-align: center !important; }
+          .cert-sig-row > div > div:first-child { margin: 0 auto !important; width: 100% !important; }
+        }
+      `}</style>
 
-        <div className="relative z-10">
-          <span className="inline-block rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold mb-6">
-            Stockifyy — Wealth Multiplier
-          </span>
-          <h1 className="font-display text-4xl md:text-6xl text-white font-semibold leading-tight">
-            Certificate <span className="text-gradient-gold">Verification</span>
-          </h1>
-          <p className="font-sans text-white/50 mt-5 max-w-md mx-auto text-sm leading-relaxed">
-            Instantly authenticate any Stockifyy certificate using the unique ID printed on your document.
-          </p>
-        </div>
-      </div>
+      {cert ? (
+        <>
+          {/* ── CERTIFICATE ── */}
+          <div className="w-full" style={{ maxWidth: "min(1100px, calc(100vw - 48px))" }}>
 
-      {/* Content */}
-      <main className="flex-1 max-w-content mx-auto w-full px-6 md:px-10 py-16 md:py-24">
+            {/* Outer gold border frame */}
+            <div style={{
+              background: "linear-gradient(135deg, #C9A84C 0%, #F0D080 40%, #C9A84C 60%, #8B6914 100%)",
+              padding: 3,
+              borderRadius: 0,
+              boxShadow: "0 30px 80px rgba(0,0,0,0.18), 0 8px 24px rgba(201,168,76,0.2)",
+            }}>
+              {/* Inner border */}
+              <div style={{
+                background: "#FFFFFF",
+                borderRadius: 0,
+                padding: 6,
+              }}>
+                <div style={{
+                  border: "1px solid rgba(201,168,76,0.4)",
+                  borderRadius: 0,
+                  background: "#FFFFFF",
+                  position: "relative",
+                  overflow: "hidden",
+                  padding: "clamp(20px, 5vw, 48px) clamp(16px, 6vw, 60px) clamp(20px, 4vw, 40px)",
+                }}>
 
-        {cert ? (
-          /* ── VALID ── */
-          <div className="space-y-8">
-
-            {/* Verified badge row */}
-            <div className="flex items-center gap-4 rounded-2xl bg-emerald-50 border border-emerald-200 px-6 py-5">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-emerald-500">
-                <CheckCircle className="size-6 text-white" />
-              </div>
-              <div>
-                <p className="font-display text-lg font-semibold text-emerald-800">
-                  Certificate Successfully Verified
-                </p>
-                <p className="font-sans text-sm text-emerald-600 mt-0.5">
-                  This record is authentic and exists in Stockifyy's official registry.
-                </p>
-              </div>
-              <BadgeCheck className="size-8 text-emerald-400 ml-auto shrink-0 hidden sm:block" />
-            </div>
-
-            {/* Main certificate card */}
-            <div className="bg-white rounded-3xl border border-[#E8DDC8] shadow-sm overflow-hidden">
-
-              {/* Gold top bar */}
-              <div className="h-2 w-full bg-gradient-to-r from-gold via-[#fbbf24] to-goldDeep" />
-
-              {/* Certificate header */}
-              <div className="px-8 md:px-12 pt-10 pb-8 border-b border-[#E8DDC8] text-center">
-                <div className="flex h-16 w-16 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-gold to-goldDeep text-white shadow-lg mb-5">
-                  <Award className="size-8" />
-                </div>
-                <p className="font-sans text-xs uppercase tracking-[0.25em] text-goldDeep font-semibold mb-2">
-                  Certificate of Completion
-                </p>
-                <h2 className="font-display text-3xl md:text-4xl font-bold text-ink leading-tight">
-                  {cert.name}
-                </h2>
-                <p className="font-sans text-slate mt-2 text-sm">{cert.course}</p>
-
-                {/* Official verified statement */}
-                <div className="mt-6 mx-auto max-w-2xl rounded-2xl bg-gold/5 border border-gold/20 px-6 py-4">
-                  <p className="font-sans text-sm text-slate leading-relaxed">
-                    This certificate is officially verified and confirms that{" "}
-                    <span className="font-semibold text-ink">{cert.name}</span> has successfully
-                    completed{" "}
-                    <span className="font-semibold text-ink">{cert.course}</span> with{" "}
-                    <span className="font-semibold text-goldDeep">Stockifyy</span>.
-                  </p>
-                </div>
-              </div>
-
-              {/* Details row — full width */}
-              <div className="border-t border-[#E8DDC8] grid grid-cols-1 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#E8DDC8]">
-
-                <div className="flex flex-col items-center justify-center gap-2 px-6 py-8 text-center">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10">
-                    <Calendar className="size-4 text-goldDeep" />
-                  </span>
-                  <p className="text-xs font-sans text-slate uppercase tracking-widest">Completion Date</p>
-                  <p className="font-display text-sm font-semibold text-ink">{formatDate(cert.completionDate)}</p>
-                </div>
-
-                {cert.instructor && (
-                  <div className="flex flex-col items-center justify-center gap-2 px-6 py-8 text-center">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10">
-                      <GraduationCap className="size-4 text-goldDeep" />
-                    </span>
-                    <p className="text-xs font-sans text-slate uppercase tracking-widest">Instructor</p>
-                    <p className="font-display text-sm font-semibold text-ink">{cert.instructor}</p>
+                  {/* Watermark */}
+                  <div style={{
+                    position: "absolute", inset: 0, display: "flex",
+                    alignItems: "center", justifyContent: "center",
+                    pointerEvents: "none", opacity: 0.06, zIndex: 0,
+                  }}>
+                    <Image src="/images/ICON.png" alt="" width={600} height={600}
+                      style={{ objectFit: "contain" }} />
                   </div>
-                )}
 
-                <div className="flex flex-col items-center justify-center gap-2 px-6 py-8 text-center">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10">
-                    <Hash className="size-4 text-goldDeep" />
-                  </span>
-                  <p className="text-xs font-sans text-slate uppercase tracking-widest">Enrollment No</p>
-                  <p className="font-mono text-sm font-bold text-ink tracking-widest">{cert.id}</p>
-                </div>
-                 <div className="flex flex-col items-center justify-center gap-2 px-6 py-8 text-center">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10">
-                    <Hash className="size-4 text-goldDeep" />
-                  </span>
-                  <p className="text-xs font-sans text-slate uppercase tracking-widest">Certificate No</p>
-                  <p className="font-mono text-sm font-bold text-ink tracking-widest">{cert.certificateNo}</p>
-                </div>
+                  {/* Corner ornaments */}
+                  {["top-4 left-4", "top-4 right-4 rotate-90", "bottom-4 left-4 -rotate-90", "bottom-4 right-4 rotate-180"].map((pos, i) => (
+                    <svg key={i} viewBox="0 0 40 40" style={{ position: "absolute", width: 40, height: 40 }}
+                      className={`absolute ${pos}`} fill="none">
+                      <path d="M2,20 L2,2 L20,2" stroke="#C9A84C" strokeWidth="1.5" opacity="0.7" />
+                      <path d="M2,2 L8,8" stroke="#C9A84C" strokeWidth="1" opacity="0.5" />
+                    </svg>
+                  ))}
 
-              </div>
+                  <div style={{ position: "relative", zIndex: 1 }}>
 
-              {/* Verified badge — centered */}
-              <div className="border-t border-[#E8DDC8] bg-[#FFF7E9]/50 py-5 flex justify-center">
-                <div className="flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-5 py-2.5">
-                  <ShieldCheck className="size-4 text-emerald-500" />
-                  <span className="font-sans text-xs font-semibold text-emerald-700 uppercase tracking-wide">
-                    Verified & Authentic
-                  </span>
+
+                    {/* Gold line divider */}
+                    <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
+                      <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, transparent, #C9A84C)" }} />
+                      <svg viewBox="0 0 20 20" width={16} height={16}>
+                        <polygon points="10,2 12,8 18,8 13,12 15,18 10,14 5,18 7,12 2,8 8,8" fill="#C9A84C" opacity="0.8" />
+                      </svg>
+                      <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, #C9A84C, transparent)" }} />
+                    </div>
+
+                    {/* Certificate of Completion */}
+                    <div className="text-center mb-4">
+                      <p style={{ fontFamily: "Georgia, serif", fontSize: "clamp(0.5rem, 1.2vw, 0.7rem)", letterSpacing: "0.3em", color: "#8B6914", textTransform: "uppercase", marginBottom: 10 }}>
+                        Certificate of Completion
+                      </p>
+                      <p style={{ fontFamily: "Georgia, serif", fontSize: "clamp(0.65rem, 1.5vw, 0.85rem)", color: "rgba(26,18,9,0.55)", marginBottom: 16 }}>
+                        This is to certify that
+                      </p>
+                      {/* Name */}
+                      <h1 className={cormorant.className} style={{
+                        fontSize: "clamp(2.5rem, 6vw, 4rem)",
+                        fontWeight: 700, color: "#1A1209",
+                        letterSpacing: "0.01em", lineHeight: 1.2,
+                        marginBottom: 6,
+                      }}>
+                        {cert.name}
+                      </h1>
+                      {/* Underline */}
+                      <div style={{ width: 200, height: 1, background: "linear-gradient(90deg, transparent, #C9A84C 30%, #C9A84C 70%, transparent)", margin: "0 auto 16px" }} />
+                      <p style={{ fontFamily: "Georgia, serif", fontSize: "clamp(0.65rem, 1.5vw, 0.85rem)", color: "rgba(26,18,9,0.55)", marginBottom: 8 }}>
+                        has successfully completed
+                      </p>
+                      <p style={{
+                        fontFamily: "Georgia, serif",
+                        fontSize: "clamp(1rem, 2.5vw, 1.3rem)",
+                        fontWeight: 700, color: "#8B6914",
+                        letterSpacing: "0.02em", marginBottom: 6,
+                      }}>
+                        {cert.course}
+                      </p>
+                    </div>
+
+                    {/* Details row */}
+                    <div className="cert-details-grid" style={{
+                      display: "grid", gridTemplateColumns: "1fr 1fr 1fr",
+                      gap: 0, margin: "24px 0",
+                      border: "1px solid rgba(201,168,76,0.25)",
+                      borderRadius: 4, overflow: "hidden",
+                    }}>
+                      {[
+                        { label: "Certificate No", value: cert.certificateNo },
+                        { label: "Completion Date", value: formatDate(cert.completionDate) },
+                        { label: "Enrollment ID", value: cert.id },
+                      ].map(({ label, value }, i) => (
+                        <div key={label} className="cert-details-cell" style={{
+                          padding: "clamp(8px, 2vw, 14px) clamp(8px, 2vw, 20px)", textAlign: "center",
+                          borderRight: i < 2 ? "1px solid rgba(201,168,76,0.2)" : "none",
+                          background: i === 1 ? "rgba(201,168,76,0.04)" : "transparent",
+                        }}>
+                          <p style={{ fontSize: "clamp(0.45rem, 1vw, 0.6rem)", fontFamily: "sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", color: "#B89A50", marginBottom: 4 }}>{label}</p>
+                          <p style={{ fontSize: "clamp(0.6rem, 1.4vw, 0.8rem)", fontFamily: "Georgia, serif", fontWeight: 700, color: "#1A1209" }}>{value}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Instructor + Verified seal row */}
+                    <div className="cert-sig-row" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginTop: -20 }}>
+
+                      {/* Instructor signature block */}
+                      {cert.instructor && (
+                        <div style={{ textAlign: "center" }}>
+                          <Image src="/images/dr-rashid masood signature.png" alt="Instructor Signature"
+                            width={160} height={60}
+                            style={{ width: "clamp(100px, 16vw, 160px)", height: "auto", display: "block", margin: "0 auto 2px", objectFit: "contain" }} />
+                          <div style={{ width: "clamp(100px, 18vw, 220px)", borderBottom: "1px solid rgba(26,18,9,0.25)", marginBottom: 6, margin: "0 auto 6px" }} />
+                          <p style={{ fontSize: "clamp(0.55rem, 1.2vw, 0.7rem)", fontFamily: "Georgia, serif", fontWeight: 700, color: "#1A1209" }}>{cert.instructor}</p>
+                          <p style={{ fontSize: "clamp(0.45rem, 1vw, 0.58rem)", fontFamily: "sans-serif", letterSpacing: "0.15em", textTransform: "uppercase", color: "#B89A50", marginTop: 2 }}>Instructor</p>
+                        </div>
+                      )}
+
+                      <div style={{ flex: 1 }} />
+
+                      {/* Issuer signature block */}
+                      <div style={{ textAlign: "center" }}>
+                        <Image src="/images/mufeez aziz signature.png" alt="CEO Signature"
+                          width={160} height={60}
+                          style={{ width: "clamp(100px, 16vw, 160px)", height: "auto", display: "block", margin: "0 auto 2px", objectFit: "contain" }} />
+                        <div style={{ width: "clamp(100px, 18vw, 220px)", borderBottom: "1px solid rgba(26,18,9,0.25)", marginBottom: 6, margin: "0 auto 6px" }} />
+                        <p style={{ fontSize: "clamp(0.55rem, 1.2vw, 0.7rem)", fontFamily: "Georgia, serif", fontWeight: 700, color: "#1A1209" }}>CEO Mufeez Azeez</p>
+                        <p style={{ fontSize: "clamp(0.45rem, 1vw, 0.58rem)", fontFamily: "sans-serif", letterSpacing: "0.15em", textTransform: "uppercase", color: "#B89A50", marginTop: 2 }}>Issuing Authority</p>
+                      </div>
+                    </div>
+
+
+                  </div>
                 </div>
               </div>
             </div>
-
-            {/* Bottom CTA */}
-            <div className="text-center">
-              <p className="font-sans text-sm text-slate mb-4">
-                Issued by <span className="font-semibold text-goldDeep">Stockifyy Financial Advisory</span> — SECP Certified
-              </p>
-              <Link
-                href="/"
-                className="inline-block rounded-full bg-gradient-to-r from-gold to-goldDeep text-white font-display text-sm font-medium px-8 py-3 hover:opacity-90 transition-opacity shadow-md"
-              >
-                Visit Stockifyy
-              </Link>
-            </div>
-
           </div>
 
-        ) : (
-          /* ── INVALID ── */
-          <div className="max-w-lg mx-auto text-center py-10">
-            <div className="flex h-24 w-24 mx-auto items-center justify-center rounded-full bg-red-50 border-2 border-red-100 mb-8">
-              <XCircle className="size-12 text-red-400" />
-            </div>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-ink mb-4">
-              Certificate Not Found
-            </h2>
-            <p className="font-sans text-slate leading-relaxed mb-2">
-              No certificate matching ID{" "}
-              <span className="font-mono font-bold text-ink bg-[#E8DDC8]/80 px-2 py-0.5 rounded-md">
-                {params.id}
-              </span>{" "}
-              was found in our records.
+          {/* Verified notice below certificate */}
+          <div className="flex items-center gap-2 mt-6">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-60" style={{ background: "#10B981" }} />
+              <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: "#10B981" }} />
+            </span>
+            <p className="font-sans text-xs" style={{ color: "rgba(0,0,0,0.4)" }}>
+              Certificate verified · Stockifyy Identity Governance ·{" "}
+              <a href="mailto:info@stockifyy.com" style={{ color: "rgba(201,168,76,0.7)", textDecoration: "underline" }}>info@stockifyy.com</a>
             </p>
-            <p className="font-sans text-sm text-slate leading-relaxed mb-10">
-              Please double-check the ID printed on your certificate, or contact us for assistance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link
-                href="/#contact"
-                className="rounded-full bg-gradient-to-r from-gold to-goldDeep text-white font-display text-sm font-medium px-8 py-3 hover:opacity-90 transition-opacity shadow-md"
-              >
-                Contact Stockifyy
-              </Link>
-              <Link
-                href="/"
-                className="rounded-full border border-[#E8DDC8] text-ink font-display text-sm font-medium px-8 py-3 hover:border-gold transition-colors"
-              >
-                Go to Homepage
-              </Link>
+          </div>
+        </>
+
+      ) : (
+        /* ── NOT FOUND — certificate layout ── */
+        <div className="w-full" style={{ maxWidth: "min(1100px, calc(100vw - 48px))" }}>
+          <div style={{
+            background: "linear-gradient(135deg, #C9A84C 0%, #F0D080 40%, #C9A84C 60%, #8B6914 100%)",
+            padding: 3, borderRadius: 0,
+            boxShadow: "0 30px 80px rgba(0,0,0,0.18), 0 8px 24px rgba(201,168,76,0.2)",
+          }}>
+            <div style={{ background: "#FFFFFF", borderRadius: 0, padding: 6 }}>
+              <div style={{
+                border: "1px solid rgba(201,168,76,0.4)", borderRadius: 0,
+                background: "#FFFFFF", position: "relative", overflow: "hidden",
+                padding: "clamp(20px, 5vw, 48px) clamp(16px, 6vw, 60px) clamp(20px, 4vw, 40px)",
+                textAlign: "center",
+              }}>
+                {/* Watermark */}
+                <div style={{
+                  position: "absolute", inset: 0, display: "flex",
+                  alignItems: "center", justifyContent: "center",
+                  pointerEvents: "none", opacity: 0.06, zIndex: 0,
+                }}>
+                  <Image src="/images/ICON.png" alt="" width={600} height={600}
+                    style={{ objectFit: "contain" }} />
+                </div>
+
+                {/* Corner ornaments */}
+                {["top-4 left-4", "top-4 right-4 rotate-90", "bottom-4 left-4 -rotate-90", "bottom-4 right-4 rotate-180"].map((pos, i) => (
+                  <svg key={i} viewBox="0 0 40 40" style={{ position: "absolute", width: 40, height: 40 }}
+                    className={`absolute ${pos}`} fill="none">
+                    <path d="M2,20 L2,2 L20,2" stroke="#C9A84C" strokeWidth="1.5" opacity="0.7" />
+                    <path d="M2,2 L8,8" stroke="#C9A84C" strokeWidth="1" opacity="0.5" />
+                  </svg>
+                ))}
+
+                <div style={{ position: "relative", zIndex: 1 }}>
+
+                {/* Gold divider */}
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 28 }}>
+                  <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, transparent, #C9A84C)" }} />
+                  <svg viewBox="0 0 20 20" width={16} height={16}>
+                    <polygon points="10,2 12,8 18,8 13,12 15,18 10,14 5,18 7,12 2,8 8,8" fill="#C9A84C" opacity="0.8" />
+                  </svg>
+                  <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, #C9A84C, transparent)" }} />
+                </div>
+
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, borderRadius: 100, padding: "6px 14px", background: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.2)", marginBottom: 24 }}>
+                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#EF4444", display: "inline-block" }} />
+                  <span style={{ fontSize: "0.6rem", fontFamily: "sans-serif", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#DC2626" }}>Not Verified</span>
+                </div>
+
+                <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 700, color: "#1A1209", marginBottom: 12 }}>
+                  Certificate Not Found
+                </h1>
+                <p style={{ fontFamily: "Georgia, serif", fontSize: "clamp(0.65rem, 1.5vw, 0.85rem)", color: "rgba(26,18,9,0.5)", marginBottom: 6 }}>
+                  No certificate matching ID
+                </p>
+                <p style={{ fontFamily: "Georgia, serif", fontSize: "clamp(0.9rem, 2vw, 1.1rem)", fontWeight: 700, color: "#8B6914", marginBottom: 28 }}>
+                  {params.id}
+                </p>
+
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
+                  <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, transparent, #C9A84C)" }} />
+                  <svg viewBox="0 0 20 20" width={16} height={16}>
+                    <polygon points="10,2 12,8 18,8 13,12 15,18 10,14 5,18 7,12 2,8 8,8" fill="#C9A84C" opacity="0.8" />
+                  </svg>
+                  <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, #C9A84C, transparent)" }} />
+                </div>
+
+                <p style={{ fontFamily: "sans-serif", fontSize: "0.75rem", color: "rgba(26,18,9,0.4)", marginBottom: 28, lineHeight: 1.7 }}>
+                  Double-check the ID printed on your certificate, or contact us for assistance.
+                </p>
+
+                <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+                  <Link href="/" style={{
+                    display: "inline-flex", alignItems: "center", borderRadius: 100,
+                    padding: "10px 28px", fontFamily: "sans-serif", fontSize: "0.75rem",
+                    fontWeight: 600, background: "linear-gradient(135deg, #C9A84C, #8B6914)", color: "#fff",
+                    textDecoration: "none",
+                  }}>Go to Homepage</Link>
+                  <Link href="/#contact" style={{
+                    display: "inline-flex", alignItems: "center", borderRadius: 100,
+                    padding: "10px 28px", fontFamily: "sans-serif", fontSize: "0.75rem",
+                    fontWeight: 600, border: "1px solid rgba(201,168,76,0.4)", color: "#8B6914",
+                    textDecoration: "none", background: "transparent",
+                  }}>Contact Us</Link>
+                </div>
+                </div>{/* end zIndex:1 */}
+              </div>
             </div>
           </div>
-        )}
-
-      </main>
-
-      {/* Footer */}
-      {/* <footer className="border-t border-[#E8DDC8] bg-[#FFF7E9]/60 px-6 py-6 text-center">
-        <p className="text-xs font-sans text-slate">
-          © {new Date().getFullYear()} Stockifyy Financial Advisory · SECP Licensed ·{" "}
-          <Link href="/privacy-policy" className="hover:text-goldDeep transition-colors">Privacy Policy</Link>
-        </p>
-      </footer> */}
-
+        </div>
+      )}
     </div>
   );
 }
