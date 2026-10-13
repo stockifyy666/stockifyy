@@ -14,9 +14,15 @@ export default function HeroContent() {
   useEffect(() => {
     const el = contentRef.current;
     if (!el) return;
+    // Fire immediately if already in view (handles sticky + SSR case)
+    const rect = el.getBoundingClientRect();
+    if (rect.bottom > 0 && rect.top < window.innerHeight + 200) {
+      setContentVisible(true);
+      return;
+    }
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { setContentVisible(true); observer.disconnect(); } },
-      { threshold: 0.12 }
+      { threshold: 0.01, rootMargin: "150px 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -28,7 +34,7 @@ export default function HeroContent() {
       ref={contentRef}
       className={`relative z-10 mx-auto max-w-content px-6 md:px-10${contentVisible ? " content-visible" : ""}`}
     >
-      <div className="flex flex-col lg:flex-row lg:items-center lg:py-4">
+      <div className="flex flex-col-reverse lg:flex-row lg:items-center lg:py-4">
 
         {/* ════════ LEFT — copy ════════ */}
         <div className="flex w-full flex-col items-start pb-8 pt-3 sm:pb-10 sm:pt-4 lg:w-1/2 lg:py-1 lg:pr-8">

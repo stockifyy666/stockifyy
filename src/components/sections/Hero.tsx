@@ -48,59 +48,6 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden" style={{ background: "#FFFDF7" }}>
-      <style>{`
-        @keyframes float-up {
-          0%   { opacity: 0; transform: translateY(28px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pop-in {
-          0%   { opacity: 0; transform: scale(0.75) translateY(10px); }
-          70%  { opacity: 1; transform: scale(1.06) translateY(0); }
-          100% { opacity: 1; transform: scale(1) translateY(0); }
-        }
-        .badge-pop-1 { animation: pop-in 0.5s 0.1s cubic-bezier(0.34,1.56,0.64,1) both; }
-        .badge-pop-2 { animation: pop-in 0.5s 0.22s cubic-bezier(0.34,1.56,0.64,1) both; }
-        .badge-pop-3 { animation: pop-in 0.5s 0.34s cubic-bezier(0.34,1.56,0.64,1) both; }
-        .badge-pop-4 { animation: pop-in 0.5s 0.46s cubic-bezier(0.34,1.56,0.64,1) both; }
-        @keyframes shimmer {
-          0%   { background-position: 0% center; }
-          100% { background-position: 200% center; }
-        }
-        @keyframes float-card {
-          0%, 100% { transform: translateY(0px); }
-          50%       { transform: translateY(-7px); }
-        }
-        .anim-1 { animation: float-up 0.65s 0.05s ease forwards; opacity: 0; }
-        .anim-2 { animation: float-up 0.65s 0.15s ease forwards; opacity: 0; }
-        .anim-3 { animation: float-up 0.65s 0.25s ease forwards; opacity: 0; }
-        .anim-4 { animation: float-up 0.65s 0.35s ease forwards; opacity: 0; }
-        .anim-5 { animation: float-up 0.65s 0.45s ease forwards; opacity: 0; }
-        .anim-6 { animation: float-up 0.65s 0.55s ease forwards; opacity: 0; }
-        /* scroll-triggered versions */
-        .scroll-anim-1 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.05s ease, transform 0.7s 0.05s ease; }
-        .scroll-anim-2 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.18s ease, transform 0.7s 0.18s ease; }
-        .scroll-anim-3 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.3s ease, transform 0.7s 0.3s ease; }
-        .scroll-anim-4 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.42s ease, transform 0.7s 0.42s ease; }
-        .scroll-anim-5 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.54s ease, transform 0.7s 0.54s ease; }
-        .scroll-anim-img { opacity: 0; transform: translateX(40px) scale(0.96); transition: opacity 0.9s 0.2s ease, transform 0.9s 0.2s ease; }
-        .content-visible .scroll-anim-1,
-        .content-visible .scroll-anim-2,
-        .content-visible .scroll-anim-3,
-        .content-visible .scroll-anim-4,
-        .content-visible .scroll-anim-5 { opacity: 1; transform: translateY(0); }
-        .content-visible .scroll-anim-img { opacity: 1; transform: translateX(0) scale(1); }
-        .shimmer-text {
-          background-image: linear-gradient(90deg, #FEA500 0%, #7C5200 40%, #FEA500 80%, #7C5200 100%);
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          animation: shimmer 4s linear infinite;
-        }
-        .float-card-1 { animation: float-card 4s 0s ease-in-out infinite; }
-        .float-card-2 { animation: float-card 4s 1.5s ease-in-out infinite; }
-      `}</style>
-
       {/* dot pattern */}
       <div
         aria-hidden="true"
@@ -148,7 +95,7 @@ export default function Hero() {
                 fill
                 priority={i === 0}
                 sizes="100vw"
-                quality={90}
+                quality={75}
                 className="object-cover sm:hidden"
               />
               <Image
@@ -157,7 +104,7 @@ export default function Hero() {
                 fill
                 priority={i === 0}
                 sizes="100vw"
-                quality={90}
+                quality={75}
                 className="hidden object-cover sm:block"
               />
             </div>

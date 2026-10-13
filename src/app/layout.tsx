@@ -17,7 +17,7 @@ const roboto = Roboto({
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -27,9 +27,21 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "Independent corporate advisory for boards and management teams — mergers & acquisitions, capital strategy, restructuring, and governance.",
+    "Pakistan's most trusted SECP-licensed, Shariah-compliant stock market advisory. Expert financial guidance for PSX investors since 2006.",
+  metadataBase: new URL("https://stockifyy.com"),
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/images/favicon.ico",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://stockifyy.com",
+    title: `${site.fullName} | Stock Market Advisory`,
+    description:
+      "Pakistan's most trusted SECP-licensed, Shariah-compliant stock market advisory. Expert financial guidance for PSX investors since 2006.",
+    siteName: site.fullName,
   },
 };
 
@@ -41,8 +53,53 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${roboto.variable} ${poppins.variable}`}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FinancialService",
+              name: "Stockifyy",
+              url: "https://stockifyy.com",
+              logo: "https://stockifyy.com/images/favicon.ico",
+              description:
+                "Pakistan's most trusted SECP-licensed, Shariah-compliant stock market advisory.",
+              telephone: "+923362444466",
+              areaServed: { "@type": "Country", name: "Pakistan" },
+              knowsAbout: [
+                "Stock Market Advisory",
+                "Technical Analysis",
+                "PSX Investments",
+                "Shariah-Compliant Finance",
+              ],
+              sameAs: [
+                "https://www.facebook.com/stockifyy",
+                "https://www.instagram.com/stockifyy",
+              ],
+            }),
+          }}
+        />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+        {/* Preload first banner image for LCP improvement */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/course-banner-technical-analysis-mobile.jpg"
+          media="(max-width: 640px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/course-banner-technical-analysis.webp"
+          media="(min-width: 641px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/website-image.png"
+          media="(min-width: 1024px)"
+        />
       </head>
       <body className="font-sans antialiased">
         <Header />
