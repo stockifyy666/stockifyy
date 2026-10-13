@@ -81,19 +81,6 @@ export default function RootLayout({
         />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
-        {/* Preload first banner image for LCP improvement */}
-        <link
-          rel="preload"
-          as="image"
-          href="/images/course-banner-technical-analysis-mobile.jpg"
-          media="(max-width: 640px)"
-        />
-        <link
-          rel="preload"
-          as="image"
-          href="/images/course-banner-technical-analysis.webp"
-          media="(min-width: 641px)"
-        />
       </head>
       <body className="font-sans antialiased">
         <Header />

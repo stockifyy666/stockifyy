@@ -153,7 +153,7 @@ function RingCard({
   );
 }
 
-// ── Grid card (mobile / tablet) ──────────────────────────────────────────
+// ── Grid card (mobile / tablet) — accessible link with aria-label ────────
 function GridCard({ service }: { service: (typeof services)[0] }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -164,6 +164,7 @@ function GridCard({ service }: { service: (typeof services)[0] }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
+      <span className="sr-only">{service.title}</span>
       <CardFace service={service} hovered={hovered} />
     </Link>
   );

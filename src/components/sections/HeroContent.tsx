@@ -109,7 +109,7 @@ export default function HeroContent() {
                 <p className="mt-0.5 text-[10px] font-bold uppercase tracking-wide text-[#111111] sm:mt-1 sm:text-[11px]">
                   {s.label}
                 </p>
-                <p className="text-[9px] text-gray-400 sm:text-[10px]">{s.sub}</p>
+                <p className="text-[9px] text-gray-600 sm:text-[10px]">{s.sub}</p>
               </div>
             ))}
           </div>
