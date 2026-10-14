@@ -92,12 +92,12 @@ export default function Footer() {
               Services
             </p>
 
-            <ul className="space-y-3 font-sans text-sm text-gray-600">
+            <ul className="font-sans text-sm text-gray-600">
               {services.slice(0, 3).map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="transition-colors hover:text-[#986300]"
+                    className="block py-[7px] transition-colors hover:text-[#986300]"
                   >
                     {service.navLabel}
                   </Link>
@@ -107,7 +107,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="font-medium text-[#986300] hover:text-[#FEA500] transition-colors"
+                  className="block py-[7px] font-medium text-[#986300] hover:text-[#FEA500] transition-colors"
                 >
                   All Services →
                 </Link>
@@ -121,51 +121,12 @@ export default function Footer() {
               Company
             </p>
 
-            <ul className="space-y-3 font-sans text-sm text-gray-600">
-              <li>
-                <Link
-                  href="/blog"
-                  className="transition-colors hover:text-[#986300]"
-                >
-                  Insights
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/#about"
-                  className="transition-colors hover:text-[#986300]"
-                >
-                  About Us
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/team"
-                  className="transition-colors hover:text-[#986300]"
-                >
-                  Our Team
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/#faq"
-                  className="transition-colors hover:text-[#986300]"
-                >
-                  FAQ
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/#contact"
-                  className="transition-colors hover:text-[#986300]"
-                >
-                  Contact
-                </Link>
-              </li>
+            <ul className="font-sans text-sm text-gray-600">
+              <li><Link href="/blog" className="block py-[7px] transition-colors hover:text-[#986300]">Insights</Link></li>
+              <li><Link href="/#about" className="block py-[7px] transition-colors hover:text-[#986300]">About Us</Link></li>
+              <li><Link href="/team" className="block py-[7px] transition-colors hover:text-[#986300]">Our Team</Link></li>
+              <li><Link href="/#faq" className="block py-[7px] transition-colors hover:text-[#986300]">FAQ</Link></li>
+              <li><Link href="/#contact" className="block py-[7px] transition-colors hover:text-[#986300]">Contact</Link></li>
             </ul>
           </div>
         </div>

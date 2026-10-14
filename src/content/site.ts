@@ -6,7 +6,7 @@ export const site = {
   email: "partners@stockifyy.com",
   phone: "+1 (555) 019-2200",
   address: "One Ledger Square, Suite 1400",
-  dataPortalHref: "/data-portal",
+  dataPortalHref: "https://stockifyy-data-portal.vercel.app/dashboard",
   // Order matters: Header renders Home, About Us, then the Services
   // dropdown, then the rest of this list, in this exact order.
   nav: [

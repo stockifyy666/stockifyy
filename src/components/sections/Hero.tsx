@@ -81,7 +81,7 @@ export default function Hero() {
 
       {/* Banner slider */}
       <div>
-        <div className="anim-1 relative z-10 w-full overflow-hidden aspect-[1080/700] sm:aspect-[3/1]">
+        <div className="relative z-10 w-full overflow-hidden aspect-[1080/700] sm:aspect-[3/1]">
           {slides.map((s, i) => (
             <div
               key={s.src}
@@ -95,7 +95,7 @@ export default function Hero() {
                 fill
                 priority={i === 0}
                 sizes="100vw"
-                quality={75}
+                quality={60}
                 className="object-cover sm:hidden"
               />
               <Image
@@ -104,7 +104,7 @@ export default function Hero() {
                 fill
                 priority={i === 0}
                 sizes="100vw"
-                quality={75}
+                quality={60}
                 className="hidden object-cover sm:block"
               />
             </div>

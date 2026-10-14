@@ -2,13 +2,13 @@ import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
 const HeroContent = dynamic(() => import("@/components/sections/HeroContent"));
 
-const AboutUs = dynamic(() => import("@/components/sections/AboutUs"));
-const ServicesSpiral = dynamic(() => import("@/components/sections/ServicesSpiral"));
-const WhyChooseUs = dynamic(() => import("@/components/sections/WhyChooseUs"));
-const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
-const CTASection = dynamic(() => import("@/components/sections/CTASection"));
-const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
-const ContactSection = dynamic(() => import("@/components/sections/ContactSection"));
+const AboutUs = dynamic(() => import("@/components/sections/AboutUs"), { ssr: false });
+const ServicesSpiral = dynamic(() => import("@/components/sections/ServicesSpiral"), { ssr: false });
+const WhyChooseUs = dynamic(() => import("@/components/sections/WhyChooseUs"), { ssr: false });
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials"), { ssr: false });
+const CTASection = dynamic(() => import("@/components/sections/CTASection"), { ssr: false });
+const FAQSection = dynamic(() => import("@/components/sections/FAQSection"), { ssr: false });
+const ContactSection = dynamic(() => import("@/components/sections/ContactSection"), { ssr: false });
 
 export default function Home() {
   return (

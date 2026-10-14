@@ -121,7 +121,7 @@ export default function HeroContent() {
             src={websiteImage}
             alt="Stockifyy Advisory Team — Sohail Farooq & Mufeez Azeez"
             width={900}
-            height={800}
+            height={599}
             quality={75}
             className="w-full h-auto object-contain object-top"
             sizes="(max-width: 640px) 100vw, (max-width: 1080px) 55vw, 50vw"

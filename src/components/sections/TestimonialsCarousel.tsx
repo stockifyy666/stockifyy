@@ -62,7 +62,7 @@ export default function TestimonialsCarousel() {
               src={reviews[prevIdx]}
               alt={`Google review ${prevIdx + 1}`}
               width={260}
-              height={320}
+              height={93}
               sizes="260px"
               className="w-full h-auto object-contain"
             />
@@ -74,7 +74,7 @@ export default function TestimonialsCarousel() {
               src={reviews[current]}
               alt={`Google review ${current + 1}`}
               width={320}
-              height={400}
+              height={114}
               sizes="320px"
               className="w-full h-auto object-contain"
               loading="lazy"
@@ -87,7 +87,7 @@ export default function TestimonialsCarousel() {
               src={reviews[nextIdx]}
               alt={`Google review ${nextIdx + 1}`}
               width={260}
-              height={320}
+              height={93}
               sizes="260px"
               className="w-full h-auto object-contain"
             />
@@ -119,7 +119,7 @@ export default function TestimonialsCarousel() {
             src={reviews[current]}
             alt={`Google review ${current + 1}`}
             width={400}
-            height={300}
+            height={143}
             sizes="(max-width: 768px) calc(100vw - 80px)"
             className="w-full h-auto object-contain"
             loading="lazy"
@@ -136,17 +136,13 @@ export default function TestimonialsCarousel() {
       </div>
 
       {/* Dot indicators */}
-      <div className="flex justify-center gap-2 mt-6">
+      <div className="flex justify-center mt-6">
         {reviews.map((_, i) => (
-          // The visible dot stays small (design intent), but the
-          // button itself gets padding so the actual tap target is
-          // >=24x24px — small dots otherwise fail touch-target
-          // accessibility checks and are hard to tap on mobile.
           <button
             key={i}
             onClick={() => { setCurrent(i); setPaused(true); }}
             aria-label={`Go to review ${i + 1}`}
-            className="p-3 flex items-center justify-center"
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center"
           >
             <span
               className={`block rounded-full transition-all duration-300 ${

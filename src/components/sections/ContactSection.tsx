@@ -48,7 +48,7 @@ export default function ContactSection() {
   }
 
   const inputClass =
-    "w-full rounded-full bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink placeholder:text-ink/40 focus:border-gold outline-none transition-colors";
+    "w-full min-h-[48px] rounded-full bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink placeholder:text-ink/40 focus:border-gold outline-none transition-colors";
 
   return (
     <section id="contact" className="bg-cream text-ink py-24 md:py-24">
@@ -114,7 +114,7 @@ export default function ContactSection() {
               onChange={handleChange}
               required
               aria-label="Select a Service"
-              className="w-full appearance-none rounded-full bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink focus:border-gold outline-none transition-colors cursor-pointer"
+              className="w-full min-h-[48px] appearance-none rounded-full bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink focus:border-gold outline-none transition-colors cursor-pointer"
             >
               <option value="" disabled>Select a Service</option>
               {SERVICE_LIST.map((s) => (

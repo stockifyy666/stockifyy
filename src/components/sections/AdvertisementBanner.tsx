@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
@@ -37,10 +38,8 @@ export default function AdvertisementBanner() {
           className={`${i === 0 ? "relative" : "absolute inset-0"} transition-opacity duration-700`}
           style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={slide.laptop} alt={`Advertisement ${i + 1}`} className="hidden md:block w-full h-auto" />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={slide.mobile} alt={`Advertisement ${i + 1}`} className="block md:hidden w-full h-auto" />
+          <Image src={slide.laptop} alt={`Advertisement ${i + 1}`} width={1920} height={800} className="hidden md:block w-full h-auto" priority={i === 0} />
+          <Image src={slide.mobile} alt={`Advertisement ${i + 1}`} width={800} height={1000} className="block md:hidden w-full h-auto" priority={i === 0} />
         </div>
       ))}
 

@@ -69,7 +69,7 @@ export default function VerifyPage({ params }: Props) {
                   Certificate Successfully Verified
                 </p>
                 <p className="font-sans text-sm text-emerald-600 mt-0.5">
-                  This record is authentic and exists in Stockifyy's official registry.
+                  This record is authentic and exists in Stockifyy&apos;s official registry.
                 </p>
               </div>
               <BadgeCheck className="size-8 text-emerald-400 ml-auto shrink-0 hidden sm:block" />

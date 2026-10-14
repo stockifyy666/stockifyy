@@ -1,0 +1,27 @@
+# Stockifyy
+
+> Pakistan's premier stock market education and advisory platform. We help retail investors learn technical analysis, understand capital markets, and grow wealth through structured courses and personalized advisory.
+
+## Services
+
+- [Technical Analysis SuperClass](/services/technical-analysis-superclass): Comprehensive course covering chart patterns, indicators, and trading psychology. Taught by Dr. Masood Rashid & Mr. Hassan Askari.
+- [Stockifyy Membership](/services/stockifyy-membership): Exclusive members-only access to market insights, trade alerts, and community.
+- [One-on-One Advisory](/services/one-on-one-advisory): Personalized investment advisory sessions tailored to your portfolio.
+- [Corporate Advisory](/services/corporate-advisory): Strategic financial guidance for businesses and institutions.
+- [Assets Under Advisement Model](/services/assets-under-advisement-model): Managed advisory for larger portfolios.
+
+## About
+
+Stockifyy was founded to democratize stock market education in Pakistan. Our instructors have decades of combined experience in capital markets, technical analysis, and wealth management.
+
+## Contact
+
+- Website: https://stockifyy.com
+- WhatsApp: +92 336 2444466
+- Email: info@stockifyy.com
+
+## Optional
+
+- [Blog](/blog): Articles on investing, market analysis, and financial literacy.
+- [Team](/team): Meet the Stockifyy instructors and advisors.
+- [Verify Certificate](/verify): Verify the authenticity of a Stockifyy course certificate.
