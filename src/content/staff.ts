@@ -122,7 +122,7 @@ export const staffMembers: StaffMember[] = [
   },
   {
     id: "STF-011",
-    name: "Abullah Awais",
+    name: "Abdullah Awais",
     position: "Web Developer",
     department: "Information Technology",
     email: "abdullahkinglk@gmail.com",
