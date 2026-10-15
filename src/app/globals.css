@@ -9,6 +9,117 @@ html {
 body {
   background-color: #f6f4ef;
   color: #0b1f2e;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===================== DARK MODE ===================== */
+html.dark {
+  color-scheme: dark;
+}
+
+/* Base */
+html.dark body,
+html.dark main {
+  background-color: #0f0f0f !important;
+  color: #e8e0d0 !important;
+}
+
+/* All sections and divs with light backgrounds */
+html.dark section,
+html.dark article,
+html.dark aside {
+  background-color: #0f0f0f !important;
+  color: #e8e0d0 !important;
+}
+
+/* Header */
+html.dark header {
+  background-color: rgba(10, 10, 10, 0.95) !important;
+  border-color: #2a2a2a !important;
+}
+
+/* Footer */
+html.dark footer {
+  background-color: #111111 !important;
+  border-color: #2a2a2a !important;
+}
+
+/* All divs — override cream/white backgrounds */
+html.dark div[class*="bg-[#FFF"],
+html.dark div[class*="bg-white"],
+html.dark div[class*="bg-cream"],
+html.dark div[class*="bg-paper"] {
+  background-color: #141414 !important;
+}
+
+/* Universal background override for known colors */
+html.dark [style*="background-color: rgb(255"] {
+  background-color: #141414 !important;
+}
+
+/* Borders */
+html.dark [class*="border-[#E8DDC8]"],
+html.dark [class*="border-gray-"],
+html.dark [class*="border-[#dad4c6]"],
+html.dark [class*="border-line"] {
+  border-color: #2a2a2a !important;
+}
+
+/* Text */
+html.dark [class*="text-gray-"],
+html.dark [class*="text-[#1A1A1A]"],
+html.dark [class*="text-[#0B1F2E]"],
+html.dark [class*="text-ink"],
+html.dark [class*="text-slate"],
+html.dark [class*="text-[#5A6472]"],
+html.dark p,
+html.dark span:not([class*="text-gold"]):not([class*="text-[#986300]"]):not([class*="text-goldDeep"]):not([class*="text-white"]) {
+  color: #c0b8a8 !important;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: #e8e0d0 !important;
+}
+
+html.dark a:not([class*="text-gold"]):not([class*="text-[#986300]"]):not([class*="text-goldDeep"]):not([class*="text-white"]):not([class*="btn"]) {
+  color: #c0b8a8 !important;
+}
+
+html.dark nav a:not([class*="text-gold"]):not([class*="text-[#986300]"]):not([class*="text-goldDeep"]) {
+  color: #d0c8b8 !important;
+}
+
+html.dark li {
+  color: #c0b8a8 !important;
+}
+
+/* White backgrounds to dark */
+html.dark [class*="bg-white"] {
+  background-color: #1a1a1a !important;
+}
+html.dark [class*="bg-[#FFF7E9]"] {
+  background-color: #141414 !important;
+}
+html.dark [class*="bg-[#f6f4ef]"],
+html.dark [class*="bg-paper"] {
+  background-color: #0f0f0f !important;
+}
+
+/* Cards and dropdowns */
+html.dark .rounded-2xl:not([class*="gradient"]):not([class*="from-"]),
+html.dark .rounded-xl:not([class*="gradient"]):not([class*="from-"]) {
+  background-color: #1a1a1a;
+  border-color: #2a2a2a;
+}
+
+/* Shadows in dark mode */
+html.dark [class*="shadow"] {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5) !important;
 }
 
 /* Signature element: the ledger rule — a brass hairline with tick marks. */
@@ -56,6 +167,28 @@ body {
 @keyframes glow-pulse {
   0%, 100% { box-shadow: 0 4px 24px rgba(254,165,0,0.35); }
   50%       { box-shadow: 0 4px 44px rgba(254,165,0,0.65); }
+}
+
+/* WhatsApp button — gentle up-down float */
+@keyframes float-up {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+.whatsapp-float {
+  animation: float-up 2.5s ease-in-out infinite;
+}
+
+/* Chatbot button — gentle side-to-side wiggle */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20%       { transform: rotate(-8deg); }
+  40%       { transform: rotate(8deg); }
+  60%       { transform: rotate(-5deg); }
+  80%       { transform: rotate(5deg); }
+}
+.chatbot-wiggle {
+  animation: wiggle 3s ease-in-out infinite;
+  animation-delay: 2s;
 }
 
 .glow-btn {

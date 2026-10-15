@@ -3,14 +3,14 @@ import { ArrowRight } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="bg-white">
+    <section className="bg-white dark:bg-[#0f0f0f]">
       <div className="max-w-content mx-auto px-8 py-16 md:px-16 md:py-24 text-center">
-        <p className="case-index text-ink font-display text-lg mb-4">
+        <p className="case-index text-ink dark:text-[#e8e0d0] font-display text-lg mb-4">
           INVEST WITH CLARITY 
 
         </p>
 
-        <h2 className="font-display text-3xl md:text-5xl text-ink mx-auto leading-tight mb-6">
+        <h2 className="font-display text-3xl md:text-5xl text-ink dark:text-[#e8e0d0] mx-auto leading-tight mb-6">
           Take the Next Step Towards a
  <span className="text-gradient-gold"> Stronger Financial Future.</span>
         </h2>

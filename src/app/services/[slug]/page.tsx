@@ -26,7 +26,7 @@ export default function ServiceDetailPage({ params }: Props) {
   const related = services.filter((s) => s.slug !== service.slug);
 
   return (
-    <div className="bg-cream">
+    <div className="bg-cream dark:bg-[#0f0f0f]">
       {/* Full-bleed hero — image as background, text overlaid */}
       <div className="relative h-[90vh] sm:h-[50vh] md:h-[60vh] min-h-[280px] sm:min-h-[380px] md:min-h-[460px] max-h-[620px] w-full overflow-hidden">
         <Image
@@ -63,7 +63,7 @@ export default function ServiceDetailPage({ params }: Props) {
         </div>
       </div>
 
-      <article className="max-w-content mx-auto px-6 md:px-10 py-10 md:py-14">
+      <article className="max-w-content mx-auto px-6 md:px-10 py-10 md:py-14 dark:text-[#e8e0d0]">
         <div className="grid md:grid-cols-3 gap-8 md:gap-10 items-start">
 
           {/* Main content */}
@@ -95,7 +95,7 @@ export default function ServiceDetailPage({ params }: Props) {
                   {service.horizons.map((h) => (
                     <div
                       key={h.label}
-                      className="rounded-2xl border border-gold/30 bg-white p-5"
+                      className="rounded-2xl border border-gold/30 bg-white dark:bg-[#1a1a1a] p-5"
                     >
                       <span className="inline-block rounded-full bg-gold/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-goldDeep mb-3">
                         {h.label}
@@ -110,7 +110,7 @@ export default function ServiceDetailPage({ params }: Props) {
 
             {/* Who Is It For */}
             {service.whoIsItFor && service.whoIsItFor.length > 0 && (
-              <div className="mt-8 rounded-2xl border border-line bg-white p-6">
+              <div className="mt-8 rounded-2xl border border-line dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] p-6">
                 <div className="flex items-center gap-2 mb-4">
                   <Users className="size-4 text-gold" />
                   <h2 className="font-display text-base font-bold text-ink">Who Is It For?</h2>
@@ -136,7 +136,7 @@ export default function ServiceDetailPage({ params }: Props) {
           </div>
 
           {/* Sidebar */}
-          <aside className="rounded-2xl border border-line bg-white p-7 h-fit">
+          <aside className="rounded-2xl border border-line dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] p-7 h-fit">
             <p className="font-sans text-xs uppercase tracking-widest text-gold mb-5">
               What this covers
             </p>
@@ -175,8 +175,8 @@ export default function ServiceDetailPage({ params }: Props) {
                   key={plan.name}
                   className={`rounded-2xl border p-7 flex flex-col ${
                     i === 1
-                      ? "border-gold bg-gradient-to-b from-gold/10 to-transparent"
-                      : "border-line bg-white"
+                      ? "border-gold bg-gradient-to-b from-gold/10 to-transparent dark:from-gold/5"
+                      : "border-line dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a]"
                   }`}
                 >
                   {i === 1 && (

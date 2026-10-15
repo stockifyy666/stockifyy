@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function BlogIndexPage() {
   return (
-    <div className="bg-cream">
+    <div className="bg-cream dark:bg-[#0f0f0f]">
       <section className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28">
         <div className="text-center max-w-2xl mx-auto">
           <span className="inline-block rounded-full border border-gold/40 bg-gold/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-goldDeep">

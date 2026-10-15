@@ -32,7 +32,7 @@ export default function BlogPostPage({ params }: Props) {
   const nextPost = posts[(currentIndex + 1) % posts.length];
 
   return (
-    <div className="bg-cream">
+    <div className="bg-cream dark:bg-[#0f0f0f]">
       <ReadingProgressBar />
       <BackToTop />
 
@@ -134,7 +134,7 @@ export default function BlogPostPage({ params }: Props) {
 
           {/* Recent Post sidebar */}
           <aside>
-            <div className="lg:sticky lg:top-32 rounded-2xl border border-line bg-creamSoft p-6">
+            <div className="lg:sticky lg:top-32 rounded-2xl border border-line dark:border-[#2a2a2a] bg-creamSoft dark:bg-[#1a1a1a] p-6">
               <p className="font-display text-lg text-ink mb-5">Recent Post</p>
               <div className="space-y-5">
                 {recent.map((p) => (

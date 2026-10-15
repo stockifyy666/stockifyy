@@ -7,6 +7,7 @@ import { site } from "@/content/site";
 import { services } from "@/content/services";
 import logo from "../../../public/images/logo.svg"
 import Image from "next/image";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -32,7 +33,7 @@ export default function Header() {
   }, [mobileOpen]);
 
   return (
-<header className="sticky top-0 z-50 border-b border-[#E8DDC8] bg-[#FFF7E9]/90 backdrop-blur-xl">
+<header className="sticky top-0 z-50 border-b border-[#E8DDC8] dark:border-[#2a2a2a] bg-[#FFF7E9]/90 dark:bg-[#0a0a0a]/95 backdrop-blur-xl">
       <div className="max-w-content mx-auto px-6 md:px-10 flex items-center justify-between h-20">
         {/* Logo lockup */}
       <Link href="/" className="flex items-center">
@@ -45,7 +46,7 @@ export default function Header() {
 </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-8 font-sans text-sm text-gray-700">
+        <nav className="hidden lg:flex items-center gap-8 font-sans text-sm text-gray-700 dark:text-gray-300">
           <Link href={homeItem.href} className="hover:text-[#986300] duration-200 transition-colors">
             {homeItem.label}
           </Link>
@@ -65,7 +66,7 @@ export default function Header() {
               aria-expanded={servicesOpen}
               className="flex items-center gap-1.5 hover:text-[#986300] transition-colors"
             >
-              Services
+              Offerings
               <svg
                 width="10"
                 height="10"
@@ -85,7 +86,7 @@ export default function Header() {
                   : "opacity-0 -translate-y-1 pointer-events-none"
               }`}
             >
-         <div className="bg-white rounded-2xl border border-gray-200 shadow-xl py-2 w-60 max-h-[70vh] overflow-y-auto">
+         <div className="bg-white dark:bg-[#1a1a1a] rounded-2xl border border-gray-200 dark:border-[#2a2a2a] shadow-xl py-2 w-60 max-h-[70vh] overflow-y-auto">
   {services.map((s) => (
     <Link
       key={s.slug}
@@ -102,7 +103,7 @@ export default function Header() {
     href="/services"
     className="block px-4 py-2.5 text-xs font-semibold text-[#986300] hover:bg-[#FFF7E9]"
   >
-    View All Services →
+    View All Offerings →
   </Link>
 </div>
             </div>
@@ -117,55 +118,60 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
+
+          <ThemeToggle />
         </nav>
 
-        {/* Mobile menu toggle */}
-     <button
+        {/* Mobile: dark mode toggle + hamburger grouped together on right */}
+        <div className="lg:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
   onClick={() => setMobileOpen((v) => !v)}
   aria-label={mobileOpen ? "Close menu" : "Open menu"}
   aria-expanded={mobileOpen}
-  className="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center"
+  className="relative w-10 h-10 flex flex-col items-center justify-center"
 >
   <span
-    className={`absolute w-6 h-0.5 bg-[#1A1A1A] rounded-full transition-all duration-300 ${
+    className={`absolute w-6 h-0.5 bg-[#1A1A1A] dark:bg-[#d0c8b8] rounded-full transition-all duration-300 ${
       mobileOpen ? "rotate-45" : "-translate-y-2"
     }`}
   />
   <span
-    className={`absolute w-6 h-0.5 bg-[#1A1A1A] rounded-full transition-all duration-300 ${
+    className={`absolute w-6 h-0.5 bg-[#1A1A1A] dark:bg-[#d0c8b8] rounded-full transition-all duration-300 ${
       mobileOpen ? "opacity-0" : ""
     }`}
   />
   <span
-    className={`absolute w-6 h-0.5 bg-[#1A1A1A] rounded-full transition-all duration-300 ${
+    className={`absolute w-6 h-0.5 bg-[#1A1A1A] dark:bg-[#d0c8b8] rounded-full transition-all duration-300 ${
       mobileOpen ? "-rotate-45" : "translate-y-2"
     }`}
   />
 </button>
+        </div>
       </div>
 
       {/* Mobile menu panel */}
       <div
-        className={`lg:hidden overflow-hidden bg-[#FFF7E9] border-t border-[#E8DDC8] transition-[max-height] duration-300 ease-in-out ${
+        className={`lg:hidden overflow-hidden bg-[#FFF7E9] dark:bg-[#0a0a0a] border-t border-[#E8DDC8] dark:border-[#2a2a2a] transition-[max-height] duration-300 ease-in-out ${
           mobileOpen ? "max-h-[calc(100vh-5rem)] overflow-y-auto" : "max-h-0"
         }`}
       >
         <nav className="max-w-content mx-auto px-6 py-6 flex flex-col font-sans text-base">
-          <Link href={homeItem.href} className="py-4 border-b border-[#E8DDC8] text-[#1A1A1A]">
+          <Link href={homeItem.href} className="py-4 border-b border-[#E8DDC8] dark:border-[#2a2a2a] text-[#1A1A1A] dark:text-[#d0c8b8]">
             {homeItem.label}
           </Link>
-          <Link href={aboutItem.href} className="py-4 border-b border-[#E8DDC8] text-[#1A1A1A]">
+          <Link href={aboutItem.href} className="py-4 border-b border-[#E8DDC8] dark:border-[#2a2a2a] text-[#1A1A1A] dark:text-[#d0c8b8]">
             {aboutItem.label}
           </Link>
 
           {/* Services accordion */}
-          <div className="border-b border-[#E8DDC8]">
+          <div className="border-b border-[#E8DDC8] dark:border-[#2a2a2a]">
             <button
               onClick={() => setMobileServicesOpen((v) => !v)}
               aria-expanded={mobileServicesOpen}
-              className="w-full flex items-center justify-between py-4 text-[#1A1A1A]"
+              className="w-full flex items-center justify-between py-4 text-[#1A1A1A] dark:text-[#d0c8b8]"
             >
-              Services
+              Offerings
               <svg
                 width="12"
                 height="12"
@@ -187,13 +193,13 @@ export default function Header() {
                   <Link
                     key={s.slug}
                     href={`/services/${s.slug}`}
-                    className="py-2.5 text-sm leading-snug text-[#1A1A1A]/70 hover:text-[#986300]"
+                    className="py-2.5 text-sm leading-snug text-[#1A1A1A]/70 dark:text-[#a09880] hover:text-[#986300]"
                   >
                     {s.navLabel}
                   </Link>
                 ))}
                 <Link href="/services" className="py-2.5 text-sm text-brass">
-                  View all services →
+                  View all offerings →
                 </Link>
               </div>
             </div>
@@ -203,7 +209,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="py-4 border-b border-[#E8DDC8] text-[#1A1A1A]"
+              className="py-4 border-b border-[#E8DDC8] dark:border-[#2a2a2a] text-[#1A1A1A] dark:text-[#d0c8b8]"
             >
               {item.label}
             </Link>

@@ -29,7 +29,7 @@ export default function HeroContent() {
   }, []);
 
   return (
-    <div style={{ background: "#FFFDF7" }}>
+    <div className="bg-[#FFFDF7] dark:bg-[#0f0f0f]">
     <div
       ref={contentRef}
       className={`relative z-10 mx-auto max-w-content px-6 md:px-10${contentVisible ? " content-visible" : ""}`}

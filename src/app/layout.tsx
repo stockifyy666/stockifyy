@@ -4,7 +4,10 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import dynamic from "next/dynamic";
 import { site } from "@/content/site";
+
+const AIChatbot = dynamic(() => import("@/components/ui/AIChatbot"), { ssr: false });
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -87,6 +90,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <AIChatbot />
       </body>
     </html>
   );

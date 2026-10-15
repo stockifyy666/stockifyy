@@ -47,7 +47,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative overflow-hidden" style={{ background: "#FFFDF7" }}>
+    <section className="relative overflow-hidden bg-[#FFFDF7] dark:bg-[#0f0f0f]">
       {/* dot pattern */}
       <div
         aria-hidden="true"

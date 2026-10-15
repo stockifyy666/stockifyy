@@ -48,14 +48,14 @@ export default function ContactSection() {
   }
 
   const inputClass =
-    "w-full min-h-[48px] rounded-full bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink placeholder:text-ink/40 focus:border-gold outline-none transition-colors";
+    "w-full min-h-[48px] rounded-full bg-transparent border border-ink/25 dark:border-[#4a4030] px-5 py-3 font-sans text-sm text-ink dark:text-[#e8e0d0] placeholder:text-ink/40 dark:placeholder:text-[#7a7060] focus:border-gold outline-none transition-colors";
 
   return (
-    <section id="contact" className="bg-cream text-ink py-24 md:py-24">
+    <section id="contact" className="bg-cream dark:bg-[#0f0f0f] text-ink dark:text-[#e8e0d0] py-24 md:py-24">
       <div className="max-w-content mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-16">
         <div>
-          <p className="case-index text-ink font-display text-lg mb-4">Get in Touch</p>
-          <h2 className="font-display text-3xl md:text-5xl leading-tight mb-6 text-ink">
+          <p className="case-index text-ink dark:text-[#e8e0d0] font-display text-lg mb-4">Get in Touch</p>
+          <h2 className="font-display text-3xl md:text-5xl leading-tight mb-6 text-ink dark:text-[#e8e0d0]">
             Let&apos;s Start a{" "}
             <span className="text-gradient-gold">Conversation</span>
           </h2>
@@ -114,7 +114,7 @@ export default function ContactSection() {
               onChange={handleChange}
               required
               aria-label="Select a Service"
-              className="w-full min-h-[48px] appearance-none rounded-full bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink focus:border-gold outline-none transition-colors cursor-pointer"
+              className="w-full min-h-[48px] appearance-none rounded-full bg-transparent dark:bg-[#0f0f0f] border border-ink/25 dark:border-[#4a4030] px-5 py-3 font-sans text-sm text-ink dark:text-[#e8e0d0] focus:border-gold outline-none transition-colors cursor-pointer"
             >
               <option value="" disabled>Select a Service</option>
               {SERVICE_LIST.map((s) => (
@@ -139,7 +139,7 @@ export default function ContactSection() {
             placeholder="Your Message"
             aria-label="Your Message"
             rows={4}
-            className="w-full rounded-2xl bg-transparent border border-ink/25 px-5 py-3 font-sans text-sm text-ink placeholder:text-ink/40 focus:border-gold outline-none transition-colors resize-none"
+            className="w-full rounded-2xl bg-transparent border border-ink/25 dark:border-[#4a4030] px-5 py-3 font-sans text-sm text-ink dark:text-[#e8e0d0] placeholder:text-ink/40 dark:placeholder:text-[#7a7060] focus:border-gold outline-none transition-colors resize-none"
           />
 
           {/* Success message */}

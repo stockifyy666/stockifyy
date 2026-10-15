@@ -3,7 +3,7 @@ import teamoffice from "../../../public/images/officeteam.jpeg"
 
 export default function AboutUs() {
   return (
-   <div className="bg-[#FFFDF7]">
+   <div className="bg-[#FFFDF7] dark:bg-[#0f0f0f]">
      <section id="about" className="max-w-content  mx-auto px-6 md:px-10 py-24 md:py-24">
       <div className="grid md:grid-cols-2 gap-14 items-center">
         <div className="relative aspect-[4/3] w-full order-2 md:order-1">
@@ -16,8 +16,8 @@ export default function AboutUs() {
           />
         </div>
         <div className="order-1 md:order-2">
-          <p className="case-index font-display text-ink font text-lg mb-4">About Us</p>
-          <h2 className="font-display text-3xl md:text-[44px] text-ink leading-tight mb-6">
+          <p className="case-index font-display text-ink dark:text-[#e8e0d0] font text-lg mb-4">Our Story</p>
+          <h2 className="font-display text-3xl md:text-[44px] text-ink dark:text-[#e8e0d0] leading-tight mb-6">
             
            Clarity, Discipline and Values <span className="text-gradient-gold"> in Every Decision</span>
           </h2>

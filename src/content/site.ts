@@ -7,13 +7,13 @@ export const site = {
   phone: "+1 (555) 019-2200",
   address: "One Ledger Square, Suite 1400",
   dataPortalHref: "https://stockifyy-data-portal.vercel.app/dashboard",
-  // Order matters: Header renders Home, About Us, then the Services
+  // Order matters: Header renders Overview, Our Story, then the Offerings
   // dropdown, then the rest of this list, in this exact order.
   nav: [
-    { href: "/", label: "Home" },
-    { href: "/#about", label: "About Us" },
+    { href: "/", label: "Overview" },
+    { href: "/#about", label: "Our Story" },
     { href: "/team", label: "Our Team" },
     // { href: "/blog", label: "Blogs" },
-    { href: "/#contact", label: "Contact Us" },
+    { href: "/#contact", label: "Let's Talk" },
   ],
 };

@@ -7,7 +7,7 @@ export default function ServiceCard({ service }: { service: Service }) {
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="group h-full flex flex-col rounded-2xl border border-line bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+      className="group h-full flex flex-col rounded-2xl border border-line dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
     >
       <div className="p-3 pb-0">
         <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden">
@@ -27,7 +27,7 @@ export default function ServiceCard({ service }: { service: Service }) {
           <Icon className="size-4" aria-hidden="true" />
         </span>
 
-        <h2 className="font-display text-lg md:text-xl text-ink font-semibold leading-snug line-clamp-2">
+        <h2 className="font-display text-lg md:text-xl text-ink dark:text-[#e8e0d0] font-semibold leading-snug line-clamp-2">
           {service.title}
         </h2>
         <p className="font-sans text-sm text-slate mt-2 leading-relaxed line-clamp-2 flex-1">

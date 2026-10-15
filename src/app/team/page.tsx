@@ -17,13 +17,13 @@ export default function TeamPage() {
   );
 
   return (
-    <div className="bg-cream min-h-screen">
+    <div className="bg-cream dark:bg-[#0f0f0f] min-h-screen">
       {/* Hero heading */}
       <div className="max-w-content mx-auto px-6 md:px-10 pt-20 md:pt-28 pb-12 text-center">
         <span className="inline-block rounded-full border border-gold/40 bg-gold/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-goldDeep mb-5">
           Stockifyy — Wealth Multiplier
         </span>
-        <h1 className="font-display text-4xl md:text-6xl text-ink font-semibold leading-tight">
+        <h1 className="font-display text-4xl md:text-6xl text-ink dark:text-[#e8e0d0] font-semibold leading-tight">
           Meet Our <span className="text-gradient-gold">Team</span>
         </h1>
         <p className="font-sans text-ink/55 mt-5 max-w-xl mx-auto leading-relaxed">
@@ -62,7 +62,7 @@ export default function TeamPage() {
               </div>
               {/* Name & role */}
               <div className="mt-4 text-center">
-                <h2 className="font-display text-lg md:text-xl text-ink font-semibold">
+                <h2 className="font-display text-lg md:text-xl text-ink dark:text-[#e8e0d0] font-semibold">
                   {member.name}
                 </h2>
                 <span className="inline-block mt-1.5 rounded-full bg-gold/10 border border-gold/30 px-3 py-0.5 text-xs font-sans font-semibold text-goldDeep tracking-wide">
@@ -103,7 +103,7 @@ export default function TeamPage() {
               </div>
               {/* Name & role */}
               <div className="mt-4 text-center">
-                <h2 className="font-display text-lg md:text-xl text-ink font-semibold">
+                <h2 className="font-display text-lg md:text-xl text-ink dark:text-[#e8e0d0] font-semibold">
                   {member.name}
                 </h2>
                 <span className="inline-block mt-1.5 rounded-full bg-gold/10 border border-gold/30 px-3 py-0.5 text-xs font-sans font-semibold text-goldDeep tracking-wide">

@@ -49,7 +49,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#FFF7E9] border-t border-[#E8DDC8] ">
+    <footer className="bg-[#FFF7E9] dark:bg-[#0a0a0a] border-t border-[#E8DDC8] dark:border-[#2a2a2a]">
       <div className="max-w-content mx-auto px-6 md:px-10 py-16">
         <div className="grid md:grid-cols-4 gap-12">
           {/* Company */}
@@ -89,7 +89,7 @@ export default function Footer() {
           {/* Services */}
           <div>
             <p className="font-sans text-xs uppercase tracking-[0.2em] text-[#986300] font-semibold mb-5">
-              Services
+              Offerings
             </p>
 
             <ul className="font-sans text-sm text-gray-600">
@@ -109,7 +109,7 @@ export default function Footer() {
                   href="/services"
                   className="block py-[7px] font-medium text-[#986300] hover:text-[#FEA500] transition-colors"
                 >
-                  All Services →
+                  All Offerings →
                 </Link>
               </li>
             </ul>
@@ -123,10 +123,10 @@ export default function Footer() {
 
             <ul className="font-sans text-sm text-gray-600">
               <li><Link href="/blog" className="block py-[7px] transition-colors hover:text-[#986300]">Insights</Link></li>
-              <li><Link href="/#about" className="block py-[7px] transition-colors hover:text-[#986300]">About Us</Link></li>
+              <li><Link href="/#about" className="block py-[7px] transition-colors hover:text-[#986300]">Our Story</Link></li>
               <li><Link href="/team" className="block py-[7px] transition-colors hover:text-[#986300]">Our Team</Link></li>
               <li><Link href="/#faq" className="block py-[7px] transition-colors hover:text-[#986300]">FAQ</Link></li>
-              <li><Link href="/#contact" className="block py-[7px] transition-colors hover:text-[#986300]">Contact</Link></li>
+              <li><Link href="/#contact" className="block py-[7px] transition-colors hover:text-[#986300]">Let&apos;s Talk</Link></li>
             </ul>
           </div>
         </div>

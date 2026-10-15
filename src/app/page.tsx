@@ -22,7 +22,7 @@ export default function Home() {
       </div>
 
       {/* All sections scroll over HeroContent */}
-      <div className="relative z-10 bg-[#FFFDF7]">
+      <div className="relative z-10 bg-[#FFFDF7] dark:bg-[#0f0f0f]">
         <AboutUs />
         <ServicesSpiral />
         <WhyChooseUs />

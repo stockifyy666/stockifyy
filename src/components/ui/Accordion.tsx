@@ -21,7 +21,7 @@ export default function Accordion({ items }: { items: AccordionItem[] }) {
               aria-expanded={isOpen}
               className="w-full flex items-center justify-between gap-6 py-6 text-left"
             >
-              <span className="font-display text-lg md:text-xl text-ink">
+              <span className="font-display text-lg md:text-xl text-ink dark:text-[#e8e0d0]">
                 {item.question}
               </span>
               <span
