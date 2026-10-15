@@ -26,7 +26,7 @@ export default function ServiceDetailPage({ params }: Props) {
   const related = services.filter((s) => s.slug !== service.slug);
 
   return (
-    <div className="dark:bg-[#0f0f0f]">
+    <div className="bg-[#FFF7E9] dark:bg-[#0f0f0f]">
       {/* Full-bleed hero — image as background, text overlaid */}
       <div className="relative h-[90vh] sm:h-[50vh] md:h-[60vh] min-h-[280px] sm:min-h-[380px] md:min-h-[460px] max-h-[620px] w-full overflow-hidden dark:bg-[#0f0f0f]">
         <Image
@@ -48,8 +48,10 @@ export default function ServiceDetailPage({ params }: Props) {
           All offerings
         </Link>
 
-        {/* Dark mode — bottom fade, only bottom 25% to avoid covering text */}
-        <div className="hidden dark:block absolute bottom-0 left-0 right-0 h-[25%] bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none z-10" />
+        {/* Light mode — bottom fade to white, hides gray wave */}
+        <div className="dark:hidden absolute bottom-0 left-0 right-0 h-[35%] bg-gradient-to-t from-[#FFF7E9] via-[#FFF7E9]/60 to-transparent pointer-events-none z-10" />
+        {/* Dark mode — bottom fade to dark */}
+        <div className="hidden dark:block absolute bottom-0 left-0 right-0 h-[35%] bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/80 to-transparent pointer-events-none z-10" />
 
         <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center pt-12 sm:pt-0">
           {/* <span className="inline-flex items-start gap-1.5 rounded-2xl bg-white px-4 py-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wide text-ink max-w-[85vw] sm:max-w-md text-center leading-snug">
@@ -67,7 +69,7 @@ export default function ServiceDetailPage({ params }: Props) {
         </div>
       </div>
 
-      <article className="max-w-content mx-auto px-6 md:px-10 py-10 md:py-14 dark:text-[#e8e0d0] dark:bg-[#0f0f0f]">
+      <article className="max-w-content mx-auto px-6 md:px-10 py-10 md:py-14 dark:text-[#e8e0d0] bg-[#FFF7E9] dark:bg-[#0f0f0f]">
         <div className="grid md:grid-cols-3 gap-8 md:gap-10 items-start">
 
           {/* Main content */}
