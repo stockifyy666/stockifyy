@@ -100,32 +100,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "API key not configured" }, { status: 500 });
     }
 
-    const lastUserMsg = messages[messages.length - 1];
-    const hasImage = imageBase64 && lastUserMsg?.role === "user";
-
-    const groqMessages: { role: string; content: string | { type: string; text?: string; image_url?: { url: string } }[] }[] = [
+    const groqMessages = [
       { role: "system", content: SYSTEM_PROMPT },
-      ...messages.slice(0, hasImage ? -1 : undefined).map((msg: { role: string; content: string }) => ({
+      ...messages.map((msg: { role: string; content: string }) => ({
         role: msg.role,
         content: msg.content,
       })),
     ];
-
-    if (hasImage) {
-      groqMessages.push({
-        role: "user",
-        content: [
-          {
-            type: "image_url",
-            image_url: { url: `data:${imageMimeType ?? "image/jpeg"};base64,${imageBase64}` },
-          },
-          {
-            type: "text",
-            text: lastUserMsg.content || "Please analyze this image and tell me what you see.",
-          },
-        ],
-      });
-    }
 
     const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
@@ -134,7 +115,7 @@ export async function POST(req: NextRequest) {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "meta-llama/llama-4-scout-17b-16e-instruct",
+        model: "qwen/qwen3.8-27b",
         messages: groqMessages,
         temperature: 0.7,
         max_tokens: 800,
@@ -144,28 +125,6 @@ export async function POST(req: NextRequest) {
     if (!res.ok) {
       const err = await res.json();
       console.error("Groq error:", JSON.stringify(err));
-
-      // Fallback to text-only model if vision model fails
-      if (hasImage) {
-        const fallbackMessages = [
-          { role: "system", content: SYSTEM_PROMPT },
-          ...messages.map((msg: { role: string; content: string }) => ({
-            role: msg.role,
-            content: msg.content,
-          })),
-        ];
-        const fallbackRes = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
-          body: JSON.stringify({ model: "qwen/qwen3.8-27b", messages: fallbackMessages, temperature: 0.7, max_tokens: 800 }),
-        });
-        if (fallbackRes.ok) {
-          const fallbackData = await fallbackRes.json();
-          const fallbackText = fallbackData.choices?.[0]?.message?.content ?? "Sorry, I could not generate a response.";
-          return NextResponse.json({ reply: fallbackText });
-        }
-      }
-
       const errMsg = err?.error?.message ?? "Groq API error";
       return NextResponse.json({ reply: `API Error: ${errMsg}` });
     }
