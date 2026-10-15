@@ -132,9 +132,9 @@ export default function AIChatbot() {
 
           {/* Header — logo icon only */}
           <div className="flex items-center gap-2.5 px-3.5 py-2.5 bg-gradient-to-r from-[#FEA500] to-[#7a4e00] shrink-0">
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0 overflow-hidden">
+            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0 overflow-hidden p-0.5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/favicon.ico" alt="Stockifyy" width={24} height={24} className="object-contain" />
+              <img src="/images/stockifyy-logo.webp" alt="Stockifyy" width={28} height={28} className="object-contain" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="font-semibold text-white text-[13px] leading-tight">Stockifyy AI</p>
@@ -143,6 +143,15 @@ export default function AIChatbot() {
                 <p className="text-white/80 text-[10px]">Online · Always here</p>
               </span>
             </div>
+            <button
+              onClick={() => { setMessages([{ role: "assistant", content: WELCOME }]); setShowQuick(true); }}
+              title="Clear chat"
+              className="text-white/70 hover:text-white transition shrink-0"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <polyline points="3 6 5 6 21 6" /><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" /><path d="M10 11v6M14 11v6" /><path d="M9 6V4h6v2" />
+              </svg>
+            </button>
             <button onClick={() => setOpen(false)} className="text-white/70 hover:text-white transition shrink-0">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12" /></svg>
             </button>
@@ -151,7 +160,16 @@ export default function AIChatbot() {
           {/* Messages */}
           <div className="flex-1 overflow-y-auto px-3 py-3 space-y-2.5" style={{ minHeight: 0 }}>
             {messages.map((m, i) => (
-              <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+              <div key={i} className={`group flex items-end gap-1 ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                {m.role === "assistant" && (
+                  <button
+                    onClick={() => setMessages((prev) => prev.filter((_, idx) => idx !== i))}
+                    title="Delete message"
+                    className="opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mb-1 text-gray-300 hover:text-red-400"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12" /></svg>
+                  </button>
+                )}
                 <div className={`max-w-[88%] rounded-2xl px-3 py-2 text-[13px] leading-relaxed whitespace-pre-wrap break-words ${
                   m.role === "user"
                     ? "bg-gradient-to-br from-[#FEA500] to-[#7a4e00] text-white rounded-br-sm"
@@ -163,6 +181,15 @@ export default function AIChatbot() {
                   )}
                   {m.content}
                 </div>
+                {m.role === "user" && (
+                  <button
+                    onClick={() => setMessages((prev) => prev.filter((_, idx) => idx !== i))}
+                    title="Delete message"
+                    className="opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mb-1 text-gray-300 hover:text-red-400"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12" /></svg>
+                  </button>
+                )}
               </div>
             ))}
 

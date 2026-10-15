@@ -96,7 +96,7 @@ export default function Footer() {
               {services.slice(0, 3).map((service) => (
                 <li key={service.slug}>
                   <Link
-                    href={`/services/${service.slug}`}
+                    href={`/offerings/${service.slug}`}
                     className="block py-[7px] transition-colors hover:text-[#986300]"
                   >
                     {service.navLabel}
@@ -106,7 +106,7 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="/services"
+                  href="/offerings"
                   className="block py-[7px] font-medium text-[#986300] hover:text-[#FEA500] transition-colors"
                 >
                   All Offerings →
@@ -123,10 +123,10 @@ export default function Footer() {
 
             <ul className="font-sans text-sm text-gray-600">
               <li><Link href="/blog" className="block py-[7px] transition-colors hover:text-[#986300]">Insights</Link></li>
-              <li><Link href="/#about" className="block py-[7px] transition-colors hover:text-[#986300]">Our Story</Link></li>
+              <li><Link href="/#our-story" className="block py-[7px] transition-colors hover:text-[#986300]">Our Story</Link></li>
               <li><Link href="/team" className="block py-[7px] transition-colors hover:text-[#986300]">Our Team</Link></li>
               <li><Link href="/#faq" className="block py-[7px] transition-colors hover:text-[#986300]">FAQ</Link></li>
-              <li><Link href="/#contact" className="block py-[7px] transition-colors hover:text-[#986300]">Let&apos;s Talk</Link></li>
+              <li><Link href="/#lets-talk" className="block py-[7px] transition-colors hover:text-[#986300]">Let&apos;s Talk</Link></li>
             </ul>
           </div>
         </div>

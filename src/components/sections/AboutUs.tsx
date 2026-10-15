@@ -4,7 +4,7 @@ import teamoffice from "../../../public/images/officeteam.jpeg"
 export default function AboutUs() {
   return (
    <div className="bg-[#FFFDF7] dark:bg-[#0f0f0f]">
-     <section id="about" className="max-w-content  mx-auto px-6 md:px-10 py-24 md:py-24">
+     <section id="our-story" className="max-w-content  mx-auto px-6 md:px-10 py-24 md:py-24">
       <div className="grid md:grid-cols-2 gap-14 items-center">
         <div className="relative aspect-[4/3] w-full order-2 md:order-1">
           <Image

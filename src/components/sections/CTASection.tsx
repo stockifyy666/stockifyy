@@ -20,7 +20,7 @@ export default function CTASection() {
         </p>
 
         <Link
-          href="/#contact"
+          href="/#lets-talk"
           className="glow-btn font-display inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white transition-transform hover:-translate-y-0.5 hover:scale-[1.02] sm:gap-2.5 sm:px-8 sm:py-4"
           style={{ background: "linear-gradient(135deg, #FEA500 0%, #7C5200 100%)" }}
         >

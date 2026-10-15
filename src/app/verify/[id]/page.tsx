@@ -191,7 +191,7 @@ export default function VerifyPage({ params }: Props) {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
-                href="/#contact"
+                href="/#lets-talk"
                 className="rounded-full bg-gradient-to-r from-gold to-goldDeep text-white font-display text-sm font-medium px-8 py-3 hover:opacity-90 transition-opacity shadow-md"
               >
                 Contact Stockifyy

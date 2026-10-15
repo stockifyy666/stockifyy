@@ -47,9 +47,11 @@ html.dark footer {
 /* All divs — override cream/white backgrounds */
 html.dark div[class*="bg-[#FFF"],
 html.dark div[class*="bg-white"],
-html.dark div[class*="bg-cream"],
 html.dark div[class*="bg-paper"] {
   background-color: #141414 !important;
+}
+html.dark div[class*="bg-cream"] {
+  background-color: #0f0f0f !important;
 }
 
 /* Universal background override for known colors */

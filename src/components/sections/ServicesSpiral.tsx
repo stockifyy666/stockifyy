@@ -14,7 +14,7 @@ function GridCard({ service }: { service: (typeof services)[0] }) {
   const [hovered, setHovered] = useState(false);
   return (
     <Link
-      href={`/services/${service.slug}`}
+      href={`/offerings/${service.slug}`}
       aria-label={service.title}
       className="block h-[150px] w-full sm:h-[300px] md:h-[230px] lg:h-[220px]"
       onMouseEnter={() => setHovered(true)}
@@ -114,7 +114,7 @@ export default function ServicesSpiral() {
               </div>
               <ul className="sr-only">
                 {services.map((s) => (
-                  <li key={s.slug}><a href={`/services/${s.slug}`}>{s.title}</a></li>
+                  <li key={s.slug}><a href={`/offerings/${s.slug}`}>{s.title}</a></li>
                 ))}
               </ul>
             </>

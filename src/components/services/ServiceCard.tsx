@@ -6,7 +6,7 @@ export default function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon;
   return (
     <Link
-      href={`/services/${service.slug}`}
+      href={`/offerings/${service.slug}`}
       className="group h-full flex flex-col rounded-2xl border border-line dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden"
     >
       <div className="p-3 pb-0">

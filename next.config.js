@@ -4,6 +4,9 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: false,
+  experimental: {
+    optimizePackageImports: ["lucide-react", "framer-motion"],
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
@@ -29,6 +32,7 @@ const nextConfig = {
         headers: [
           { key: "X-DNS-Prefetch-Control", value: "on" },
           { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
         ],
       },
     ];

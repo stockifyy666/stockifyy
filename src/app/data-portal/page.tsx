@@ -45,7 +45,7 @@ export default function DataPortalPage() {
             Return Home
           </Link>
           <Link
-            href="/#contact"
+            href="/#lets-talk"
             className="inline-block rounded-full border border-gold/40 text-ink font-display text-sm font-medium px-7 py-3.5 hover:border-gold hover:text-goldDeep transition-colors"
           >
             Contact Us

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -48,7 +48,7 @@ const sections = [
   {
     title: "7. Your Rights",
     body: [
-      "You have the right to access, correct, or request deletion of any personal information we hold about you. To exercise these rights, please contact us at partners@stockifyy.com. We will respond to your request within a reasonable timeframe.",
+      "You have the right to access, correct, or request deletion of any personal information we hold about you. To exercise these rights, please contact us at info@stockifyy.com. We will respond to your request within a reasonable timeframe.",
     ],
   },
   {
@@ -60,7 +60,7 @@ const sections = [
   {
     title: "9. Contact Us",
     body: [
-      "If you have any questions or concerns about this Privacy Policy or how your data is handled, please contact us at partners@stockifyy.com.",
+      "If you have any questions or concerns about this Privacy Policy or how your data is handled, please contact us at info@stockifyy.com.",
     ],
   },
 ];
@@ -127,3 +127,4 @@ export default function PrivacyPolicyPage() {
     </div>
   );
 }
+

@@ -121,7 +121,7 @@ function RingCard({
       transition={{ type: "spring", stiffness: 300, damping: 26, mass: 0.6 }}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
-      onClick={() => router.push(`/services/${service.slug}`)}
+      onClick={() => router.push(`/offerings/${service.slug}`)}
       className="cursor-pointer"
     >
       <CardFace service={service} hovered={hovered} />

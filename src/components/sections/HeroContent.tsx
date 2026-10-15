@@ -77,7 +77,7 @@ export default function HeroContent() {
           {/* CTAs */}
           <div className="scroll-anim-4 mt-7 flex flex-wrap items-center gap-3 sm:mt-9 sm:gap-4">
             <Link
-              href="/#contact"
+              href="/#lets-talk"
               className="glow-btn font-display inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white transition-transform hover:-translate-y-0.5 hover:scale-[1.02] sm:gap-2.5 sm:px-8 sm:py-4"
               style={{ background: "linear-gradient(135deg, #FEA500 0%, #7C5200 100%)" }}
             >
@@ -85,7 +85,7 @@ export default function HeroContent() {
               <ArrowRight className="size-3.5 sm:size-4" />
             </Link>
             <Link
-              href="/services"
+              href="/offerings"
               className="font-display inline-flex items-center gap-2 rounded-full border border-gold/40 bg-transparent px-6 py-3 text-sm font-semibold text-ink transition-all hover:-translate-y-0.5 hover:scale-[1.02] hover:border-transparent hover:bg-gradient-to-r hover:from-gold hover:to-goldDeep hover:text-white sm:px-8 sm:py-4"
             >
               Explore Services

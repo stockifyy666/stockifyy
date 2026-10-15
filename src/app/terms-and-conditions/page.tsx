@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -74,7 +74,7 @@ const sections = [
   {
     title: "11. Contact",
     body: [
-      "If you have any questions regarding these Terms and Conditions, please contact us at partners@stockifyy.com.",
+      "If you have any questions regarding these Terms and Conditions, please contact us at info@stockifyy.com.",
     ],
   },
 ];
@@ -141,3 +141,4 @@ export default function TermsAndConditionsPage() {
     </div>
   );
 }
+

@@ -136,13 +136,13 @@ export default function TestimonialsCarousel() {
       </div>
 
       {/* Dot indicators */}
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center mt-3">
         {reviews.map((_, i) => (
           <button
             key={i}
             onClick={() => { setCurrent(i); setPaused(true); }}
             aria-label={`Go to review ${i + 1}`}
-            className="min-w-[44px] min-h-[44px] flex items-center justify-center"
+            className="p-1 flex items-center justify-center"
           >
             <span
               className={`block rounded-full transition-all duration-300 ${
@@ -156,7 +156,7 @@ export default function TestimonialsCarousel() {
       </div>
 
       {/* Read All Reviews button */}
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-5">
         <a
           href={GOOGLE_REVIEWS_URL}
           target="_blank"

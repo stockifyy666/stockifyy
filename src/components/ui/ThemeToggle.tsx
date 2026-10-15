@@ -11,8 +11,7 @@ export default function ThemeToggle() {
     const saved = localStorage.getItem("theme");
     let isDark = false;
     if (saved === "dark") isDark = true;
-    else if (saved === "light") isDark = false;
-    else isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    else isDark = false; // default always light
     setDark(isDark);
     document.documentElement.classList.toggle("dark", isDark);
   }, []);

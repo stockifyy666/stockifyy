@@ -51,7 +51,7 @@ export default function ContactSection() {
     "w-full min-h-[48px] rounded-full bg-transparent border border-ink/25 dark:border-[#4a4030] px-5 py-3 font-sans text-sm text-ink dark:text-[#e8e0d0] placeholder:text-ink/40 dark:placeholder:text-[#7a7060] focus:border-gold outline-none transition-colors";
 
   return (
-    <section id="contact" className="bg-cream dark:bg-[#0f0f0f] text-ink dark:text-[#e8e0d0] py-24 md:py-24">
+    <section id="lets-talk" className="bg-cream dark:bg-[#0f0f0f] text-ink dark:text-[#e8e0d0] py-24 md:py-24">
       <div className="max-w-content mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-16">
         <div>
           <p className="case-index text-ink dark:text-[#e8e0d0] font-display text-lg mb-4">Get in Touch</p>

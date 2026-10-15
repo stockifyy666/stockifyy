@@ -3,7 +3,7 @@ import ServiceCard from "@/components/services/ServiceCard";
 import { services } from "@/content/services";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Offerings",
   description:
     "Nine Shariah-compliant advisory services on the PSX: one-on-one advisory, corporate advisory, assets under advisement, portfolio designing, wealth planning, webinars, taxation services, PSX account opening and the Stockifyy investor community.",
 };

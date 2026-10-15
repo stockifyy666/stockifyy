@@ -90,7 +90,7 @@ export default function Header() {
   {services.map((s) => (
     <Link
       key={s.slug}
-      href={`/services/${s.slug}`}
+      href={`/offerings/${s.slug}`}
       className="block px-4 py-2.5 text-xs leading-snug text-gray-700 hover:bg-[#FFF7E9] hover:text-[#986300] transition"
     >
       {s.navLabel}
@@ -100,7 +100,7 @@ export default function Header() {
   <div className="border-t border-gray-100 my-1.5" />
 
   <Link
-    href="/services"
+    href="/offerings"
     className="block px-4 py-2.5 text-xs font-semibold text-[#986300] hover:bg-[#FFF7E9]"
   >
     View All Offerings →
@@ -192,13 +192,13 @@ export default function Header() {
                 {services.map((s) => (
                   <Link
                     key={s.slug}
-                    href={`/services/${s.slug}`}
+                    href={`/offerings/${s.slug}`}
                     className="py-2.5 text-sm leading-snug text-[#1A1A1A]/70 dark:text-[#a09880] hover:text-[#986300]"
                   >
                     {s.navLabel}
                   </Link>
                 ))}
-                <Link href="/services" className="py-2.5 text-sm text-brass">
+                <Link href="/offerings" className="py-2.5 text-sm text-brass">
                   View all offerings →
                 </Link>
               </div>

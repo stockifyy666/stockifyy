@@ -26,9 +26,9 @@ export default function ServiceDetailPage({ params }: Props) {
   const related = services.filter((s) => s.slug !== service.slug);
 
   return (
-    <div className="bg-cream dark:bg-[#0f0f0f]">
+    <div className="dark:bg-[#0f0f0f]">
       {/* Full-bleed hero — image as background, text overlaid */}
-      <div className="relative h-[90vh] sm:h-[50vh] md:h-[60vh] min-h-[280px] sm:min-h-[380px] md:min-h-[460px] max-h-[620px] w-full overflow-hidden">
+      <div className="relative h-[90vh] sm:h-[50vh] md:h-[60vh] min-h-[280px] sm:min-h-[380px] md:min-h-[460px] max-h-[620px] w-full overflow-hidden dark:bg-[#0f0f0f]">
         <Image
           src={service.image3}
           alt={service.title}
@@ -37,15 +37,19 @@ export default function ServiceDetailPage({ params }: Props) {
           className="object-cover"
           sizes="100vw"
         />
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/60" /> */}
+        {/* Darken hero image overall */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50" />
 
         <Link
-          href="/services"
+          href="/offerings"
           className="absolute left-6 top-6 md:left-10 md:top-8 inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-ink hover:border-gold hover:text-goldDeep transition-colors"
         >
           <ArrowLeft className="size-4" aria-hidden="true" />
-          All services
+          All offerings
         </Link>
+
+        {/* Dark mode — bottom fade, only bottom 25% to avoid covering text */}
+        <div className="hidden dark:block absolute bottom-0 left-0 right-0 h-[25%] bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none z-10" />
 
         <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center pt-12 sm:pt-0">
           {/* <span className="inline-flex items-start gap-1.5 rounded-2xl bg-white px-4 py-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wide text-ink max-w-[85vw] sm:max-w-md text-center leading-snug">
@@ -63,7 +67,7 @@ export default function ServiceDetailPage({ params }: Props) {
         </div>
       </div>
 
-      <article className="max-w-content mx-auto px-6 md:px-10 py-10 md:py-14 dark:text-[#e8e0d0]">
+      <article className="max-w-content mx-auto px-6 md:px-10 py-10 md:py-14 dark:text-[#e8e0d0] dark:bg-[#0f0f0f]">
         <div className="grid md:grid-cols-3 gap-8 md:gap-10 items-start">
 
           {/* Main content */}
@@ -154,7 +158,7 @@ export default function ServiceDetailPage({ params }: Props) {
               ))}
             </ul>
             <Link
-              href="/#contact"
+              href="/#lets-talk"
               className="block text-center rounded-full bg-gradient-to-r from-gold to-goldDeep text-white font-display text-sm font-medium px-5 py-3 mt-8 shadow-lg hover:opacity-90 transition-opacity"
             >
               Discuss this service
@@ -196,7 +200,7 @@ export default function ServiceDetailPage({ params }: Props) {
                     ))}
                   </ul>
                   <Link
-                    href="/#contact"
+                    href="/#lets-talk"
                     className={`mt-6 block text-center rounded-full text-sm font-display font-medium px-5 py-3 transition-opacity hover:opacity-90 ${
                       i === 1
                         ? "bg-gradient-to-r from-gold to-goldDeep text-white shadow-lg"
