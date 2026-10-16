@@ -13,8 +13,10 @@ const ContactSection = dynamic(() => import("@/components/sections/ContactSectio
 export default function Home() {
   return (
     <>
-      {/* Hero slider + badges — normal flow (not sticky) */}
-      <Hero />
+      {/* Hero slider + badges — desktop only (hidden on mobile/tablet to match live site) */}
+      <div className="hidden lg:block">
+        <Hero />
+      </div>
 
       {/* Grow Your Wealth — sticky so About Us slides over it */}
       <div className="sticky top-0 z-0">

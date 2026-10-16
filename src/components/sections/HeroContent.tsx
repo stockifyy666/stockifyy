@@ -50,7 +50,7 @@ export default function HeroContent() {
               background: "rgba(254,165,0,0.08)",
             }}
           >
-            <BadgeCheck className="size-3.5" style={{ color: "#FEA500" }} />
+            <BadgeCheck className="size-3 sm:size-3.5" style={{ color: "#FEA500" }} />
             <span
               className="text-[10px] font-bold uppercase tracking-[0.15em] sm:text-[11px] sm:tracking-[0.2em]"
               style={{ color: "#7C5200" }}
@@ -78,7 +78,7 @@ export default function HeroContent() {
           </p>
 
           {/* CTAs */}
-          <div className="scroll-anim-4 mt-4 flex flex-wrap items-center gap-3 sm:mt-9 sm:gap-4">
+          <div className="scroll-anim-4 mt-7 flex flex-wrap items-center gap-3 sm:mt-9 sm:gap-4">
             <Link
               href="/#lets-talk"
               className="glow-btn font-display inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white"
@@ -124,7 +124,7 @@ export default function HeroContent() {
             src={websiteImage}
             alt="Stockifyy Advisory Team — Sohail Farooq & Mufeez Azeez"
             width={900}
-            height={599}
+            height={800}
             quality={75}
             className="w-full h-auto object-contain object-top"
             sizes="(max-width: 640px) 100vw, (max-width: 1080px) 55vw, 50vw"
