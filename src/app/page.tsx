@@ -17,7 +17,7 @@ export default function Home() {
       <Hero />
 
       {/* Grow Your Wealth — sticky so About Us slides over it */}
-      <div className="sticky top-20 z-0">
+      <div className="sticky top-0 z-0">
         <HeroContent />
       </div>
 
