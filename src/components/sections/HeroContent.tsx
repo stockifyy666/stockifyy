@@ -40,7 +40,7 @@ export default function HeroContent() {
       <div className="flex flex-col lg:flex-row lg:items-center lg:min-h-[640px] lg:py-8">
 
         {/* ════════ LEFT — copy ════════ */}
-        <div className="flex w-full flex-col items-start pb-8 pt-12 sm:pb-10 sm:pt-14 lg:w-1/2 lg:py-1 lg:pr-8">
+        <div className="flex w-full flex-col items-start pb-8 pt-12 max-[360px]:pt-3 max-[360px]:pb-2 sm:pb-10 sm:pt-14 lg:w-1/2 lg:py-1 lg:pr-8">
 
           {/* kicker */}
           <div
@@ -60,25 +60,25 @@ export default function HeroContent() {
           </div>
 
           {/* headline */}
-          <h1 className="font-display scroll-anim-2 mt-5 text-[2rem] font-black leading-[1.06] tracking-tight text-[#111111] sm:text-4xl md:text-5xl lg:text-[3.3rem] xl:text-[3.9rem]">
+          <h1 className="font-display scroll-anim-2 mt-5 max-[360px]:mt-2 text-[2rem] font-black leading-[1.06] tracking-tight text-[#111111] sm:text-4xl md:text-5xl lg:text-[3.3rem] xl:text-[3.9rem]">
             Grow Your Wealth
             <br />
             <span className="shimmer-text">The Right Way.</span>
           </h1>
 
           {/* sub-headline */}
-          <p className="scroll-anim-2 mt-2.5 text-base font-medium sm:text-lg md:text-xl">
+          <p className="scroll-anim-2 mt-2.5 max-[360px]:mt-1 text-base font-medium sm:text-lg md:text-xl">
             Pakistan&apos;s most trusted stock market advisory.
           </p>
 
           {/* body */}
-          <p className="scroll-anim-3 mt-1 max-w-lg text-sm leading-relaxed text-gray-500 sm:text-base sm:mt-4">
+          <p className="scroll-anim-3 mt-1 max-[360px]:hidden max-w-lg text-sm leading-relaxed text-gray-500 sm:text-base sm:mt-4">
             Research driven financial advisory for Pakistan Stock Exchange investors,
             built around your goals, risk profile and values.
           </p>
 
           {/* CTAs */}
-          <div className="scroll-anim-4 mt-7 flex flex-wrap items-center gap-3 sm:mt-9 sm:gap-4">
+          <div className="scroll-anim-4 mt-7 max-[360px]:mt-3 flex flex-wrap items-center gap-3 sm:mt-9 sm:gap-4">
             <Link
               href="/#lets-talk"
               className="glow-btn font-display inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white"
@@ -89,7 +89,7 @@ export default function HeroContent() {
             </Link>
             <Link
               href="/services"
-              className="font-display inline-flex items-center gap-2 rounded-full border border-gold/40 bg-transparent px-6 py-3 text-sm font-semibold text-ink"
+              className="font-display max-[360px]:hidden inline-flex items-center gap-2 rounded-full border border-gold/40 bg-transparent px-6 py-3 text-sm font-semibold text-ink"
             >
               Explore Services
             </Link>
@@ -97,7 +97,7 @@ export default function HeroContent() {
 
           {/* stats */}
           <div
-            className="scroll-anim-5 mt-8 grid grid-cols-3 gap-3 border-t pt-6 sm:pt-8 sm:mt-2 sm:gap-8"
+            className="scroll-anim-5 mt-8 max-[360px]:mt-2 grid grid-cols-3 gap-3 border-t pt-6 max-[360px]:pt-2 sm:pt-8 sm:mt-2 sm:gap-8"
             style={{ borderColor: "rgba(254,165,0,0.2)" }}
           >
             {[
