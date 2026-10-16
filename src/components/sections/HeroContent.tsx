@@ -38,7 +38,7 @@ export default function HeroContent() {
       ref={contentRef}
       className={`relative z-10 mx-auto max-w-content px-6 md:px-10${contentVisible ? " content-visible" : ""}`}
     >
-      <div className="flex flex-col-reverse lg:flex-row lg:items-center lg:min-h-[640px] lg:py-8">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:min-h-[640px] lg:py-8">
 
         {/* ════════ LEFT — copy ════════ */}
         <div className="flex w-full flex-col items-start pb-4 pt-3 sm:pb-10 sm:pt-8 lg:w-1/2 lg:py-1 lg:pr-8">
