@@ -3,7 +3,7 @@ import TestimonialsCarousel from "./TestimonialsCarousel";
 
 export default function Testimonials() {
   return (
-    <div className="bg-[#FFFDF7] dark:bg-[#0f0f0f]">
+    <div className="bg-[#FFFDF7]">
       <section className="py-24 md:py-24 overflow-hidden">
         <div className="max-w-content mx-auto px-6 md:px-10 mb-14">
           <SectionHeading

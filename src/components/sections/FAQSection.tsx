@@ -12,8 +12,8 @@ export default function FAQSection() {
         /> */}
 
         <div>
-          <p className="case-index text-ink dark:text-[#e8e0d0] font-display text-lg mb-4">FAQ</p>
-          <h2 className="font-display text-3xl md:text-5xl text-ink dark:text-[#e8e0d0] leading-tight mb-6">
+          <p className="case-index text-ink font-display text-lg mb-4">FAQ</p>
+          <h2 className="font-display text-3xl md:text-5xl text-ink leading-tight mb-6">
             Common questions before the <span className="text-gradient-gold">first call.</span>
           </h2>
         </div>

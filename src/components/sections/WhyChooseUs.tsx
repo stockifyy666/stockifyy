@@ -33,11 +33,11 @@ export default function WhyChooseUs() {
   const [playing, setPlaying] = useState(false);
 
   return (
-    <div className="bg-[#FFF7E9]/95 dark:bg-[#0f0f0f]">
+    <div className="bg-[#FFF7E9]/95">
       <section className="max-w-content mx-auto px-6 md:px-10 py-24 md:py-24">
         <div className="">
-          <p className="case-index font-display text-ink dark:text-[#e8e0d0] text-lg mb-4">Why Choose Us</p>
-          <h2 className="font-display text-3xl md:text-5xl text-ink dark:text-[#e8e0d0] leading-tight mb-6">
+          <p className="case-index font-display text-ink text-lg mb-4">Why Choose Us</p>
+          <h2 className="font-display text-3xl md:text-5xl text-ink leading-tight mb-6">
             Why investors <br /> choose <span className="text-gradient-gold">Stockifyy</span>
           </h2>
         </div>
@@ -85,7 +85,7 @@ export default function WhyChooseUs() {
                   <r.icon className="size-5" aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl text-ink dark:text-[#e8e0d0] mb-1">{r.title}</h3>
+                  <h3 className="font-display text-xl text-ink mb-1">{r.title}</h3>
                   <p className="font-sans text-sm text-slate leading-relaxed">{r.body}</p>
                 </div>
               </div>

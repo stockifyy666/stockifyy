@@ -28,15 +28,15 @@ const ITEMS = [...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS];
 export function Ticker() {
   return (
     <div
-      className="relative overflow-hidden border-b border-t bg-[#fffdf7] dark:bg-[#111111]"
+      className="relative overflow-hidden border-b border-t bg-[#fffdf7]"
       style={{ borderColor: "rgba(254,165,0,0.2)" }}
       role="marquee"
       aria-label="Live Pakistan Stock Exchange ticker"
     >
       {/* left fade */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#fffdf7] dark:from-[#111111] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#fffdf7] to-transparent" />
       {/* right fade */}
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#fffdf7] dark:from-[#111111] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#fffdf7] to-transparent" />
 
       {/* scrolling strip */}
       <div

@@ -49,7 +49,7 @@ export default function TestimonialsCarousel() {
         <button
           onClick={() => { prev(); setPaused(true); }}
           aria-label="Previous review"
-          className="flex-shrink-0 w-10 h-10 rounded-full border border-creamLine dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] shadow-sm flex items-center justify-center text-ink dark:text-[#e8e0d0] hover:border-gold hover:text-gold transition-colors"
+          className="flex-shrink-0 w-10 h-10 rounded-full border border-creamLine bg-white shadow-sm flex items-center justify-center text-ink hover:border-gold hover:text-gold transition-colors"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -57,7 +57,7 @@ export default function TestimonialsCarousel() {
         {/* Cards */}
         <div className="flex gap-5 items-center">
           {/* Left card */}
-          <div className="w-[260px] flex-shrink-0 opacity-50 rounded-2xl overflow-hidden shadow-sm border border-creamLine dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] transition-all duration-500">
+          <div className="w-[260px] flex-shrink-0 opacity-50 rounded-2xl overflow-hidden shadow-sm border border-creamLine bg-white transition-all duration-500">
             <Image
               src={reviews[prevIdx]}
               alt={`Google review ${prevIdx + 1}`}
@@ -69,7 +69,7 @@ export default function TestimonialsCarousel() {
           </div>
 
           {/* Center card (active) */}
-          <div className="w-[320px] flex-shrink-0 rounded-2xl overflow-hidden shadow-xl border-2 border-gold bg-white dark:bg-[#1a1a1a] transition-all duration-500">
+          <div className="w-[320px] flex-shrink-0 rounded-2xl overflow-hidden shadow-xl border-2 border-gold bg-white transition-all duration-500">
             <Image
               src={reviews[current]}
               alt={`Google review ${current + 1}`}
@@ -82,7 +82,7 @@ export default function TestimonialsCarousel() {
           </div>
 
           {/* Right card */}
-          <div className="w-[260px] flex-shrink-0 opacity-50 rounded-2xl overflow-hidden shadow-sm border border-creamLine dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] transition-all duration-500">
+          <div className="w-[260px] flex-shrink-0 opacity-50 rounded-2xl overflow-hidden shadow-sm border border-creamLine bg-white transition-all duration-500">
             <Image
               src={reviews[nextIdx]}
               alt={`Google review ${nextIdx + 1}`}
@@ -98,7 +98,7 @@ export default function TestimonialsCarousel() {
         <button
           onClick={() => { next(); setPaused(true); }}
           aria-label="Next review"
-          className="flex-shrink-0 w-10 h-10 rounded-full border border-creamLine dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] shadow-sm flex items-center justify-center text-ink dark:text-[#e8e0d0] hover:border-gold hover:text-gold transition-colors"
+          className="flex-shrink-0 w-10 h-10 rounded-full border border-creamLine bg-white shadow-sm flex items-center justify-center text-ink hover:border-gold hover:text-gold transition-colors"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
@@ -109,12 +109,12 @@ export default function TestimonialsCarousel() {
         <button
           onClick={() => { prev(); setPaused(true); }}
           aria-label="Previous review"
-          className="flex-shrink-0 w-9 h-9 rounded-full border border-creamLine dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] shadow-sm flex items-center justify-center text-ink dark:text-[#e8e0d0] hover:border-gold hover:text-gold transition-colors"
+          className="flex-shrink-0 w-9 h-9 rounded-full border border-creamLine bg-white shadow-sm flex items-center justify-center text-ink hover:border-gold hover:text-gold transition-colors"
         >
           <ChevronLeft className="w-4 h-4" />
         </button>
 
-        <div className="flex-1 rounded-2xl overflow-hidden shadow-lg border-2 border-gold bg-white dark:bg-[#1a1a1a]">
+        <div className="flex-1 rounded-2xl overflow-hidden shadow-lg border-2 border-gold bg-white">
           <Image
             src={reviews[current]}
             alt={`Google review ${current + 1}`}
@@ -129,7 +129,7 @@ export default function TestimonialsCarousel() {
         <button
           onClick={() => { next(); setPaused(true); }}
           aria-label="Next review"
-          className="flex-shrink-0 w-9 h-9 rounded-full border border-creamLine dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] shadow-sm flex items-center justify-center text-ink dark:text-[#e8e0d0] hover:border-gold hover:text-gold transition-colors"
+          className="flex-shrink-0 w-9 h-9 rounded-full border border-creamLine bg-white shadow-sm flex items-center justify-center text-ink hover:border-gold hover:text-gold transition-colors"
         >
           <ChevronRight className="w-4 h-4" />
         </button>
