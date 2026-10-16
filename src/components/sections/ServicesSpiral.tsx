@@ -1,22 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/content/services";
+import RingScene from "@/components/sections/RingScene";
 
-// framer-motion lives only in RingScene → separate lazy chunk, never parsed on mobile
-const RingScene = dynamic(() => import("./RingScene"), { ssr: false });
+type ScreenSize = "mobile" | "tablet" | "laptop" | "desktop";
 
-// ── Grid card (mobile / tablet / laptop) ─────────────────────────────────────
+function getScreenSize(): ScreenSize {
+  const w = window.innerWidth;
+  if (w < 640) return "mobile";
+  if (w < 1024) return "tablet";
+  if (w < 1280) return "laptop";
+  return "desktop";
+}
+
 function GridCard({ service }: { service: (typeof services)[0] }) {
   const [hovered, setHovered] = useState(false);
   return (
     <Link
-      href={`/offerings/${service.slug}`}
+      href={`/services/${service.slug}`}
       aria-label={service.title}
-      className="block h-[150px] w-full sm:h-[300px] md:h-[230px] lg:h-[220px]"
+      className="block h-[150px] w-full sm:h-[300px] md:h-[230px]"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -37,7 +43,7 @@ function GridCard({ service }: { service: (typeof services)[0] }) {
           fill
           loading="lazy"
           className="object-cover"
-          sizes="(max-width: 400px) 180px, (max-width: 768px) 200px, 220px"
+          sizes="(max-width: 640px) 180px, (max-width: 1024px) 260px, 300px"
           style={{
             transform: hovered ? "scale(1.1)" : "scale(1)",
             transition: "transform 0.5s ease",
@@ -57,21 +63,14 @@ function GridCard({ service }: { service: (typeof services)[0] }) {
   );
 }
 
-// ── Main export ────────────────────────────────────────────────────────────────
 export default function ServicesSpiral() {
-  const [screenSize, setScreenSize] = useState<"mobile" | "tablet" | "Laptop" | "desktop">("mobile");
+  const [screenSize, setScreenSize] = useState<ScreenSize>("desktop");
 
   useEffect(() => {
-    function check() {
-      const w = window.innerWidth;
-      if (w < 400) setScreenSize("mobile");
-      else if (w < 768) setScreenSize("tablet");
-      else if (w < 1024) setScreenSize("Laptop");
-      else setScreenSize("desktop");
-    }
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
+    setScreenSize(getScreenSize());
+    const handler = () => setScreenSize(getScreenSize());
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
   }, []);
 
   return (
@@ -80,7 +79,8 @@ export default function ServicesSpiral() {
         <div className="text-center max-w-2xl mx-auto">
           <p className="case-index text-ink font-display text-lg mb-4">What We Offer</p>
           <h2 className="font-display text-3xl md:text-5xl text-ink leading-tight">
-            Financial Guidance for Every  <span className="text-gradient-gold">  Stage of Your Journey</span>
+            Financial Guidance for Every&nbsp;
+            <span className="text-gradient-gold">Stage of Your Journey</span>
           </h2>
           <p className="font-sans text-slate mt-5 leading-relaxed">
             From opening your first PSX account to building and managing long-term wealth, our services are designed around your goals,
@@ -88,38 +88,21 @@ export default function ServicesSpiral() {
           </p>
         </div>
 
-        <div className="mt-6">
-          {screenSize === "mobile" && (
-            <div className="grid grid-cols-2 gap-3">
-              {services.map((s) => <GridCard key={s.slug} service={s} />)}
-            </div>
-          )}
+        {/* Desktop: 3D rotating ring */}
+        {screenSize === "desktop" && (
+          <div className="relative mt-6" style={{ cursor: "grab" }}>
+            <RingScene radius={340} height={420} />
+          </div>
+        )}
 
-          {screenSize === "tablet" && (
-            <div className="grid grid-cols-2 gap-10">
-              {services.map((s) => <GridCard key={s.slug} service={s} />)}
-            </div>
-          )}
-
-          {screenSize === "Laptop" && (
-            <div className="grid grid-cols-3 gap-3">
-              {services.map((s) => <GridCard key={s.slug} service={s} />)}
-            </div>
-          )}
-
-          {screenSize === "desktop" && (
-            <>
-              <div aria-hidden="true">
-                <RingScene radius={340} height={420} />
-              </div>
-              <ul className="sr-only">
-                {services.map((s) => (
-                  <li key={s.slug}><a href={`/offerings/${s.slug}`}>{s.title}</a></li>
-                ))}
-              </ul>
-            </>
-          )}
-        </div>
+        {/* Mobile / Tablet / Laptop: simple grid cards */}
+        {screenSize !== "desktop" && (
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+            {services.map((s) => (
+              <GridCard key={s.slug} service={s} />
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );

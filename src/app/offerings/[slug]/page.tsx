@@ -26,9 +26,9 @@ export default function ServiceDetailPage({ params }: Props) {
   const related = services.filter((s) => s.slug !== service.slug);
 
   return (
-    <div className="bg-[#FFF7E9] dark:bg-[#0f0f0f]">
-      {/* Full-bleed hero — image as background, text overlaid */}
-      <div className="relative h-[90vh] sm:h-[50vh] md:h-[60vh] min-h-[280px] sm:min-h-[380px] md:min-h-[460px] max-h-[620px] w-full overflow-hidden dark:bg-[#0f0f0f]">
+    <div className="bg-cream">
+      {/* Full-bleed hero */}
+      <div className="relative h-[90vh] sm:h-[50vh] md:h-[60vh] min-h-[280px] sm:min-h-[380px] md:min-h-[460px] max-h-[620px] w-full overflow-hidden">
         <Image
           src={service.image3}
           alt={service.title}
@@ -37,39 +37,26 @@ export default function ServiceDetailPage({ params }: Props) {
           className="object-cover"
           sizes="100vw"
         />
-        {/* Darken hero image overall */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50" />
 
         <Link
           href="/offerings"
           className="absolute left-6 top-6 md:left-10 md:top-8 inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-ink hover:border-gold hover:text-goldDeep transition-colors"
         >
           <ArrowLeft className="size-4" aria-hidden="true" />
-          All offerings
+          All services
         </Link>
 
-        {/* Light mode — bottom fade to white, hides gray wave */}
-        <div className="dark:hidden absolute bottom-0 left-0 right-0 h-[35%] bg-gradient-to-t from-[#FFF7E9] via-[#FFF7E9]/60 to-transparent pointer-events-none z-10" />
-        {/* Dark mode — bottom fade to dark */}
-        <div className="hidden dark:block absolute bottom-0 left-0 right-0 h-[35%] bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/80 to-transparent pointer-events-none z-10" />
-
         <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center pt-12 sm:pt-0">
-          {/* <span className="inline-flex items-start gap-1.5 rounded-2xl bg-white px-4 py-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wide text-ink max-w-[85vw] sm:max-w-md text-center leading-snug">
-            <Icon className="size-3 sm:size-3.5 shrink-0 mt-0.5" aria-hidden="true" />
-            <span>{service.tagline}</span>
-          </span> */}
-
           <h1 className="font-display text-2xl sm:text-4xl md:text-5xl text-white mt-4 max-w-3xl leading-tight px-2 sm:px-0">
             {service.title}
           </h1>
-
           <p className="font-sans text-white/80 border-y border-gold/50 py-3 mt-4 max-w-xl leading-relaxed text-sm sm:text-base px-2 sm:px-0">
             {service.summary}
           </p>
         </div>
       </div>
 
-      <article className="max-w-content mx-auto px-6 md:px-10 py-10 md:py-14 dark:text-[#e8e0d0] bg-[#FFF7E9] dark:bg-[#0f0f0f]">
+      <article className="max-w-content mx-auto px-6 md:px-10 py-10 md:py-14">
         <div className="grid md:grid-cols-3 gap-8 md:gap-10 items-start">
 
           {/* Main content */}
@@ -90,7 +77,6 @@ export default function ServiceDetailPage({ params }: Props) {
               />
             </div>
 
-            {/* Investment Horizons (Wealth Planning) */}
             {service.horizons && service.horizons.length > 0 && (
               <div className="mt-10">
                 <div className="flex items-center gap-2 mb-5">
@@ -99,10 +85,7 @@ export default function ServiceDetailPage({ params }: Props) {
                 </div>
                 <div className="grid sm:grid-cols-3 gap-4">
                   {service.horizons.map((h) => (
-                    <div
-                      key={h.label}
-                      className="rounded-2xl border border-gold/30 bg-white dark:bg-[#1a1a1a] p-5"
-                    >
+                    <div key={h.label} className="rounded-2xl border border-gold/30 bg-white p-5">
                       <span className="inline-block rounded-full bg-gold/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-goldDeep mb-3">
                         {h.label}
                       </span>
@@ -114,9 +97,8 @@ export default function ServiceDetailPage({ params }: Props) {
               </div>
             )}
 
-            {/* Who Is It For */}
             {service.whoIsItFor && service.whoIsItFor.length > 0 && (
-              <div className="mt-8 rounded-2xl border border-line dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] p-6">
+              <div className="mt-8 rounded-2xl border border-line bg-white p-6">
                 <div className="flex items-center gap-2 mb-4">
                   <Users className="size-4 text-gold" />
                   <h2 className="font-display text-base font-bold text-ink">Who Is It For?</h2>
@@ -132,7 +114,6 @@ export default function ServiceDetailPage({ params }: Props) {
               </div>
             )}
 
-            {/* Disclaimer */}
             {service.disclaimer && (
               <div className="mt-6 flex gap-3 rounded-xl border border-gold/20 bg-gold/5 p-4">
                 <Info className="size-4 text-gold shrink-0 mt-0.5" />
@@ -142,7 +123,7 @@ export default function ServiceDetailPage({ params }: Props) {
           </div>
 
           {/* Sidebar */}
-          <aside className="rounded-2xl border border-line dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a] p-7 h-fit">
+          <aside className="rounded-2xl border border-line bg-white p-7 h-fit">
             <p className="font-sans text-xs uppercase tracking-widest text-gold mb-5">
               What this covers
             </p>
@@ -152,9 +133,7 @@ export default function ServiceDetailPage({ params }: Props) {
                   <Check className="size-4 text-gold shrink-0 mt-0.5" aria-hidden="true" />
                   <div>
                     <p className="font-display text-sm font-semibold text-ink">{f.title}</p>
-                    <p className="font-sans text-xs text-slate mt-1 leading-relaxed">
-                      {f.description}
-                    </p>
+                    <p className="font-sans text-xs text-slate mt-1 leading-relaxed">{f.description}</p>
                   </div>
                 </li>
               ))}
@@ -168,7 +147,6 @@ export default function ServiceDetailPage({ params }: Props) {
           </aside>
         </div>
 
-        {/* Membership Plans (Stockifyy Membership) */}
         {service.plans && service.plans.length > 0 && (
           <div className="mt-10">
             <p className="case-index text-gold text-sm mb-2">Membership Tiers</p>
@@ -181,8 +159,8 @@ export default function ServiceDetailPage({ params }: Props) {
                   key={plan.name}
                   className={`rounded-2xl border p-7 flex flex-col ${
                     i === 1
-                      ? "border-gold bg-gradient-to-b from-gold/10 to-transparent dark:from-gold/5"
-                      : "border-line dark:border-[#2a2a2a] bg-white dark:bg-[#1a1a1a]"
+                      ? "border-gold bg-gradient-to-b from-gold/10 to-transparent"
+                      : "border-line bg-white"
                   }`}
                 >
                   {i === 1 && (
@@ -217,7 +195,6 @@ export default function ServiceDetailPage({ params }: Props) {
           </div>
         )}
 
-        {/* Related services */}
         <div className="mt-14 pt-8 border-t border-line">
           <p className="case-index text-gold text-sm mb-6">Explore other services</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">

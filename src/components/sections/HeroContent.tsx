@@ -29,7 +29,7 @@ export default function HeroContent() {
   }, []);
 
   return (
-    <div className="bg-[#FFFDF7] dark:bg-[#0f0f0f]">
+    <div className="bg-[#FFFDF7]">
     <div
       ref={contentRef}
       className={`relative z-10 mx-auto max-w-content px-6 md:px-10${contentVisible ? " content-visible" : ""}`}
@@ -85,7 +85,7 @@ export default function HeroContent() {
               <ArrowRight className="size-3.5 sm:size-4" />
             </Link>
             <Link
-              href="/offerings"
+              href="/services"
               className="font-display inline-flex items-center gap-2 rounded-full border border-gold/40 bg-transparent px-6 py-3 text-sm font-semibold text-ink transition-all hover:-translate-y-0.5 hover:scale-[1.02] hover:border-transparent hover:bg-gradient-to-r hover:from-gold hover:to-goldDeep hover:text-white sm:px-8 sm:py-4"
             >
               Explore Services

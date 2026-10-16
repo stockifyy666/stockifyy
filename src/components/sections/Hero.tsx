@@ -47,7 +47,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#FFFDF7] dark:bg-[#0f0f0f]">
+    <section className="relative overflow-hidden bg-[#FFFDF7]">
       {/* dot pattern */}
       <div
         aria-hidden="true"
@@ -154,7 +154,7 @@ export default function Hero() {
               <span className="text-center text-[9px] sm:text-[11px] font-semibold text-ink">Verify Certificate</span>
             </div>
 
-            <Link href="/offerings/stockifyy-membership" className="badge-pop-2 group flex flex-col items-center gap-1.5">
+            <Link href="/services/stockifyy-membership" className="badge-pop-2 group flex flex-col items-center gap-1.5">
               <div className="flex h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)] transition-transform group-hover:scale-110">
                 <Crown className="size-5 sm:size-7 md:size-8 text-white" />
               </div>
@@ -168,7 +168,7 @@ export default function Hero() {
               <span className="text-center text-[9px] sm:text-[11px] font-semibold text-ink">Meet Our Team</span>
             </Link>
 
-            <Link href="/offerings/one-on-one-advisory" className="badge-pop-4 group flex flex-col items-center gap-1.5">
+            <Link href="/services/one-on-one-advisory" className="badge-pop-4 group flex flex-col items-center gap-1.5">
               <div className="flex h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)] transition-transform group-hover:scale-110">
                 <PhoneCall className="size-5 sm:size-7 md:size-8 text-white" />
               </div>

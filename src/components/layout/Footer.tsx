@@ -49,7 +49,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#FFF7E9] dark:bg-[#0a0a0a] border-t border-[#E8DDC8] dark:border-[#2a2a2a]">
+    <footer className="bg-[#FFF7E9] border-t border-[#E8DDC8]">
       <div className="max-w-content mx-auto px-6 md:px-10 py-16">
         <div className="grid md:grid-cols-4 gap-12">
           {/* Company */}
@@ -96,7 +96,7 @@ export default function Footer() {
               {services.slice(0, 3).map((service) => (
                 <li key={service.slug}>
                   <Link
-                    href={`/offerings/${service.slug}`}
+                    href={`/services/${service.slug}`}
                     className="block py-[7px] transition-colors hover:text-[#986300]"
                   >
                     {service.navLabel}
@@ -106,7 +106,7 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="/offerings"
+                  href="/services"
                   className="block py-[7px] font-medium text-[#986300] hover:text-[#FEA500] transition-colors"
                 >
                   All Offerings →

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { useRouter } from "next/navigation";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 import { services } from "@/content/services";
@@ -13,53 +12,8 @@ function degToRad(d: number) {
   return (d * Math.PI) / 180;
 }
 
-function CardFace({ service, hovered }: { service: (typeof services)[0]; hovered: boolean }) {
-  return (
-    <div
-      className="relative flex h-full w-full flex-col items-center justify-end gap-2 overflow-hidden rounded-2xl p-3"
-      style={{
-        border: hovered ? "1px solid rgba(254,165,0,0.75)" : "1px solid rgba(254,165,0,0.35)",
-        boxShadow: hovered
-          ? "0 28px 64px rgba(30,24,8,0.28),0 0 0 4px rgba(254,165,0,0.18),inset 0 1px 0 rgba(255,255,255,0.9)"
-          : "0 8px 32px rgba(30,24,8,0.14),0 2px 8px rgba(254,165,0,0.12),inset 0 1px 0 rgba(255,255,255,0.85)",
-        transition: "box-shadow 0.4s ease, border-color 0.4s ease",
-      }}
-    >
-      <Image
-        src={service.image1}
-        alt=""
-        fill
-        loading="lazy"
-        className="object-cover"
-        sizes="(max-width: 400px) 180px, (max-width: 768px) 200px, 220px"
-        style={{
-          transform: hovered ? "scale(1.1)" : "scale(1)",
-          transition: "transform 0.5s ease",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background: hovered
-            ? "linear-gradient(to top, rgba(11,31,46,0.75) 0%, rgba(11,31,46,0.2) 50%, rgba(11,31,46,0) 100%)"
-            : "linear-gradient(to top, rgba(11,31,46,0.60) 0%, rgba(11,31,46,0.15) 55%, rgba(11,31,46,0) 100%)",
-          transition: "background 0.4s ease",
-        }}
-      />
-      <p className="relative z-10 px-2 text-center font-display text-[11px] font-semibold leading-tight text-white" />
-      {hovered && (
-        <motion.span
-          initial={{ opacity: 0, y: 4 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.25 }}
-          className="relative z-10 rounded-full bg-gold px-3 py-0.5 font-display text-[9px] font-bold uppercase tracking-widest text-ink"
-        >
-          Explore →
-        </motion.span>
-      )}
-    </div>
-  );
-}
+// Shared drag state — set by container, read by cards
+const dragState = { isDragging: false };
 
 function RingCard({
   service,
@@ -76,7 +30,6 @@ function RingCard({
   radius: number;
   onHoverChange: (hovering: boolean) => void;
 }) {
-  const router = useRouter();
   const [hovered, setHovered] = useState(false);
 
   const baseAngle = (index / total) * 360;
@@ -101,7 +54,11 @@ function RingCard({
   }, [onHoverChange]);
 
   return (
-    <motion.div
+    <motion.a
+      href={`/services/${service.slug}`}
+      onClick={(e) => {
+        if (dragState.isDragging) e.preventDefault();
+      }}
       style={{
         position: "absolute",
         width: W,
@@ -110,21 +67,62 @@ function RingCard({
         marginTop: -H / 2,
         translateX: x,
         translateZ: z,
-        rotateY: 0,
-        rotateX: 0,
         opacity,
         zIndex: hovered ? 99 : Math.round(depthT * 20),
         transformStyle: "preserve-3d",
         willChange: "transform",
+        textDecoration: "none",
+        display: "block",
       }}
       animate={{ scale: hovered ? depthScale * 1.15 : depthScale }}
       transition={{ type: "spring", stiffness: 300, damping: 26, mass: 0.6 }}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
-      onClick={() => router.push(`/offerings/${service.slug}`)}
-      className="cursor-pointer"
     >
-      <CardFace service={service} hovered={hovered} />
+      {/* Card face */}
+      <div
+        className="relative flex h-full w-full flex-col items-center justify-end gap-2 overflow-hidden rounded-2xl p-3"
+        style={{
+          border: hovered ? "1px solid rgba(254,165,0,0.75)" : "1px solid rgba(254,165,0,0.35)",
+          boxShadow: hovered
+            ? "0 28px 64px rgba(30,24,8,0.28),0 0 0 4px rgba(254,165,0,0.18),inset 0 1px 0 rgba(255,255,255,0.9)"
+            : "0 8px 32px rgba(30,24,8,0.14),0 2px 8px rgba(254,165,0,0.12),inset 0 1px 0 rgba(255,255,255,0.85)",
+          transition: "box-shadow 0.4s ease, border-color 0.4s ease",
+        }}
+      >
+        <Image
+          src={service.image1}
+          alt={service.title}
+          fill
+          loading="lazy"
+          className="object-cover"
+          sizes="220px"
+          style={{
+            transform: hovered ? "scale(1.1)" : "scale(1)",
+            transition: "transform 0.5s ease",
+          }}
+        />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background: hovered
+              ? "linear-gradient(to top, rgba(11,31,46,0.75) 0%, rgba(11,31,46,0.2) 50%, rgba(11,31,46,0) 100%)"
+              : "linear-gradient(to top, rgba(11,31,46,0.60) 0%, rgba(11,31,46,0.15) 55%, rgba(11,31,46,0) 100%)",
+            transition: "background 0.4s ease",
+          }}
+        />
+        {hovered && (
+          <motion.span
+            initial={{ opacity: 0, y: 4 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+            className="relative z-10 rounded-full bg-gold px-3 py-0.5 font-display text-[9px] font-bold uppercase tracking-widest text-ink"
+          >
+            Explore →
+          </motion.span>
+        )}
+      </div>
+      {/* Bottom edge depth */}
       <div
         style={{
           position: "absolute",
@@ -139,7 +137,7 @@ function RingCard({
           opacity: 0.45,
         }}
       />
-    </motion.div>
+    </motion.a>
   );
 }
 
@@ -152,6 +150,7 @@ export default function RingScene({ radius, height }: { radius: number; height: 
   const lastMX = useRef(0);
   const velRef = useRef(0);
   const isHovered = useRef(false);
+  const pointerDownPos = useRef({ x: 0, y: 0 });
 
   const [spinAngle, setSpinAngle] = useState(0);
 
@@ -191,11 +190,11 @@ export default function RingScene({ radius, height }: { radius: number; height: 
   }, []);
 
   function onPointerDown(e: React.PointerEvent) {
-    if ((e.target as HTMLElement).closest("[role=link]")) return;
     isDrag.current = true;
+    dragState.isDragging = false;
     lastMX.current = e.clientX;
     velRef.current = 0;
-    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    pointerDownPos.current = { x: e.clientX, y: e.clientY };
   }
   function onPointerMove(e: React.PointerEvent) {
     if (!isDrag.current) return;
@@ -203,13 +202,19 @@ export default function RingScene({ radius, height }: { radius: number; height: 
     velRef.current = dx * 0.25;
     angleRef.current += dx * 0.25;
     lastMX.current = e.clientX;
+    const totalDx = Math.abs(e.clientX - pointerDownPos.current.x);
+    const totalDy = Math.abs(e.clientY - pointerDownPos.current.y);
+    if (totalDx > 8 || totalDy > 8) dragState.isDragging = true;
     const rect = containerRef.current?.getBoundingClientRect();
     if (rect) {
       rawTY.set(((e.clientX - rect.left - rect.width / 2) / (rect.width / 2)) * 7);
       rawTX.set(((e.clientY - rect.top - rect.height / 2) / (rect.height / 2)) * 5);
     }
   }
-  function onPointerUp() { isDrag.current = false; }
+  function onPointerUp() {
+    isDrag.current = false;
+    setTimeout(() => { dragState.isDragging = false; }, 50);
+  }
   function onMouseMove(e: React.MouseEvent<HTMLDivElement>) {
     if (isDrag.current) return;
     const rect = containerRef.current?.getBoundingClientRect();
@@ -223,11 +228,11 @@ export default function RingScene({ radius, height }: { radius: number; height: 
     <div
       ref={containerRef}
       className="relative flex w-full select-none items-center justify-center"
-      style={{ height, perspective: 1000, cursor: isDrag.current ? "grabbing" : "grab" }}
+      style={{ height, perspective: 1000, cursor: "grab" }}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
-      onPointerLeave={onPointerUp}
+      onPointerLeave={() => { isDrag.current = false; dragState.isDragging = false; }}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >

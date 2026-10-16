@@ -10,10 +10,10 @@
   // Order matters: Header renders Overview, Our Story, then the Offerings
   // dropdown, then the rest of this list, in this exact order.
   nav: [
-    { href: "/", label: "Overview" },
-    { href: "/#our-story", label: "Our Story" },
+    { href: "/", label: "Home" },
+    { href: "/#our-story", label: "About Us" },
     { href: "/team", label: "Our Team" },
     // { href: "/blog", label: "Blogs" },
-    { href: "/#lets-talk", label: "Let's Talk" },
+    { href: "/#lets-talk", label: "Contact Us" },
   ],
 };
