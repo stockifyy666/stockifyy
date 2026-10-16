@@ -134,18 +134,30 @@ body {
   background-clip: text;
   animation: shimmer 4s linear infinite;
 }
-.scroll-anim-1 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.05s ease, transform 0.7s 0.05s ease; }
-.scroll-anim-2 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.18s ease, transform 0.7s 0.18s ease; }
-.scroll-anim-3 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.3s ease, transform 0.7s 0.3s ease; }
-.scroll-anim-4 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.42s ease, transform 0.7s 0.42s ease; }
-.scroll-anim-5 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.54s ease, transform 0.7s 0.54s ease; }
-.scroll-anim-img { opacity: 0; transform: translateX(40px) scale(0.96); transition: opacity 0.9s 0.2s ease, transform 0.9s 0.2s ease; }
-.content-visible .scroll-anim-1,
-.content-visible .scroll-anim-2,
-.content-visible .scroll-anim-3,
-.content-visible .scroll-anim-4,
-.content-visible .scroll-anim-5 { opacity: 1; transform: translateY(0); }
-.content-visible .scroll-anim-img { opacity: 1; transform: translateX(0) scale(1); }
+/* Mobile/tablet: always visible — no animation hiding */
+@media (max-width: 1279px) {
+  .scroll-anim-1, .scroll-anim-2, .scroll-anim-3,
+  .scroll-anim-4, .scroll-anim-5, .scroll-anim-img {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Desktop only: entrance animation */
+@media (min-width: 1280px) {
+  .scroll-anim-1 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.05s ease, transform 0.7s 0.05s ease; }
+  .scroll-anim-2 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.18s ease, transform 0.7s 0.18s ease; }
+  .scroll-anim-3 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.3s ease, transform 0.7s 0.3s ease; }
+  .scroll-anim-4 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.42s ease, transform 0.7s 0.42s ease; }
+  .scroll-anim-5 { opacity: 0; transform: translateY(36px); transition: opacity 0.7s 0.54s ease, transform 0.7s 0.54s ease; }
+  .scroll-anim-img { opacity: 0; transform: translateX(40px) scale(0.96); transition: opacity 0.9s 0.2s ease, transform 0.9s 0.2s ease; }
+  .content-visible .scroll-anim-1,
+  .content-visible .scroll-anim-2,
+  .content-visible .scroll-anim-3,
+  .content-visible .scroll-anim-4,
+  .content-visible .scroll-anim-5 { opacity: 1; transform: translateY(0); }
+  .content-visible .scroll-anim-img { opacity: 1; transform: translateX(0) scale(1); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   * {

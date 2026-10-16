@@ -12,9 +12,13 @@ export default function HeroContent() {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Mobile/tablet: always show immediately
+    if (window.innerWidth < 1280) {
+      setContentVisible(true);
+      return;
+    }
     const el = contentRef.current;
     if (!el) return;
-    // Fire immediately if already in view (handles sticky + SSR case)
     const rect = el.getBoundingClientRect();
     if (rect.bottom > 0 && rect.top < window.innerHeight + 200) {
       setContentVisible(true);

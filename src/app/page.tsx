@@ -16,13 +16,13 @@ export default function Home() {
       {/* Hero slider + badges — normal flow (not sticky) */}
       <Hero />
 
-      {/* Grow Your Wealth — sticky so About Us slides over it */}
-      <div className="sticky top-20 z-0">
+      {/* Grow Your Wealth — desktop: sticky so About Us slides over it; mobile/tablet: normal flow */}
+      <div className="xl:sticky xl:top-20 xl:z-0">
         <HeroContent />
       </div>
 
       {/* All sections scroll over HeroContent */}
-      <div className="relative z-10 bg-[#FFFDF7] dark:bg-[#0f0f0f]">
+      <div className="relative z-10 bg-[#FFFDF7]">
         <AboutUs />
         <ServicesSpiral />
         <WhyChooseUs />
