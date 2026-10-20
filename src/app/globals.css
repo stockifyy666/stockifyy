@@ -4,12 +4,27 @@
 
 html {
   scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background-color: #f6f4ef;
   color: #0b1f2e;
   transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* GPU-accelerated layers for animated elements */
+.glow-btn,
+.shimmer-text {
+  will-change: transform;
+}
+
+img {
+  content-visibility: auto;
 }
 
 /* Signature element: the ledger rule — a brass hairline with tick marks. */

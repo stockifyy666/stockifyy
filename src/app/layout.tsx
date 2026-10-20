@@ -27,26 +27,47 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.fullName} | Corporate Advisory`,
+    default: `${site.fullName} | Stock Market Advisory Pakistan`,
     template: `%s | ${site.name}`,
   },
   description:
     "Pakistan's most trusted SECP-licensed, Shariah-compliant stock market advisory. Expert financial guidance for PSX investors since 2006.",
   metadataBase: new URL("https://stockifyy.com"),
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   icons: {
     icon: "/images/favicon.ico",
+    shortcut: "/images/favicon.ico",
+    apple: "/images/favicon.ico",
+  },
+  keywords: [
+    "stock market Pakistan", "PSX advisory", "SECP licensed", "Shariah compliant investment",
+    "Pakistan Stock Exchange", "financial advisory Pakistan", "halal investment", "Stockifyy",
+  ],
+  authors: [{ name: "Stockifyy Financial Advisory" }],
+  creator: "Stockifyy",
+  publisher: "Stockifyy Financial Advisory",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   openGraph: {
     type: "website",
     url: "https://stockifyy.com",
-    title: `${site.fullName} | Stock Market Advisory`,
+    title: `${site.fullName} | Stock Market Advisory Pakistan`,
     description:
       "Pakistan's most trusted SECP-licensed, Shariah-compliant stock market advisory. Expert financial guidance for PSX investors since 2006.",
     siteName: site.fullName,
+    locale: "en_PK",
+    images: [{ url: "/images/ICON.png", width: 1200, height: 630, alt: "Stockifyy Financial Advisory" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.fullName} | Stock Market Advisory`,
+    description: "Pakistan's most trusted SECP-licensed stock market advisory.",
+    images: ["/images/ICON.png"],
+  },
+  verification: {},
 };
 
 export default function RootLayout({
@@ -83,8 +104,10 @@ export default function RootLayout({
             }),
           }}
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+        <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
+        <link rel="dns-prefetch" href="https://wa.me" />
       </head>
       <body className="font-sans antialiased">
         <Header />

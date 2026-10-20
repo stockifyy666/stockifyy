@@ -94,8 +94,10 @@ export default function Hero() {
                 alt={s.alt}
                 fill
                 priority={i === 0}
+                fetchPriority={i === 0 ? "high" : "low"}
+                loading={i === 0 ? "eager" : "lazy"}
                 sizes="100vw"
-                quality={60}
+                quality={65}
                 className="object-cover sm:hidden"
               />
               <Image
@@ -103,8 +105,10 @@ export default function Hero() {
                 alt={s.alt}
                 fill
                 priority={i === 0}
+                fetchPriority={i === 0 ? "high" : "low"}
+                loading={i === 0 ? "eager" : "lazy"}
                 sizes="100vw"
-                quality={60}
+                quality={65}
                 className="hidden object-cover sm:block"
               />
             </div>

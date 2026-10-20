@@ -1,7 +1,21 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import AdvertisementBanner from "@/components/sections/AdvertisementBanner";
 // import AdvertisementBannerDesigned from "@/components/sections/AdvertisementBannerDesigned";
 import Hero from "@/components/sections/Hero";
+
+export const metadata: Metadata = {
+  title: "Stockifyy | Pakistan's #1 SECP-Licensed Stock Market Advisory",
+  description:
+    "Grow your wealth the right way. Pakistan's most trusted SECP-licensed, Shariah-compliant stock market advisory for PSX investors since 2006.",
+  alternates: { canonical: "https://stockifyy.com" },
+  openGraph: {
+    url: "https://stockifyy.com",
+    title: "Stockifyy | Pakistan's #1 SECP-Licensed Stock Market Advisory",
+    description: "Grow your wealth the right way. SECP-licensed, Shariah-compliant PSX advisory since 2006.",
+    images: [{ url: "/images/ICON.png", width: 1200, height: 630 }],
+  },
+};
 const HeroContent = dynamic(() => import("@/components/sections/HeroContent"), { ssr: false });
 
 const AboutUs = dynamic(() => import("@/components/sections/AboutUs"), { ssr: false });
