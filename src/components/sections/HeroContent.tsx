@@ -5,10 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import Counter from "@/components/ui/Counter";
+import VerifyModal from "@/components/ui/VerifyModal";
 import websiteImage from "../../../public/images/website-image.png";
 
 export default function HeroContent() {
   const [contentVisible, setContentVisible] = useState(false);
+  const [verifyOpen, setVerifyOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -32,6 +34,8 @@ export default function HeroContent() {
   }, []);
 
   return (
+    <>
+    <VerifyModal open={verifyOpen} onClose={() => setVerifyOpen(false)} />
     <div className="bg-[#FFFDF7]">
     <div
       ref={contentRef}
@@ -42,13 +46,16 @@ export default function HeroContent() {
         {/* ════════ LEFT — copy ════════ */}
         <div className="flex w-full flex-col items-start pb-8 pt-12 max-[360px]:pt-3 max-[360px]:pb-2 sm:pb-10 sm:pt-14 lg:w-1/2 lg:py-1 lg:pr-8">
 
-          {/* kicker */}
-          <div
-            className="scroll-anim-1 inline-flex items-center gap-2 rounded-full px-3 py-1.5 sm:px-4 sm:py-2"
+          {/* kicker — clickable verify badge */}
+          <button
+            type="button"
+            onClick={() => setVerifyOpen(true)}
+            className="scroll-anim-1 inline-flex items-center gap-2 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 cursor-pointer transition-all hover:scale-105 hover:shadow-md active:scale-100"
             style={{
               border: "1.5px solid rgba(254,165,0,0.4)",
               background: "rgba(254,165,0,0.08)",
             }}
+            aria-label="Verify Certificate"
           >
             <BadgeCheck className="size-3 sm:size-3.5" style={{ color: "#FEA500" }} />
             <span
@@ -57,7 +64,7 @@ export default function HeroContent() {
             >
               SECP-LICENSED · SHARIAH-COMPLIANT
             </span>
-          </div>
+          </button>
 
           {/* headline */}
           <h1 className="font-display scroll-anim-2 mt-5 max-[360px]:mt-2 text-[2rem] font-black leading-[1.06] tracking-tight text-[#111111] sm:text-4xl md:text-5xl lg:text-[3.3rem] xl:text-[3.9rem]">
@@ -139,5 +146,6 @@ export default function HeroContent() {
     </div>
 
     </div>
+    </>
   );
 }
