@@ -61,20 +61,19 @@ export default function HeroContent() {
 
           {/* headline */}
           <h1 className="font-display scroll-anim-2 mt-5 max-[360px]:mt-2 text-[2rem] font-black leading-[1.06] tracking-tight text-[#111111] sm:text-4xl md:text-5xl lg:text-[3.3rem] xl:text-[3.9rem]">
-            Grow Your Wealth
+            Apna Paisa
             <br />
-            <span className="shimmer-text">The Right Way.</span>
+            <span className="shimmer-text">Sahi Jagah Lagao.</span>
           </h1>
 
           {/* sub-headline */}
           <p className="scroll-anim-2 mt-2.5 max-[360px]:mt-1 text-base font-medium sm:text-lg md:text-xl">
-            Pakistan&apos;s most trusted stock market advisory.
+            Pakistan ka sabse trusted SECP-certified stock market advisory.
           </p>
 
           {/* body */}
           <p className="scroll-anim-3 mt-1 max-[360px]:hidden max-w-lg text-sm leading-relaxed text-gray-500 sm:text-base sm:mt-4">
-            Research driven financial advisory for Pakistan Stock Exchange investors,
-            built around your goals, risk profile and values.
+            PSX mein Shariah-compliant invest karein — apne goals, apni values aur apne budget ke hisaab se. Hum aapke saath hain, shuru se aakhir tak.
           </p>
 
           {/* CTAs */}

@@ -23,21 +23,10 @@ export default function AboutUs() {
           </h2>
           <div className="font-sans text-slate leading-relaxed space-y-5">
             <p>
-              Stockifyy is an SECP-licensed financial advisory focused on helping investors navigate the Pakistan Stock Exchange with greater clarity and discipline.
-
-{/* We believe successful investing is not built on speculation or short-term noise. It requires quality research, responsible risk management and a strategy that reflects each investor’s goals and circumstances. */}
-
+              Humari kahani ek simple sawaal se shuru hui — Pakistan mein itne log mehnat se paise kamate hain, lekin invest karna kisi ke liye bhi aasan nahi tha. Koi trust nahi, koi sahi guidance nahi, aur halal options ke baare mein toh koi baat hi nahi karta tha.
             </p>
-
-
             <p>
-            Our advisory is built entirely around Shariah-compliant investment opportunities.
-             Whether you are entering the market for the first time or managing an established 
-             portfolio, we help you understand your investments, make informed decisions and
-              build long-term wealth without compromising your values.
-
-
-
+              Stockifyy woh jagah hai jo hum chahte the ke pehle exist karti — jahan aap PSX mein invest karein, apni values se compromise kiye bina, aur kisi ایسے insaan ki madad se jo actually samjhata ho ke aapke liye kya sahi hai. SECP-certified, Shariah-compliant, aur sach mein aapki taraf.
             </p>
           </div>
         </div>
