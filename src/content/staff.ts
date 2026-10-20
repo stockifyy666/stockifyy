@@ -129,7 +129,7 @@ export const staffMembers: StaffMember[] = [
     phone: "+92 300 1234511",
     image: "",
     office: "Islamabad",
-    isActive: true,
+    isActive: true,  
   },
   {
     id: "STF-012",
