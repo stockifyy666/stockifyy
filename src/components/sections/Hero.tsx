@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, Award, Crown, PhoneCall, Users } from "lucide-react";
+import VerifyModal from "@/components/ui/VerifyModal";
 
 const slides = [
   {
@@ -23,6 +24,7 @@ const ENROLL_WHATSAPP_URL =
 
 export default function Hero() {
   const [slide, setSlide] = useState(0);
+  const [verifyOpen, setVerifyOpen] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const startTimer = () => {
@@ -47,6 +49,8 @@ export default function Hero() {
   }
 
   return (
+    <>
+    <VerifyModal open={verifyOpen} onClose={() => setVerifyOpen(false)} />
     <section className="relative overflow-hidden bg-[#FFFDF7]">
       {/* dot pattern */}
       <div
@@ -147,12 +151,12 @@ export default function Hero() {
         {/* Quick-resource strip */}
         <div className="anim-1 relative z-10 w-full bg-[#FFFDF7] py-2 sm:py-4 border-b" style={{ borderColor: "rgba(254,165,0,0.35)" }}>
           <div className="mx-auto flex max-w-content items-start justify-center gap-3 px-3 sm:gap-14 sm:px-6 md:gap-20">
-            <Link href="/verify" className="badge-pop-1 group flex flex-col items-center gap-1">
+            <button type="button" onClick={() => setVerifyOpen(true)} className="badge-pop-1 group flex flex-col items-center gap-1">
               <div className="flex h-10 w-10 sm:h-16 sm:w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)] transition-transform group-hover:scale-110">
                 <Award className="size-4 sm:size-7 md:size-8 text-white" />
               </div>
               <span className="text-center text-[9px] sm:text-[11px] font-semibold text-ink">Verify Certificate</span>
-            </Link>
+            </button>
 
             <Link href="/services/stockifyy-membership" className="badge-pop-2 group flex flex-col items-center gap-1">
               <div className="flex h-10 w-10 sm:h-16 sm:w-16 md:h-20 md:w-20 items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_4px_20px_rgba(254,165,0,0.35)] transition-transform group-hover:scale-110">
@@ -184,5 +188,6 @@ export default function Hero() {
         style={{ background: "linear-gradient(90deg, transparent, #FEA500, transparent)", opacity: 0.5 }}
       />
     </section>
+    </>
   );
 }
