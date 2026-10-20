@@ -66,7 +66,7 @@ export default function VerifyIndexPage() {
                   type="text"
                   value={id}
                   onChange={(e) => setId(e.target.value)}
-                  placeholder="e.g. RC-2026-01"
+                  placeholder=""
                   className="w-full rounded-2xl border border-[#E8DDC8] bg-[#FFFDF7] px-4 py-3 font-mono text-sm text-ink placeholder:text-slate/40 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-all"
                 />
                 <button
