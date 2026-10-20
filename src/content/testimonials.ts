@@ -3,50 +3,34 @@ import type { Testimonial } from "@/types";
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Pehle main khud PSX mein invest karta tha aur loss hota tha. Stockifyy ki guidance ke baad mera portfolio properly manage ho raha hai. Sohail bhai ne clearly samjhaya ke kaunse stocks halal hain aur kaunse nahi.",
-    name: "Usman Tariq",
-    role: "Business Owner",
-    company: "Lahore",
-    avatar: "",
+      "Stockify ran our sell-side process end to end and kept the board informed at every stage. We closed above our initial valuation target.",
+    name: "Helena Marsh",
+    role: "CEO",
+    company: "Northfield Industrial Group",
+    avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&q=80",
   },
   {
     quote:
-      "Maine bohot jagah se advisory li but Stockifyy ne jo mujhe Technical Analysis sikhai woh real hai. Ab main khud chart dekhta hun aur entry exit decide karta hun. Dr. Masood sahab ka teaching style bohot clear hai.",
-    name: "Farhan Iqbal",
-    role: "Software Engineer",
-    company: "Karachi",
-    avatar: "",
+      "They gave us a capital structure plan we could actually defend to our lenders. Direct, specific, no filler.",
+    name: "Daniel Osei",
+    role: "CFO",
+    company: "Verdant Foods Co.",
+    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80",
   },
   {
     quote:
-      "Meri salary ka ek hissa ab PSX mein properly invest ho raha hai — Shariah-compliant stocks mein. Pehle dar lagta tha, ab confidence hai. Stockifyy ki wajah se mujhe pata chal gaya ke wealth kaise grow karti hai.",
-    name: "Ayesha Noman",
-    role: "Teacher",
-    company: "Islamabad",
-    avatar: "",
+      "The turnaround plan bought us the time we needed with creditors and the credibility to execute it.",
+    name: "Priya Anand",
+    role: "Managing Director",
+    company: "Halcyon Manufacturing",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80",
   },
   {
     quote:
-      "One-on-One Advisory session bohot helpful raha. Mufeez bhai ne mera poora portfolio dekha aur mujhe specific stocks suggest kiye. Generic advice nahi thi — meri situation ke hisaab se guidance mili.",
-    name: "Bilal Chaudhry",
-    role: "Doctor",
-    company: "Rawalpindi",
-    avatar: "",
-  },
-  {
-    quote:
-      "Technical Analysis SuperClass join ki thi. 3 mahine mein jo seekha woh saalon ki mehnat tha. Chart patterns, indicators, trading psychology — sab cover hua. Poora worth it tha.",
-    name: "Hamza Siddiqui",
-    role: "Student",
-    company: "Faisalabad",
-    avatar: "",
-  },
-  {
-    quote:
-      "Main ek retired government employee hun. Stockifyy ne mujhe safely invest karna sikha diya. Ab meri savings grow ho rahi hain aur main apne bachon pe depend nahi. Shukar hai is team ka.",
-    name: "Muhammad Akram",
-    role: "Retired Officer",
-    company: "Multan",
-    avatar: "",
+      "Their valuation work held up under scrutiny from both our auditors and the acquirer's counsel.",
+    name: "Sofia Lindqvist",
+    role: "VP Finance",
+    company: "Baltic Components AB",
+    avatar: "https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?w=200&q=80",
   },
 ];
