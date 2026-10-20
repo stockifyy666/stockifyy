@@ -16,7 +16,7 @@ export default function AboutUs() {
           />
         </div>
         <div className="order-1 md:order-2">
-          <p className="case-index font-display text-ink font text-lg mb-4">Our Story</p>
+          <p className="case-index font-display text-ink font text-lg mb-4">About Us</p>
           <h2 className="font-display text-3xl md:text-[44px] text-ink leading-tight mb-6">
             
            Clarity, Discipline and Values <span className="text-gradient-gold"> in Every Decision</span>
