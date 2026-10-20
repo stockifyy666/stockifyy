@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { Award, Search, ShieldCheck, CheckCircle, XCircle, Calendar, GraduationCap, Hash, BadgeCheck, MessageCircle } from "lucide-react";
-import Link from "next/link";
 import { getCertificateById } from "@/content/certificates";
 import type { Certificate } from "@/content/certificates";
 
@@ -47,94 +46,143 @@ export default function VerifyIndexPage() {
         </div>
       </div>
 
-      <main className="flex-1 flex items-start justify-center px-6 py-6 sm:py-10 md:py-16">
+      <main className="flex-1 flex items-start justify-center px-4 sm:px-6 py-6 sm:py-10 md:py-16">
         <div className="w-full max-w-lg">
 
           {/* Search card */}
           <div className="bg-white rounded-3xl border border-[#E8DDC8] shadow-sm overflow-hidden">
             <div className="h-2 w-full bg-gradient-to-r from-gold via-[#fbbf24] to-goldDeep" />
-            <div className="px-6 md:px-10 py-8">
+            <div className="px-5 sm:px-8 md:px-10 py-7">
 
-              <div className="flex h-14 w-14 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-gold to-goldDeep text-white shadow-lg mb-4">
-                <Award className="size-7" />
+              <div className="flex h-12 w-12 mx-auto items-center justify-center rounded-full bg-gradient-to-r from-gold to-goldDeep text-white shadow-lg mb-3">
+                <Award className="size-6" />
               </div>
               <h2 className="font-display text-xl font-bold text-ink mb-1 text-center">Enter Certificate ID</h2>
-              <p className="font-sans text-sm text-slate mb-6 text-center">The ID is printed on your certificate.</p>
+              <p className="font-sans text-sm text-slate mb-5 text-center">The ID is printed on your certificate.</p>
 
-              <form onSubmit={handleSubmit} className="flex gap-2">
+              {/* Search — stacked on mobile for full width */}
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="text"
                   value={id}
                   onChange={(e) => setId(e.target.value)}
                   placeholder="e.g. RC-2026-01"
-                  className="flex-1 rounded-2xl border border-[#E8DDC8] bg-[#FFFDF7] px-4 py-3 font-mono text-sm text-ink placeholder:text-slate/40 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-all"
+                  className="w-full rounded-2xl border border-[#E8DDC8] bg-[#FFFDF7] px-4 py-3 font-mono text-sm text-ink placeholder:text-slate/40 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-all"
                 />
                 <button
                   type="submit"
                   disabled={!id.trim()}
-                  className="flex items-center gap-1.5 rounded-2xl bg-gradient-to-r from-gold to-goldDeep px-4 py-3 text-sm font-bold text-white shadow-md transition-opacity hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-gold to-goldDeep px-5 py-3 text-sm font-bold text-white shadow-md transition-opacity hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   <Search className="size-4" />
-                  <span className="hidden sm:inline">Verify</span>
+                  Verify
                 </button>
               </form>
 
               {/* ── IDLE ── */}
               {result === undefined && (
-                <div className="mt-6 flex flex-col items-center gap-2 py-4 text-center">
+                <div className="mt-5 flex flex-col items-center gap-2 py-4 text-center">
                   <ShieldCheck className="size-9 text-gold/40" />
                   <p className="font-sans text-sm text-slate">Enter your Certificate ID above to verify.</p>
                 </div>
               )}
 
-              {/* ── FOUND ── */}
+              {/* ── FOUND — full certificate ── */}
               {result && (
                 <div className="mt-5 space-y-4">
+                  {/* verified banner */}
                   <div className="flex items-start gap-3 rounded-2xl bg-emerald-50 border border-emerald-200 px-4 py-3">
                     <CheckCircle className="size-5 text-emerald-500 shrink-0 mt-0.5" />
                     <div>
                       <p className="font-display text-sm font-semibold text-emerald-800">Certificate Verified ✓</p>
-                      <p className="font-sans text-xs text-emerald-600 mt-0.5">This record is authentic and exists in Stockifyy&apos;s official registry.</p>
+                      <p className="font-sans text-xs text-emerald-600 mt-0.5">This record is authentic in Stockifyy&apos;s official registry.</p>
                     </div>
                     <BadgeCheck className="size-5 text-emerald-400 ml-auto shrink-0 hidden sm:block mt-0.5" />
                   </div>
 
-                  <div className="rounded-2xl border border-[#E8DDC8] bg-[#FFFDF7] overflow-hidden">
-                    <div className="px-5 py-5 text-center border-b border-[#E8DDC8]">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-goldDeep mb-1">Certificate of Completion</p>
-                      <h3 className="font-display text-xl font-black text-ink">{result.name}</h3>
-                      <p className="font-sans text-sm text-slate mt-1">{result.course}</p>
-                    </div>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 divide-[#E8DDC8]">
-                      <div className="flex flex-col items-center gap-1.5 px-3 py-4 text-center sm:border-r border-[#E8DDC8]">
-                        <Calendar className="size-4 text-goldDeep" />
-                        <p className="text-[9px] uppercase tracking-widest text-slate font-sans">Date</p>
-                        <p className="font-display text-xs font-semibold text-ink">{formatDate(result.completionDate)}</p>
+                  {/* ── Certificate Document ── */}
+                  <div className="rounded-3xl border-2 border-gold/40 bg-[#FFFDF7] overflow-hidden shadow-lg relative">
+
+                    {/* corner ornaments */}
+                    <div className="absolute top-2 left-2 h-6 w-6 border-t-2 border-l-2 border-gold/50 rounded-tl-lg" />
+                    <div className="absolute top-2 right-2 h-6 w-6 border-t-2 border-r-2 border-gold/50 rounded-tr-lg" />
+                    <div className="absolute bottom-2 left-2 h-6 w-6 border-b-2 border-l-2 border-gold/50 rounded-bl-lg" />
+                    <div className="absolute bottom-2 right-2 h-6 w-6 border-b-2 border-r-2 border-gold/50 rounded-br-lg" />
+
+                    {/* gold top bar */}
+                    <div className="h-1.5 w-full bg-gradient-to-r from-gold via-[#fbbf24] to-goldDeep" />
+
+                    <div className="px-5 sm:px-8 pt-6 pb-8 text-center">
+                      {/* issuer */}
+                      <p className="font-sans text-[9px] uppercase tracking-[0.25em] text-goldDeep font-bold mb-1">Stockifyy Financial Advisory</p>
+                      <p className="font-sans text-[8px] uppercase tracking-[0.15em] text-slate/60 mb-4">SECP Licensed · Shariah Compliant</p>
+
+                      {/* seal */}
+                      <div className="flex h-14 w-14 mx-auto items-center justify-center rounded-full bg-gradient-to-br from-gold to-goldDeep shadow-[0_0_0_4px_rgba(254,165,0,0.15)] mb-3">
+                        <Award className="size-7 text-white" />
                       </div>
-                      {result.instructor && (
-                        <div className="flex flex-col items-center gap-1.5 px-3 py-4 text-center sm:border-r border-[#E8DDC8]">
-                          <GraduationCap className="size-4 text-goldDeep" />
-                          <p className="text-[9px] uppercase tracking-widest text-slate font-sans">Instructor</p>
-                          <p className="font-display text-xs font-semibold text-ink">{result.instructor}</p>
+
+                      {/* This certifies */}
+                      <p className="font-sans text-[10px] text-slate/70 uppercase tracking-[0.2em] mb-1">This Certifies That</p>
+
+                      {/* Name */}
+                      <h3 className="font-display text-2xl sm:text-3xl font-black text-ink leading-tight">{result.name}</h3>
+
+                      <p className="font-sans text-[10px] text-slate/70 uppercase tracking-[0.15em] mt-3 mb-1">Has Successfully Completed</p>
+
+                      {/* Course */}
+                      <p className="font-display text-base sm:text-lg font-bold text-goldDeep leading-snug px-2">{result.course}</p>
+
+                      {/* divider */}
+                      <div className="my-4 flex items-center gap-3">
+                        <div className="flex-1 h-px bg-gradient-to-r from-transparent to-gold/30" />
+                        <div className="h-1.5 w-1.5 rounded-full bg-gold/50" />
+                        <div className="flex-1 h-px bg-gradient-to-l from-transparent to-gold/30" />
+                      </div>
+
+                      {/* details row */}
+                      <div className="grid grid-cols-3 gap-2 text-center">
+                        <div className="flex flex-col items-center gap-1">
+                          <Calendar className="size-3.5 text-goldDeep" />
+                          <p className="text-[8px] uppercase tracking-widest text-slate font-sans">Date</p>
+                          <p className="font-display text-[10px] sm:text-xs font-bold text-ink leading-tight">{formatDate(result.completionDate)}</p>
                         </div>
-                      )}
-                      <div className="flex flex-col items-center gap-1.5 px-3 py-4 text-center sm:border-r border-[#E8DDC8]">
-                        <Hash className="size-4 text-goldDeep" />
-                        <p className="text-[9px] uppercase tracking-widest text-slate font-sans">Enroll No</p>
-                        <p className="font-mono text-xs font-bold text-ink">{result.id}</p>
+                        {result.instructor ? (
+                          <div className="flex flex-col items-center gap-1">
+                            <GraduationCap className="size-3.5 text-goldDeep" />
+                            <p className="text-[8px] uppercase tracking-widest text-slate font-sans">Instructor</p>
+                            <p className="font-display text-[10px] sm:text-xs font-bold text-ink leading-tight">{result.instructor}</p>
+                          </div>
+                        ) : (
+                          <div className="flex flex-col items-center gap-1">
+                            <ShieldCheck className="size-3.5 text-goldDeep" />
+                            <p className="text-[8px] uppercase tracking-widest text-slate font-sans">Status</p>
+                            <p className="font-display text-[10px] sm:text-xs font-bold text-emerald-600">Verified</p>
+                          </div>
+                        )}
+                        <div className="flex flex-col items-center gap-1">
+                          <Hash className="size-3.5 text-goldDeep" />
+                          <p className="text-[8px] uppercase tracking-widest text-slate font-sans">Enroll No</p>
+                          <p className="font-mono text-[10px] sm:text-xs font-bold text-ink">{result.id}</p>
+                        </div>
                       </div>
-                      <div className="flex flex-col items-center gap-1.5 px-3 py-4 text-center">
-                        <Hash className="size-4 text-goldDeep" />
-                        <p className="text-[9px] uppercase tracking-widest text-slate font-sans">Cert No</p>
-                        <p className="font-mono text-xs font-bold text-ink">{result.certificateNo}</p>
+
+                      {/* verified stamp */}
+                      <div className="mt-5 flex justify-center">
+                        <div className="flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-4 py-1.5">
+                          <ShieldCheck className="size-3 text-emerald-500" />
+                          <span className="font-sans text-[9px] font-bold text-emerald-700 uppercase tracking-wide">Verified & Authentic</span>
+                        </div>
                       </div>
+
+                      {/* official statement */}
+                      <p className="font-sans text-[9px] text-slate/50 mt-3 leading-relaxed">
+                        Issued by Stockifyy Financial Advisory · {new Date(result.completionDate).getFullYear()}
+                      </p>
                     </div>
-                    <div className="border-t border-[#E8DDC8] bg-[#FFF7E9]/60 py-3 flex justify-center">
-                      <div className="flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-4 py-1.5">
-                        <ShieldCheck className="size-3.5 text-emerald-500" />
-                        <span className="font-sans text-[10px] font-semibold text-emerald-700 uppercase tracking-wide">Verified & Authentic</span>
-                      </div>
-                    </div>
+
+                    {/* gold bottom bar */}
+                    <div className="h-1 w-full bg-gradient-to-r from-gold via-[#fbbf24] to-goldDeep" />
                   </div>
 
                   <button onClick={handleReset} className="w-full rounded-2xl border border-[#E8DDC8] py-2.5 text-sm font-sans text-slate hover:border-gold hover:text-goldDeep transition-colors">
@@ -160,7 +208,7 @@ export default function VerifyIndexPage() {
                     Try again
                   </button>
 
-                  {/* After 2 wrong attempts — contact CTA */}
+                  {/* After 2 wrong attempts */}
                   {wrongAttempts >= 2 && (
                     <div className="rounded-2xl bg-gradient-to-br from-[#1A1A1A] to-[#2a1a00] border border-gold/30 px-5 py-5 text-center space-y-3">
                       <div className="flex h-10 w-10 mx-auto items-center justify-center rounded-full bg-gold/20">
