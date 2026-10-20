@@ -140,7 +140,7 @@ export default function Hero() {
               href={ENROLL_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-bold text-white shadow-lg transition-opacity hover:opacity-90 whitespace-nowrap font-display sm:gap-2 sm:px-8 sm:py-3 sm:text-sm"
+              className="inline-flex items-center gap-1 rounded-full px-2 py-1 text-[10px] font-bold text-white shadow-lg transition-opacity hover:opacity-90 whitespace-nowrap font-display sm:gap-2 sm:px-8 sm:py-3 sm:text-sm"
               style={{ background: "linear-gradient(135deg, #FEA500 0%, #7C5200 100%)" }}
             >
               Enroll Now →
