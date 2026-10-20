@@ -37,5 +37,39 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function StaffPage({ params }: Props) {
   const { id } = await params;
   const staff = getStaffBySlug(id);
-  return <StaffCard staff={staff} id={id} />;
+
+  const jsonLd = staff?.isActive
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: staff.name.trim(),
+        jobTitle: staff.position,
+        worksFor: {
+          "@type": "Organization",
+          name: "Stockifyy Financial Advisory",
+          url: "https://stockifyy.com",
+          sameAs: "https://stockifyy.com",
+        },
+        workLocation: {
+          "@type": "Place",
+          name: staff.office ? `${staff.office}, Pakistan` : "Pakistan",
+        },
+        email: "info@stockifyy.com",
+        telephone: staff.phone,
+        url: `https://stockifyy.com/staff/${id}`,
+        ...(staff.image ? { image: `https://stockifyy.com${staff.image}` } : {}),
+      }
+    : null;
+
+  return (
+    <>
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+      <StaffCard staff={staff} id={id} />
+    </>
+  );
 }
