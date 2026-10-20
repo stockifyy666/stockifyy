@@ -15,7 +15,7 @@ export default function VerifyIndexPage() {
 
   return (
     <div className="min-h-screen bg-cream flex flex-col">
-      <div className="w-full bg-gradient-to-br from-[#1A1A1A] via-[#2a1a00] to-[#1A1A1A] py-20 md:py-28 px-6 text-center relative overflow-hidden">
+      <div className="w-full bg-gradient-to-br from-[#1A1A1A] via-[#2a1a00] to-[#1A1A1A] py-10 sm:py-16 md:py-20 px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none"><div className="w-[600px] h-[600px] rounded-full border border-gold/10" /></div>
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none"><div className="w-[400px] h-[400px] rounded-full border border-gold/10" /></div>
         <div className="relative z-10">
@@ -25,7 +25,7 @@ export default function VerifyIndexPage() {
         </div>
       </div>
 
-      <main className="flex-1 flex items-start justify-center px-6 py-16 md:py-24">
+      <main className="flex-1 flex items-start justify-center px-6 py-6 sm:py-10 md:py-16">
         <div className="w-full max-w-lg">
           <div className="bg-white rounded-3xl border border-[#E8DDC8] shadow-sm overflow-hidden">
             <div className="h-2 w-full bg-gradient-to-r from-gold via-[#fbbf24] to-goldDeep" />

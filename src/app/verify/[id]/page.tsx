@@ -30,7 +30,7 @@ export default function VerifyPage({ params }: Props) {
     <div className="min-h-screen bg-cream flex flex-col">
 
       {/* Hero */}
-      <div className="w-full bg-gradient-to-br from-[#1A1A1A] via-[#2a1a00] to-[#1A1A1A] py-20 md:py-28 px-6 text-center relative overflow-hidden">
+      <div className="w-full bg-gradient-to-br from-[#1A1A1A] via-[#2a1a00] to-[#1A1A1A] py-10 sm:py-16 md:py-20 px-6 text-center relative overflow-hidden">
         {/* Decorative gold rings */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-[600px] h-[600px] rounded-full border border-gold/10" />
@@ -53,7 +53,7 @@ export default function VerifyPage({ params }: Props) {
       </div>
 
       {/* Content */}
-      <main className="flex-1 max-w-content mx-auto w-full px-6 md:px-10 py-16 md:py-24">
+      <main className="flex-1 max-w-content mx-auto w-full px-6 md:px-10 py-6 sm:py-10 md:py-16">
 
         {cert ? (
           /* ── VALID ── */

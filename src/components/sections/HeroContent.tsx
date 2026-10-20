@@ -41,7 +41,7 @@ export default function HeroContent() {
       <div className="flex flex-col lg:flex-row lg:items-center lg:min-h-[640px] lg:py-8">
 
         {/* ════════ LEFT — copy ════════ */}
-        <div className="flex w-full flex-col items-start pb-8 pt-12 max-[360px]:pt-3 max-[360px]:pb-2 sm:pb-10 sm:pt-14 lg:w-1/2 lg:py-1 lg:pr-8">
+        <div className="flex w-full flex-col items-start pb-4 pt-4 max-[360px]:pt-3 max-[360px]:pb-2 sm:pb-10 sm:pt-14 lg:w-1/2 lg:py-1 lg:pr-8">
 
           {/* kicker — clickable verify badge */}
           <Link
