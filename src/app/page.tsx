@@ -1,4 +1,6 @@
 import dynamic from "next/dynamic";
+import AdvertisementBanner from "@/components/sections/AdvertisementBanner";
+// import AdvertisementBannerDesigned from "@/components/sections/AdvertisementBannerDesigned";
 import Hero from "@/components/sections/Hero";
 const HeroContent = dynamic(() => import("@/components/sections/HeroContent"), { ssr: false });
 
@@ -13,6 +15,9 @@ const ContactSection = dynamic(() => import("@/components/sections/ContactSectio
 export default function Home() {
   return (
     <>
+      {/* <AdvertisementBanner /> */}
+      {/* <AdvertisementBannerDesigned /> */}
+
       {/* Hero slider + badges */}
       <Hero />
 
