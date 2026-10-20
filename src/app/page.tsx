@@ -16,8 +16,8 @@ export default function Home() {
       {/* Hero slider + badges */}
       <Hero />
 
-      {/* Grow Your Wealth — sticky so About Us slides over it */}
-      <div className="sticky top-0 z-0">
+      {/* Grow Your Wealth — sticky top-20 so badge clears navbar (h=82px) */}
+      <div className="sticky top-20 z-0">
         <HeroContent />
       </div>
 
