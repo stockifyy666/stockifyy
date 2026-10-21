@@ -80,7 +80,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         model: "compound-beta",
-        messages: groqMessages,
+        messages: groqMessages,   
         temperature: 0.7,
         max_tokens: 250,
       }),
