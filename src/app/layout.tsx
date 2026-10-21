@@ -43,6 +43,14 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SR2YX3V0WX" />
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-SR2YX3V0WX');
+        `}} />
       </head>
       <body className="font-sans antialiased">
         <Header />
