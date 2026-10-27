@@ -15,7 +15,7 @@ ABOUT STOCKIFYY:
 - Website: https://www.stockifyy.com
 - SECP Certified — fully licensed under Pakistan's regulatory framework
 - 100% Shariah-Compliant — every service, every recommendation
-- Focus: Pakistan Stock Exchange (PSX) investors
+- Focus: Pakistan Stock Exchange (PSX) investors  
 - WhatsApp: +923362444466
 - Email: info@stockifyy.com
 
