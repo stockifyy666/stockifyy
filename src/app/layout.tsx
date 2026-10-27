@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import Script from "next/script";
 import dynamic from "next/dynamic";
 import { site } from "@/content/site";
 
@@ -104,13 +105,6 @@ export default function RootLayout({
             }),
           }}
         />
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-94FMJ9N9CM" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-94FMJ9N9CM');`,
-          }}
-        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
@@ -122,6 +116,17 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
         {/* <AIChatbot /> */}
+        {/* Google Analytics — non-blocking */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-94FMJ9N9CM"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">{`
+          window.dataLayer=window.dataLayer||[];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js',new Date());
+          gtag('config','G-94FMJ9N9CM',{send_page_view:true});
+        `}</Script>
       </body>
     </html>
   );

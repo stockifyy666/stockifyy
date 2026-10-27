@@ -126,6 +126,8 @@ export default function HeroContent() {
             width={900}
             height={800}
             quality={75}
+            priority
+            fetchPriority="high"
             className="w-full h-auto object-contain object-top"
             sizes="(max-width: 640px) 100vw, (max-width: 1080px) 55vw, 50vw"
             style={{

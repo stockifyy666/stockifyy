@@ -23,8 +23,16 @@ body {
   will-change: transform;
 }
 
+/* Smooth GPU compositing for slider and sticky elements */
+.sticky,
+[class*="transition-"],
+[class*="animate-"] {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 img {
-  content-visibility: auto;
+  image-rendering: auto;
 }
 
 /* Signature element: the ledger rule — a brass hairline with tick marks. */

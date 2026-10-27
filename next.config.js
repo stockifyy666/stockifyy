@@ -7,6 +7,7 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
     optimizeCss: true,
+    webVitalsAttribution: ["CLS", "LCP", "FCP", "FID", "TTFB", "INP"],
   },
   images: {
     formats: ["image/avif", "image/webp"],
