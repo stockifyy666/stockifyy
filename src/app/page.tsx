@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import AdvertisementBanner from "@/components/sections/AdvertisementBanner";
 // import AdvertisementBannerDesigned from "@/components/sections/AdvertisementBannerDesigned";
-import Hero from "@/components/sections/Hero";
 
 export const metadata: Metadata = {
   title: "Stockifyy | Pakistan's #1 SECP-Licensed Stock Market Advisory",
@@ -31,9 +30,6 @@ export default function Home() {
     <>
       {/* <AdvertisementBanner /> */}
       {/* <AdvertisementBannerDesigned /> */}
-
-      {/* Hero slider + badges */}
-      <Hero />
 
       {/* Grow Your Wealth — sticky top-20 so badge clears navbar (h=82px) */}
       <div className="sticky top-20 z-0">
