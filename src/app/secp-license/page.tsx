@@ -3,7 +3,7 @@ import Image from "next/image";
 import secpLicense from "../../../public/images/secp-lisenced.jpeg";
 
 export const metadata: Metadata = {
-  title: "SECP Licensed",
+  title: "SECP License",
   description: "Stockifyy Advisory is licensed by the Securities and Exchange Commission of Pakistan (SECP).",
 };
 
@@ -19,7 +19,7 @@ export default function SecpLicensedPage() {
             Regulatory
           </p>
           <h1 className="font-display text-4xl md:text-5xl text-ink leading-tight mb-4">
-            SECP Licensed
+            SECP License
           </h1>
           <p className="font-sans text-slate max-w-xl leading-relaxed">
             Stockifyy Advisory is licensed by the Securities and Exchange

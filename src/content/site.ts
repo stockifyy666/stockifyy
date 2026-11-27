@@ -14,7 +14,7 @@
     { href: "/#our-story", label: "About Us" },
     { href: "/team", label: "Our Team" },
     // { href: "/blog", label: "Blogs" },
-    { href: "/secp-licensed", label: "License" },
+    { href: "/secp-license", label: "SECP License" },
     { href: "/#lets-talk", label: "Contact Us" },
   ],
 };
