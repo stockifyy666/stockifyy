@@ -3,64 +3,62 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Learn how Stockifyy Advisory collects, uses, and protects your personal information.",
+  description: "Learn how Stockifyy Pvt Limited collects, uses, and protects your personal information.",
 };
 
-const sections = [
+const sections: { title: string; body: string[]; list?: string[] }[] = [
   {
-    title: "1. Information We Collect",
+    title: "1. Consent to Use Information",
     body: [
-      "We collect information you voluntarily provide when you contact us through our website, including your full name, email address, phone number, and any message or enquiry you submit via our contact form.",
-      "We may also collect non-personal technical data such as your browser type, device, IP address, pages visited, and time spent on the site through standard web analytics tools. This data is used solely to improve the performance and user experience of our website.",
+      "By using the Stockifyy Pvt Limited website or services, you agree to this Privacy Policy. If you disagree, please stop using our services immediately.",
     ],
   },
   {
-    title: "2. How We Use Your Information",
+    title: "2. Information We Collect",
     body: [
-      "Information you provide is used to respond to your enquiries, deliver our advisory services, send you relevant updates or educational content you have requested, and improve our offerings.",
-      "We do not sell, rent, or share your personal information with third parties for their own marketing purposes. We may share data with trusted service providers who assist in operating our website, strictly under confidentiality obligations.",
+      "Non-Personal Information: includes web requests, browser type, pages visited, and time spent on pages. This is collected for security, auditing, and statistical purposes.",
+      "Personal Information: includes name, gender, phone number, email, address, any information given in the KYC form, and IP address. We collect this as per the requirements of the SECP.",
     ],
   },
   {
-    title: "3. Shariah Compliance & Data Ethics",
+    title: "3. Purpose of Collection",
     body: [
-      "Consistent with our commitment to Shariah-compliant practices, we treat your personal data with honesty and transparency. We collect only what is necessary, retain it only as long as needed, and never use it in ways you would not reasonably expect.",
+      "We collect information to provide and improve our services and for research. Non-personal information helps us enhance our services based on user preferences. We also collect information entered into KYC and other forms on our site as per SECP requirements, in our capacity as your financial advisor.",
     ],
   },
   {
-    title: "4. Cookies",
+    title: "4. Sharing Information",
+    body: ["We may share information with:"],
+    list: ["Our team members", "Legal authorities, if required"],
+  },
+  {
+    title: "5. User Rights and Retention",
     body: [
-      "Our website may use cookies to enhance your browsing experience. Cookies are small files stored on your device that help us understand how visitors use our site. You can disable cookies through your browser settings; however, some features of the website may not function correctly as a result.",
+      "You can access, correct, update, or object to the use of your personal information via our Contact Us page. We retain your information as long as needed to provide our services and comply with legal obligations.",
     ],
   },
   {
-    title: "5. Data Security",
+    title: "6. Security and Confidentiality",
     body: [
-      "We implement appropriate technical and organisational measures to protect your personal information against unauthorised access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.",
+      "We take industry-standard security measures to protect your personal information but cannot guarantee complete security. You share information at your own risk.",
     ],
   },
   {
-    title: "6. Third-Party Links",
+    title: "7. Links to Other Websites",
     body: [
-      "Our website may contain links to external websites. We are not responsible for the privacy practices or content of those sites and encourage you to review their privacy policies independently.",
+      "This Privacy Policy applies only to our services. We are not responsible for third-party websites linked from our site. Please read their privacy policies before use.",
     ],
   },
   {
-    title: "7. Your Rights",
+    title: "8. Contact Information",
     body: [
-      "You have the right to access, correct, or request deletion of any personal information we hold about you. To exercise these rights, please contact us at info@stockifyy.com. We will respond to your request within a reasonable timeframe.",
+      "For any questions about this Privacy Policy, email us at info@stockifyy.com.",
     ],
   },
   {
-    title: "8. Changes to This Policy",
+    title: "9. Updates to This Policy",
     body: [
-      "We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. The updated policy will be posted on this page with a revised effective date. We encourage you to review this page periodically.",
-    ],
-  },
-  {
-    title: "9. Contact Us",
-    body: [
-      "If you have any questions or concerns about this Privacy Policy or how your data is handled, please contact us at info@stockifyy.com.",
+      "We may update this Privacy Policy from time to time. Check the effective date above for updates. Your continued use of our services means you accept the changes.",
     ],
   },
 ];
@@ -85,7 +83,7 @@ export default function PrivacyPolicyPage() {
             we collect, how we use it, and how we protect it.
           </p>
           <p className="font-sans text-xs text-slate/60 mt-4">
-            Effective date: 1 August 2025
+            Effective date: 27 November 2026
           </p>
         </div>
       </div>
@@ -104,6 +102,13 @@ export default function PrivacyPolicyPage() {
                     {para}
                   </p>
                 ))}
+                {s.list && (
+                  <ul className="list-disc pl-6 space-y-2 font-sans text-slate">
+                    {s.list.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           ))}

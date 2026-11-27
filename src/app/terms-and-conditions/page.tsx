@@ -3,78 +3,75 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions",
-  description: "Read the terms and conditions governing use of Stockifyy Advisory's website and services.",
+  description: "Read the terms and conditions governing use of Stockifyy Pvt Limited's website and services.",
 };
 
 const sections = [
   {
-    title: "1. Acceptance of Terms",
+    title: "1. Introduction",
     body: [
-      "By accessing or using the Stockifyy Advisory website (stockifyy.com) or any of our services, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our website or services.",
+      "This website is owned and operated by Stockifyy Pvt Limited (hereinafter and throughout this website referred to as “we”, “us” and “our”).",
+      "By using stockifyy.com, you agree to these terms and any other posted guidelines. If you disagree, do not use our services.",
     ],
   },
   {
-    title: "2. Nature of Our Services",
+    title: "2. Subscription",
     body: [
-      "Stockifyy Advisory is a Securities and Exchange Commission of Pakistan (SECP) certified advisory firm. We provide stock market guidance, educational content, trade alerts, portfolio advisory, and related financial information services.",
-      "Our services are informational and advisory in nature. Nothing on this website or communicated through our services constitutes a guarantee of investment returns or a solicitation to buy or sell any specific security. Past performance is not indicative of future results.",
+      "You agree to pay the specified subscription fee when subscribing to our services or packages.",
     ],
   },
   {
-    title: "3. Shariah Compliance Disclaimer",
+    title: "3. Information from External Sources",
     body: [
-      "Stockifyy Advisory follows established Shariah screening criteria for the recommendations and guidance we provide. However, Shariah compliance of specific securities can change over time due to changes in a company's financial ratios or business activities.",
-      "Investors are ultimately responsible for verifying the Shariah compliance status of their own investments. Stockifyy does not accept liability for any investments made based solely on our compliance assessments.",
+      "We use data from public sources, which may change without notice. We are not responsible for inaccuracies from these sources.",
     ],
   },
   {
-    title: "4. No Financial Advice Guarantee",
+    title: "4. No Guarantee",
     body: [
-      "Information provided on this website and through our services is for educational and informational purposes. Individual financial circumstances vary, and nothing we communicate should be treated as personalised financial advice unless you are an enrolled advisory client with a formal agreement in place.",
-      "You should consult a qualified financial adviser before making significant investment decisions.",
+      "We strive for accuracy but do not guarantee the completeness or reliability of information. We may update our website without notice.",
     ],
   },
   {
-    title: "5. Intellectual Property",
+    title: "5. Limitation of Liability",
     body: [
-      "All content on this website, including text, graphics, logos, research reports, and educational materials, is the intellectual property of Stockifyy Advisory and is protected by applicable copyright and intellectual property laws.",
-      "You may not reproduce, distribute, or commercially exploit any content from this website without prior written permission from Stockifyy Advisory.",
+      "We are not liable for any damages arising from using or being unable to use our website, including unauthorized access.",
     ],
   },
   {
-    title: "6. User Conduct",
+    title: "6. Intellectual Property",
     body: [
-      "You agree not to use this website for any unlawful purpose, to transmit harmful or misleading content, to attempt to gain unauthorised access to any part of the website or its systems, or to interfere with the website's operation in any way.",
+      "All content on our platforms is our intellectual property or that of our licensors and is protected by law. Do not reproduce or distribute it without our consent.",
     ],
   },
   {
-    title: "7. Third-Party Links",
+    title: "7. Third-Party Websites",
     body: [
-      "Our website may contain links to third-party websites for your convenience. Stockifyy Advisory does not endorse or take responsibility for the content, privacy practices, or services of any third-party websites.",
+      "We are not responsible for the content or accuracy of third-party websites linked to ours. Use them at your own risk.",
     ],
   },
   {
-    title: "8. Limitation of Liability",
+    title: "8. Privacy Policy",
     body: [
-      "To the fullest extent permitted by law, Stockifyy Advisory shall not be liable for any direct, indirect, incidental, or consequential loss or damage arising from your use of this website or reliance on any information provided, including investment losses.",
+      "Our Privacy Policy explains how we handle your personal information. We respect your privacy and will not share your information without consent, except as required by law. You can read our Privacy Policy at stockifyy.com/privacy-policy.",
     ],
   },
   {
-    title: "9. Amendments",
+    title: "9. Governing Law",
     body: [
-      "Stockifyy Advisory reserves the right to amend these Terms and Conditions at any time. Updated terms will be posted on this page with a revised effective date. Continued use of our website after any changes constitutes your acceptance of the revised terms.",
+      "These terms are governed by the regulations of the SECP and the laws of the Government of Pakistan.",
     ],
   },
   {
-    title: "10. Governing Law",
+    title: "10. Changes to Terms",
     body: [
-      "These Terms and Conditions are governed by the laws of Pakistan. Any disputes arising from your use of our website or services shall be subject to the exclusive jurisdiction of the courts of Pakistan.",
+      "We may change these terms at any time without notice. Continued use of our services after changes means you accept the new terms.",
     ],
   },
   {
-    title: "11. Contact",
+    title: "11. Contact Us",
     body: [
-      "If you have any questions regarding these Terms and Conditions, please contact us at info@stockifyy.com.",
+      "If you have any questions about these terms, or any complaints about this site or the services we offer, please email us at info@stockifyy.com.",
     ],
   },
 ];
@@ -99,7 +96,7 @@ export default function TermsAndConditionsPage() {
             engaging with any of our advisory services.
           </p>
           <p className="font-sans text-xs text-slate/60 mt-4">
-            Effective date: 1 August 2025
+            Effective date: 27 November 2026
           </p>
         </div>
       </div>
