@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import PortalLaunchPopup from "@/components/ui/PortalLaunchPopup";
 import Script from "next/script";
 import dynamic from "next/dynamic";
 import { site } from "@/content/site";
@@ -112,6 +113,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <Header />
+        <PortalLaunchPopup />
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
