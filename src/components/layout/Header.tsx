@@ -33,9 +33,9 @@ export default function Header() {
 
   return (
 <header className="sticky top-0 z-50 border-b border-[#E8DDC8] bg-[#FFF7E9]/90 backdrop-blur-xl">
-      <div className="max-w-content mx-auto px-6 md:px-10 flex items-center justify-between h-20">
+      <div className="max-w-content mx-auto px-6 md:px-10 flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between h-20">
         {/* Logo lockup */}
-      <Link href="/" className="flex items-center">
+      <Link href="/" className="flex items-center justify-self-start">
   <Image
     src={logo}
     alt="Stockifyy Logo"
@@ -119,6 +119,16 @@ export default function Header() {
           ))}
 
         </nav>
+
+        {/* Desktop: portal button on right */}
+        <a
+          href={site.dataPortalHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden lg:inline-block justify-self-end rounded-full bg-gradient-to-r from-gold to-goldDeep text-white font-display text-sm font-medium px-6 py-2.5 shadow-lg hover:opacity-90 transition-opacity whitespace-nowrap"
+        >
+          Stockifyy&apos;s Portal
+        </a>
 
         {/* Mobile: hamburger on right */}
         <div className="lg:hidden flex items-center gap-2">
@@ -212,6 +222,14 @@ export default function Header() {
             </Link>
           ))}
 
+          <a
+            href={site.dataPortalHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 text-center rounded-full bg-gradient-to-r from-gold to-goldDeep text-white font-display text-sm font-medium px-6 py-3 shadow-lg"
+          >
+            Stockifyy&apos;s Portal
+          </a>
         </nav>
       </div>
     </header>

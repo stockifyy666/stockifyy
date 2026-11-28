@@ -6,7 +6,7 @@
   email: "info@stockifyy.com",
   phone: "+92 336 2444466",
   address: "Karachi & Islamabad, Pakistan",
-  dataPortalHref: "https://stockifyy-data-portal.vercel.app/dashboard",
+  dataPortalHref: "http://portal.stockifyy.com/",
   // Order matters: Header renders Overview, Our Story, then the Offerings
   // dropdown, then the rest of this list, in this exact order.
   nav: [
